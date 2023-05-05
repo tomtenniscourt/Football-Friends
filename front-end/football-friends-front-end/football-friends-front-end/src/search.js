@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,6 +15,17 @@ export default function Search() {
       const response = await fetch(`/users?search=${searchTerm}`);
       const data = await response.json();
       setSearchResults(data);
+      if (data.length === 0) {
+        toast.error("No users found!", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -29,6 +42,7 @@ export default function Search() {
           ))}
         </ul>
       )}
+      <ToastContainer />
     </div>
   );
 }
