@@ -18,8 +18,23 @@ const getAllUsers = async (req,res) => {
     }
 }
 
+// Get One User
+const getOneUser = async (req,res) => {
+    try {
+        user = await User.findById(
+            req.params.id
+        )
+        res.json(user)
+    } catch (error) {
+            console.log(error);
+            res.status(500).json(error);
+    }
+}
+
+
 
 
 module.exports = {
     getAllUsers,
+    getOneUser,
 }
