@@ -1,6 +1,6 @@
 const express = require("express");
 const User = require("../Models/user");
-const AdmiredPlayer = require("../Models/admiredPlayer");
+const { AdmiredPlayer } = require("../Models/admiredPlayer");
 const JWT = require("jsonwebtoken");
 
 const router = express.Router();
@@ -54,9 +54,26 @@ const updateOneUser = async (req, res) => {
   }
 };
 
+/******** ADMIRED PLAYER METHODS ********/
+
+// Create One Admired Player
+const createAdmiredPlayer = async (req, res) => {
+  try {
+    new_player = await AdmiredPlayer.create(req.body);
+    our_user = await User.findById(req.params.id);
+    our_user.playersAdmired.push(new_player);
+    our_user.save();
+    res.status(201).json(our_user);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+};
+
 module.exports = {
   getAllUsers,
   getOneUser,
   createUser,
   updateOneUser,
+  createAdmiredPlayer,
 };
