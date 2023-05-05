@@ -70,10 +70,31 @@ const createAdmiredPlayer = async (req, res) => {
   }
 };
 
+// delete an admired player
+const deleteAnAdmiredPlayer = async (req, res) => {
+  try {
+    updatedUser = await User.updateOne(
+      {
+        _id: req.params.id,
+      },
+      {
+        $pull: {
+          playersAdmired: { _id: req.params.playerId },
+        },
+      }
+    );
+    res.json(updatedUser);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 module.exports = {
   getAllUsers,
   getOneUser,
   createUser,
   updateOneUser,
   createAdmiredPlayer,
+  deleteAnAdmiredPlayer,
+  deleteAnAdmiredPlayer,
 };
