@@ -9,7 +9,7 @@ export default function NavBar() {
       </Link>
       &nbsp; | &nbsp;
       <Link to="/profile" style={{ color: "darkblue" }}>
-        Profile
+        My Profile
       </Link>
       &nbsp; | &nbsp;
       <Link to="/friends" style={{ color: "darkblue" }}>
@@ -25,7 +25,7 @@ export default function NavBar() {
       </Link>
       &nbsp; | &nbsp;
       <Link to="/login" style={{ color: "darkblue" }}>
-        Log in
+        Log in/out
       </Link>
       &nbsp; | &nbsp;
       <Link to="/register" style={{ color: "darkblue" }}>
