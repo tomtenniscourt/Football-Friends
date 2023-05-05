@@ -6,6 +6,7 @@ const {
   updateOneUser,
   createAdmiredPlayer,
   deleteAnAdmiredPlayer,
+  updateAnAdmiredPlayer,
 } = require("./controller");
 
 const router = express.Router();
@@ -18,5 +19,8 @@ router
   .post(createAdmiredPlayer);
 router.route("/Register").post(createUser);
 router.route("/Users/:id/:playerId").delete(deleteAnAdmiredPlayer);
+router
+  .route("/Users/:id/ViewAdmiredPlayer/:playerId")
+  .put(updateAnAdmiredPlayer);
 
 module.exports = router;

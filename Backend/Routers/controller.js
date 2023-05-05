@@ -89,6 +89,33 @@ const deleteAnAdmiredPlayer = async (req, res) => {
   }
 };
 
+// update an admired player
+// /Users/:id/ViewAdmiredPlayer/:playerId
+const updateAnAdmiredPlayer = async (req, res) => {
+  try {
+    updatedPlayer = await User.updateOne(
+      {
+        _id: req.params.id,
+        "playersAdmired._id": {
+          _id: req.params.playerId,
+        },
+      },
+      {
+        $set: {
+          "playersAdmired.$.name": req.body.name,
+          "playersAdmired.$.age": req.body.age,
+          "playersAdmired.$.club": req.body.club,
+          "playersAdmired.$.reasonAdmired": req.body.reasonAdmired,
+        },
+      }
+    );
+    res.status(201).json(updatedPlayer);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+};
+
 module.exports = {
   getAllUsers,
   getOneUser,
@@ -97,4 +124,27 @@ module.exports = {
   createAdmiredPlayer,
   deleteAnAdmiredPlayer,
   deleteAnAdmiredPlayer,
+  updateAnAdmiredPlayer,
 };
+
+// update an admired player
+// /Users/:id/ViewAdmiredPlayer/:playerId
+
+// const updateAnAdmiredPlayer = async (req, res) => {
+//   try {
+//     ourUser = await User.findById(req.params.id);
+//     console.log("OUR USER:  ", ourUser);
+//     ourPlayer = ourUser.playersAdmired.id(req.params.playerId);
+//     console.log("OUR PLAYER:   ", ourPlayer);
+//     playerIndex = { $indexOfArray: [ourUser.playersAdmired, ourPlayer] };
+//     console.log("PLAYER INDEX:    ", playerIndex);
+//     updatedPlayer = { ...ourUser.playersAdmired[playerIndex], ...req.body };
+//     ourUser.playersAdmired.splice(playerIndex, 1, updatedPlayer);
+//     ourUser.save();
+//     if (!ourUser) throw new Error();
+//     res.status(200).json({ message: "item not found" });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(404).json({ message: "something went wrong" });
+//   }
+// };
