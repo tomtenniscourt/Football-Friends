@@ -1,5 +1,5 @@
 # Football Friends - Project 3
-
+## Code Kickers FC
 ## Overview
 
 - Application to connect people based on their favourite Football teams and players
@@ -27,6 +27,14 @@ https://excalidraw.com/#json=JyhH0fF_IU_l3CyIbrwWX,1EPJqHp2bf5Ks3uXcO1o1w
 - Here we've listed all of the top level components that we'll be making use of throughout the project.
 - Starting from the top of the hierarchy tree, we've visually displayed all of the components and how they will flow in to one another.
 - Under each component, we've listed a three step process (signified by the three separate colors) where the flow of data is described. 
+
+## Models
+
+<img src="Images/Models.png">
+
+- We've included the 2 core Models we'll be making use of throughout the project. 
+- We decided that as the Player Schema is closely linked to the User Schema, that the two should be linked via an embedded relationship. 
+- Favourite Team is a key which may undergo some functional development as the project progresses, but for now it'll remain a standard key:value pair with a String data type.
 
 ## Team Expectations 
 ### Link to Google Docs Team Expectation sheet:
