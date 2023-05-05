@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose")
 const cors = require("cors")
 const {currentDB, localDB, port} = require("./Configuration/config")
-
+const User = require("./Models/user")
+const {AdmiredPlayer} = require ("./Models/admiredPlayer")
 
 const app = express()
 
@@ -21,4 +22,36 @@ app.use(cors({
     origin: "http://localhost:3000"
 }))
 
+
 app.listen(port,() => console.log(`Server started on port ${port}`))
+
+
+
+
+
+
+
+
+
+
+
+// Test Seed Code
+
+// const testUser = new User({
+//     email: "test",
+//     password: "tester"
+// })
+
+// const testAdmiredPlayer = new AdmiredPlayer({
+//     name: "test2",
+//     reasonAdmired: "test2"
+// })
+// testAdmiredPlayer.save()
+// .then((res) => console.log(res))
+// .catch((err) =>  console.log(err))
+
+
+// testUser.playersAdmired.push(testAdmiredPlayer)
+// testUser.save()
+// .then((res) => console.log(res))
+// .catch((err) =>  console.log(err))

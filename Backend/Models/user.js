@@ -1,6 +1,6 @@
 const mongoose = require ("mongoose");
 const Schema = mongoose.Schema;
-const AdmiredPlayer = require("./admiredPlayer")
+const {admiredPlayerSchema} = require("./admiredPlayer")
 
 const userSchema = new Schema({
     email: {type: String, required: true},
@@ -9,7 +9,7 @@ const userSchema = new Schema({
     location: String,
     age: Number,
     favouriteTeam: String,
-    playersAdmired: {AdmiredPlayer}
+    playersAdmired: [{type: admiredPlayerSchema}]
 })
 
 const User = mongoose.model("User", userSchema)

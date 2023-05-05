@@ -10,4 +10,4 @@ const admiredPlayerSchema = new Schema({
 
 const AdmiredPlayer = mongoose.model("AdmiredPlayer", admiredPlayerSchema)
 
-module.exports = AdmiredPlayer
+module.exports = {admiredPlayerSchema, AdmiredPlayer}
