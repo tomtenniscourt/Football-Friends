@@ -1,6 +1,7 @@
 const express = require("express")
 const User = require("../Models/user")
 const AdmiredPlayer = require("../Models/admiredPlayer")
+const JWT = require("jsonwebtoken")
 
 const router = express.Router()
 
@@ -31,10 +32,22 @@ const getOneUser = async (req,res) => {
     }
 }
 
-
+// Create One User
+const createUser = async (req, res) => {
+    try {
+      new_user = await User.create({ email: req.body.email });
+      new_user.password = new_user.generateHash(req.body.password);
+      new_user.save();
+      res.status(201).json(new_user);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json(error);
+    }
+  };
 
 
 module.exports = {
     getAllUsers,
     getOneUser,
+    createUser
 }
