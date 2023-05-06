@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getAllUsers, getOneUser, createUser, updateUser } from "../../API/UserApiCalls";
-import { createAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
+import { createAdmiredPlayer, deleteAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
 export default function Homepage() {
 
   // const test = getAllUsers().then((res) => res.json())
@@ -25,6 +25,9 @@ export default function Homepage() {
 //   reasonAdmired: "test 3 test"
 // })
 // console.log(test5)
+
+// const test6 = deleteAdmiredPlayer("64567cde27c32f9e4e6f7cc6", "64567f7227c32f9e4e6f7ce2")
+// console.log(test6)
 
   return <h1>Homepage</h1>;
 }

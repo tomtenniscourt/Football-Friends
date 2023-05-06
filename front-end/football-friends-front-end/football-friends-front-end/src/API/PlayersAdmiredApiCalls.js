@@ -15,3 +15,14 @@ export const createAdmiredPlayer = async (id, data) => {
     }
 }
 
+export const deleteAdmiredPlayer = async (id, playerId) => {
+    try {
+        const result = await fetch(`${URL}/Users/${id}/${playerId}`, {
+            method: "DELETE"
+        })
+        return result.json()
+    }
+    catch (err) {
+        return err
+    }
+}
