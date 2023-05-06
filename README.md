@@ -1,5 +1,7 @@
 # Football Friends - Project 3
+
 ## Code Kickers FC
+
 ## Overview
 
 - Application to connect people based on their favourite Football teams and players
@@ -12,32 +14,36 @@
 
 - Version 1 of this App will be simple but there are plenty of additional features we aim to build in the future.
 
-
 ## Entity Relationship Diagram
-<img src="Images/ERD.png">
+
+<img src="Images/Database/ERD.png">
 
 In the above ERD we have listed all the attributes of both the Users and Admired Players Schemas and the relationship between them.
 
 ## Data Flow and Component Hierarchy
+
 ### Link to Excalidraw Diagram/Flow Chart:
+
 https://excalidraw.com/#json=JyhH0fF_IU_l3CyIbrwWX,1EPJqHp2bf5Ks3uXcO1o1w
 
 <img src="Images/DataFlow/DF-CH.png">
 
 - Here we've listed all of the top level components that we'll be making use of throughout the project.
 - Starting from the top of the hierarchy tree, we've visually displayed all of the components and how they will flow in to one another.
-- Under each component, we've listed a three step process (signified by the three separate colors) where the flow of data is described. 
+- Under each component, we've listed a three step process (signified by the three separate colors) where the flow of data is described.
 
 ## Models
 
-<img src="Images/Models.png">
+<img src="Images/Database/Models.png">
 
-- We've included the 2 core Models we'll be making use of throughout the project. 
-- We decided that as the Player Schema is closely linked to the User Schema, that the two should be linked via an embedded relationship. 
+- We've included the 2 core Models we'll be making use of throughout the project.
+- We decided that as the Player Schema is closely linked to the User Schema, that the two should be linked via an embedded relationship.
 - Favourite Team is a key which may undergo some functional development as the project progresses, but for now it'll remain a standard key:value pair with a String data type.
 
-## Team Expectations 
+## Team Expectations
+
 ### Link to Google Docs Team Expectation sheet:
+
 https://docs.google.com/document/d/1TWpg1u1rXhTKCyDuWgDQZmLaGjY8xo24nyqrrdJnQvM/edit?usp=sharing
 
 - Within this document we've outlined the best practices which we agreed upon as a team.
@@ -66,19 +72,25 @@ https://docs.google.com/document/d/1TWpg1u1rXhTKCyDuWgDQZmLaGjY8xo24nyqrrdJnQvM/
 ## Wire Frames
 
 #### Browser Wire-Frame
+
 <img src="Images/Wireframes/WF-Browser.png">
 
 #### Browser Wire-Frame Whole App
+
 <img src="Images/Wireframes/WF-Browser-Whole.png">
 
 #### Mobile Wire-Frame
+
 <img src="Images/Wireframes/WF-Phone.png">
 
 #### Mobile Wire-Frame / Whole App
+
 <img src="Images/Wireframes/WF-Phone-Whole.png">
 
 ## Project Management
+
 ### Link to Project Management system:
+
 https://github.com/users/jayteebee/projects/1
 
 - For Project Management systems, we've made use of GitHub Projects.

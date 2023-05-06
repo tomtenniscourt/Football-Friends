@@ -1,13 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
-import NavBar from "./NavBar";
-import Homepage from "./homepage";
-import Profile from "./profile";
-import Friends from "./friends";
-import Messages from "./messages";
-import Search from "./search";
-import Login from "./login";
-import Register from "./register";
+import NavBar from "../Navigation/NavBar";
+import Homepage from "./Homepage";
+import Profile from "../Profile/Profile";
+import Friends from "../Profile/Friends";
+import Messages from "../Profile/Messages";
+import Search from "../Navigation/Search";
+import Login from "../Authentication/Login";
+import Register from "../Authentication/Register";
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 
