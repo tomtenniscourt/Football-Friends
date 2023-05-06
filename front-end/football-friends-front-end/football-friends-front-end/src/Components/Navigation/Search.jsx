@@ -2,6 +2,12 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+/** Might try and integrate this as a component within other pages e.g. 'AllUsers'
+ * as opposed to having it as a stand alone page
+ * Will be easier to implement as a filter search on documents which have already been
+ * fetched vs doing a fetch based on the search value
+ */
+
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
