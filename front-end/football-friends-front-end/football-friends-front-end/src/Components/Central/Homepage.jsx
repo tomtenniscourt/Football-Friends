@@ -1,6 +1,7 @@
 import { useState } from "react";
-// import { getAllUsers, getOneUser, createUser, updateUser } from "../../API/UserApiCalls";
+// import { getAllUsers, getOneUser, updateUser } from "../../API/UserApiCalls";
 // import { createAdmiredPlayer, deleteAdmiredPlayer, updateAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
+// import { createUser } from "../../API/AuthenticationApiCalls";
 export default function Homepage() {
 
   return <h1>Homepage</h1>;
