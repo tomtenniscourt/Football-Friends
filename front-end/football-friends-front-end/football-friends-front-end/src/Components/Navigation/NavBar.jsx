@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
+  /** Could do with some styling */
+
   return (
     <nav style={{ fontSize: "18px" }}>
       <Link to="/" style={{ color: "darkblue" }}>
