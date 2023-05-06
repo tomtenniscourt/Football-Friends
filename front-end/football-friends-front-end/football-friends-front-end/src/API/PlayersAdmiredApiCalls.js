@@ -26,3 +26,20 @@ export const deleteAdmiredPlayer = async (id, playerId) => {
         return err
     }
 }
+
+export const updateAdmiredPlayer = async (id, playerId, data) => {
+    try {
+        const result = await fetch(`${URL}/Users/${id}/ViewAdmiredPlayer/${playerId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        }
+        )
+        return result.json()
+
+    } catch (err) {
+        return err
+    }
+}

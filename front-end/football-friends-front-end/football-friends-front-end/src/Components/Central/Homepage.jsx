@@ -1,9 +1,33 @@
 import { useState } from "react";
-import { getAllUsers, getOneUser, createUser, updateUser } from "../../API/UserApiCalls";
-import { createAdmiredPlayer, deleteAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
+// import { getAllUsers, getOneUser, createUser, updateUser } from "../../API/UserApiCalls";
+// import { createAdmiredPlayer, deleteAdmiredPlayer, updateAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
 export default function Homepage() {
 
-  // const test = getAllUsers().then((res) => res.json())
+  return <h1>Homepage</h1>;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // const test = getAllUsers()
   // console.log(test)
 
 // const test2 = getOneUser("6454e712e12f643ac6218e6a")
@@ -29,5 +53,8 @@ export default function Homepage() {
 // const test6 = deleteAdmiredPlayer("64567cde27c32f9e4e6f7cc6", "64567f7227c32f9e4e6f7ce2")
 // console.log(test6)
 
-  return <h1>Homepage</h1>;
-}
+// const test7 = updateAdmiredPlayer("64567cde27c32f9e4e6f7cc6", "6456803b27c32f9e4e6f7d22", {
+//   name: "new test",
+//   reasonAdmired: "hi"
+// })
+// console.log(test7)
