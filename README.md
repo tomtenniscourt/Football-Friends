@@ -69,6 +69,13 @@ https://docs.google.com/document/d/1TWpg1u1rXhTKCyDuWgDQZmLaGjY8xo24nyqrrdJnQvM/
      <li>(ADDITIONAL) As a User, I want to receive notifications of likes that have been sent to me so that I can connect with fans who are interested in connecting with me.</li> 
      </ul>
 
+### Tracking User Story Progress
+
+- Throughout the project, we made use of an online tool called Miro to track progress.
+- We were able to track the User Stories using a simple color coded table like below.
+
+<img src="Images/Tracking/UserStories.png">
+
 ## Wire Frames
 
 #### Browser Wire-Frame
