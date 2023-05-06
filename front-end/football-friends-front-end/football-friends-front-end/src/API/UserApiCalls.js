@@ -1,23 +1,24 @@
- const URL = "http://localhost:5001"
- 
- export const getAllUsers = async() => {
-    try {
-       const result = await fetch(`${URL}/Users`)
-       return result.json()
-    } catch(err) {
-       return err
- }}
+const URL = "http://localhost:5001"
 
-export const getOneUser = async(id) => {
+export const getAllUsers = async () => {
+    try {
+        const result = await fetch(`${URL}/Users`)
+        return result.json()
+    } catch (err) {
+        return err
+    }
+}
+
+export const getOneUser = async (id) => {
     try {
         const result = await fetch(`${URL}/Users/${id}`)
         return result.json()
-    } catch(err) {
+    } catch (err) {
         return err
-  }
+    }
 }
 
-export const createUser = async(data) => {
+export const createUser = async (data) => {
     try {
         const result = await fetch(`${URL}/Register`, {
             method: "POST",
@@ -27,7 +28,24 @@ export const createUser = async(data) => {
             body: JSON.stringify(data)
         })
         return result.json()
-    } catch(err) {
-return err
+    } catch (err) {
+        return err
+    }
+}
+
+export const updateUser = async (id, data) => {
+    try {
+        const result = await fetch(`${URL}/Users/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        }
+        )
+        return result.json()
+
+    } catch (err) {
+        return err
     }
 }
