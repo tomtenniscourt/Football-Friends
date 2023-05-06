@@ -14,3 +14,4 @@ export const createAdmiredPlayer = async (id, data) => {
         return err
     }
 }
+

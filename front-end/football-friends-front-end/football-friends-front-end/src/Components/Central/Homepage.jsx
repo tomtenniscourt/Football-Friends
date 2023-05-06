@@ -20,11 +20,11 @@ export default function Homepage() {
 // })
 // console.log(test4)
 
-const test5 = createAdmiredPlayer("64567cde27c32f9e4e6f7cc6", {
-  name: "test 3 name",
-  reasonAdmired: "test 3 test"
-})
-console.log(test5)
+// const test5 = createAdmiredPlayer("64567cde27c32f9e4e6f7cc6", {
+//   name: "test 3 name",
+//   reasonAdmired: "test 3 test"
+// })
+// console.log(test5)
 
   return <h1>Homepage</h1>;
 }
