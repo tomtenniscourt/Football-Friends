@@ -3,33 +3,14 @@ import { useState } from "react";
 // import { createAdmiredPlayer, deleteAdmiredPlayer, updateAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
 // import { createUser } from "../../API/AuthenticationApiCalls";
 export default function Homepage() {
+  /**** TBC on what content should go here. Potentially use a third party API to
+   * populate this with football news or info on some random football players ****/
 
   return <h1>Homepage</h1>;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // const test = getAllUsers()
-  // console.log(test)
+// const test = getAllUsers()
+// console.log(test)
 
 // const test2 = getOneUser("6454e712e12f643ac6218e6a")
 // console.log(test2)
