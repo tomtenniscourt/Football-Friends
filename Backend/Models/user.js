@@ -10,6 +10,7 @@ const userSchema = new Schema({
     location: String,
     age: Number,
     favouriteTeam: String,
+    profilePicturePath: String,
     playersAdmired: [{ type: admiredPlayerSchema }]
 })
 
