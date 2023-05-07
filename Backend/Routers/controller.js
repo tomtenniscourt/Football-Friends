@@ -1,7 +1,8 @@
 const express = require("express");
 const User = require("../Models/user");
 const { AdmiredPlayer } = require("../Models/admiredPlayer");
-const JWT = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
+const jwtOptions = require("../Authentication/passportOptions");
 
 const router = express.Router();
 
@@ -55,6 +56,37 @@ const updateOneUser = async (req, res) => {
     });
     res.json(user);
   } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+// Validate a User upon Login
+
+const validateUser = async (req, res) => {
+  try {
+    if (req.body.email && req.body.password) {
+      myUser = await User.findOne({ email: req.body.email });
+      if (!myUser) {
+        res.json({ error: "No user found with that email" });
+      }
+      if (!myUser.validPassword(req.body.password)) {
+        res.json({ error: "Password did not match" });
+      } else {
+        // Build a JSON Web Token using the payload
+        const payload = {
+          id: myUser._id,
+          username: myUser.email,
+        };
+        const token = jwt.sign(payload, jwtOptions.secretOrKey, {
+          expiresIn: 100000,
+        });
+        res.json({ success: "The password matched", token: token });
+      }
+    } else {
+      res.status(400).json({ error: "Email & Password Required" });
+    }
+  } catch (error) {
+    console.log(error);
     res.status(500).json(error);
   }
 };
@@ -130,6 +162,7 @@ module.exports = {
   deleteAnAdmiredPlayer,
   deleteAnAdmiredPlayer,
   updateAnAdmiredPlayer,
+  validateUser,
 };
 
 // update an admired player

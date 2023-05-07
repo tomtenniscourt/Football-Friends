@@ -5,6 +5,7 @@ const { currentDB, localDB, port } = require("./Configuration/config");
 const User = require("./Models/user");
 const { AdmiredPlayer } = require("./Models/admiredPlayer");
 const userRoutes = require("./Routers/users");
+const authenticationRoutes = require("./Routers/authentication");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(
 );
 
 app.use(userRoutes);
+app.use(authenticationRoutes);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
