@@ -41,7 +41,6 @@ app.get(
   "/api/protected",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    console.log("working");
     res.json({
       message: "Hey, you can only see this message with a valid jwt",
       user: req.user,

@@ -63,6 +63,8 @@ const updateOneUser = async (req, res) => {
 
 // Validate a User upon Login
 
+//NEED TO EDIT THE ERROR MESSAGE TO NOT DISPLAY WHICH PART WAS ACC WRONG (email or password)
+
 const validateUser = async (req, res) => {
   try {
     if (req.body.email && req.body.password) {

@@ -17,6 +17,8 @@ export const createUser = async (data) => {
 };
 
 // Login
+
+//NEED TO DO A TRY CATCH
 export async function login(data) {
   const response = await fetch(`${URL}/login`, {
     method: "POST",
@@ -24,6 +26,20 @@ export async function login(data) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
+  });
+  return response.json();
+}
+
+//Test
+//NEED TO DO A TRY CATCH
+
+export async function test() {
+  const response = await fetch(`${URL}/api/protected`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("JWT")}`,
+    },
   });
   return response.json();
 }
