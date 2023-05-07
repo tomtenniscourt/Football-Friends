@@ -22,26 +22,31 @@ export default function Register() {
     createUser({
       email: email,
       password: password,
-    }).then((result) => console.log("FROM BACKEND:   ", result));
+    }).then((result) => {
+      console.log("FROM BACKEND:   ", result);
+    });
     setEmail("");
     setPassword("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email:
-        <input type="text" value={email} onChange={handleEmailChange} />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+    <>
+      <h1>REGISTER PAGE</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Email:
+          <input type="text" value={email} onChange={handleEmailChange} />
+        </label>
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </label>
+        <button type="submit">Register</button>
+      </form>
+    </>
   );
 }
