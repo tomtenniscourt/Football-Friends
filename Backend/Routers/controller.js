@@ -32,10 +32,15 @@ const getOneUser = async (req, res) => {
 // Create One User
 const createUser = async (req, res) => {
   try {
-    new_user = await User.create({ email: req.body.email });
-    new_user.password = new_user.generateHash(req.body.password);
-    new_user.save();
-    res.status(201).json(new_user);
+    duplicateUser = await User.find({ email: req.body.email });
+    if (duplicateUser) {
+      res.status(409).json({ error: "This email is already in use" });
+    } else {
+      new_user = await User.create({ email: req.body.email });
+      new_user.password = new_user.generateHash(req.body.password);
+      new_user.save();
+      res.status(201).json(new_user);
+    }
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
