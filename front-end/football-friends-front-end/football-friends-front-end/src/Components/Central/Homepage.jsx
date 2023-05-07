@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { test } from "../../API/AuthenticationApiCalls";
 // import { getAllUsers, getOneUser, updateUser } from "../../API/UserApiCalls";
 // import { createAdmiredPlayer, deleteAdmiredPlayer, updateAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
 // import { createUser } from "../../API/AuthenticationApiCalls";
@@ -6,7 +7,19 @@ export default function Homepage() {
   /**** TBC on what content should go here. Potentially use a third party API to
    * populate this with football news or info on some random football players ****/
 
-  return <h1>Homepage</h1>;
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    test()
+      .then((result) => result.message)
+      .then((output) => setMessage(output));
+  }, []);
+
+  return (
+    <>
+      <h1>Homepage</h1>
+      <p>{message}</p>
+    </>
+  );
 }
 
 // const test = getAllUsers()

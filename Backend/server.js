@@ -5,7 +5,18 @@ const { currentDB, localDB, port } = require("./Configuration/config");
 const User = require("./Models/user");
 const { AdmiredPlayer } = require("./Models/admiredPlayer");
 const userRoutes = require("./Routers/users");
+const authenticationRoutes = require("./Routers/authentication");
+const passport = require("passport");
+const jwt = require("jsonwebtoken");
+
+// Require Passport Strategy and Options
+const strategy = require("./Authentication/passportStrategy");
+const jwtOptions = require("./Authentication/passportOptions");
+
+passport.use(strategy);
+
 const profilePictureRouter = require("./Routers/profilePicture")
+
 
 const app = express();
 
@@ -26,6 +37,19 @@ app.use(
 );
 
 app.use(userRoutes);
+app.use(authenticationRoutes);
+
+//TEST ROUTE
+app.get(
+  "/api/protected",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    res.json({
+      message: "Hey, you can only see this message with a valid jwt",
+      user: req.user,
+    });
+  }
+);
 
 app.use(profilePictureRouter)
 

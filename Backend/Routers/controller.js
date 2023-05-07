@@ -1,7 +1,8 @@
 const express = require("express");
 const User = require("../Models/user");
 const { AdmiredPlayer } = require("../Models/admiredPlayer");
-const JWT = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
+const jwtOptions = require("../Authentication/passportOptions");
 
 const router = express.Router();
 
@@ -32,10 +33,16 @@ const getOneUser = async (req, res) => {
 // Create One User
 const createUser = async (req, res) => {
   try {
-    new_user = await User.create({ email: req.body.email });
-    new_user.password = new_user.generateHash(req.body.password);
-    new_user.save();
-    res.status(201).json(new_user);
+    duplicateUser = await User.find({ email: req.body.email });
+    console.log(duplicateUser);
+    if ((duplicateUser.length = 0)) {
+      res.status(409).json({ error: "This email is already in use" });
+    } else {
+      new_user = await User.create({ email: req.body.email });
+      new_user.password = new_user.generateHash(req.body.password);
+      new_user.save();
+      res.status(201).json(new_user);
+    }
   } catch (error) {
     console.log(error);
     res.status(500).json(error);
@@ -50,6 +57,39 @@ const updateOneUser = async (req, res) => {
     });
     res.json(user);
   } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+// Validate a User upon Login
+
+//NEED TO EDIT THE ERROR MESSAGE TO NOT DISPLAY WHICH PART WAS ACC WRONG (email or password)
+
+const validateUser = async (req, res) => {
+  try {
+    if (req.body.email && req.body.password) {
+      myUser = await User.findOne({ email: req.body.email });
+      if (!myUser) {
+        res.json({ error: "No user found with that email" });
+      }
+      if (!myUser.validPassword(req.body.password)) {
+        res.json({ error: "Password did not match" });
+      } else {
+        // Build a JSON Web Token using the payload
+        const payload = {
+          id: myUser._id,
+          username: myUser.email,
+        };
+        const token = jwt.sign(payload, jwtOptions.secretOrKey, {
+          expiresIn: 100000,
+        });
+        res.json({ success: "The password matched", token: token });
+      }
+    } else {
+      res.status(400).json({ error: "Email & Password Required" });
+    }
+  } catch (error) {
+    console.log(error);
     res.status(500).json(error);
   }
 };
@@ -125,6 +165,7 @@ module.exports = {
   deleteAnAdmiredPlayer,
   deleteAnAdmiredPlayer,
   updateAnAdmiredPlayer,
+  validateUser,
 };
 
 // update an admired player
