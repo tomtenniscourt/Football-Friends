@@ -1,3 +1,5 @@
+const User = require("../Models/user");
+
 // Passport Strategy Package
 const passportJWT = require("passport-jwt");
 
@@ -10,7 +12,7 @@ const JwtStrategy = passportJWT.Strategy;
 // Dummy User for TESTING ONLY!!!
 // Use Database for real use cases
 const dummyUser = {
-  id: 42,
+  id: "645505dd9fe91c08fb8a2ccb",
   username: "jack",
   password: "1234",
 };
@@ -25,19 +27,28 @@ const strategy = new JwtStrategy(jwtOptions, (jwtPayload, next) => {
   console.log("User ID:", jwtPayload.id);
   console.log("Token expires on: ", jwtPayload.exp);
 
+  const myUser = User.findById(jwtPayload.id)
+    .then((user) => next(null, user))
+    .catch(() => next(null, false));
   // Example Database Call:
   //
   // User.findById(jwtPayload.id)
   // .then(user => next(null, user)).catch(() => next(null, false))
-  if (dummyUser.id === jwtPayload.id) {
-    // If the ID is in the database,
-    // then let's run our original route
-    next(null, dummyUser);
-  } else {
-    // If the ID does not exist in the database (i.e. no matches)
-    // then skip our route and return a 401 error
-    next(null, false);
-  }
+
+  //   if (dummyUser.id === jwtPayload.id) {
+
+  // If the ID is in the database,
+  // then let's run our original route
+
+  // next(null, dummyUser);
+
+  //   } else {
+
+  // If the ID does not exist in the database (i.e. no matches)
+  // then skip our route and return a 401 error
+
+  // next(null, false);
 });
+// });
 
 module.exports = strategy;
