@@ -34,7 +34,8 @@ const getOneUser = async (req, res) => {
 const createUser = async (req, res) => {
   try {
     duplicateUser = await User.find({ email: req.body.email });
-    if (duplicateUser) {
+    console.log(duplicateUser);
+    if ((duplicateUser.length = 0)) {
       res.status(409).json({ error: "This email is already in use" });
     } else {
       new_user = await User.create({ email: req.body.email });
