@@ -15,6 +15,9 @@ const jwtOptions = require("./Authentication/passportOptions");
 
 passport.use(strategy);
 
+const profilePictureRouter = require("./Routers/profilePicture")
+
+
 const app = express();
 
 // Connect to mongoDB
@@ -47,6 +50,8 @@ app.get(
     });
   }
 );
+
+app.use(profilePictureRouter)
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
