@@ -8,6 +8,8 @@ import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
 import { Routes, Route } from "react-router-dom";
 import React from "react";
+import AllUsers from "../User/AllUsers";
+import ViewUser from "../User/ViewUser";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/AllUsers" element={<AllUsers />} />
+        <Route path="/ViewUser" element={<ViewUser />} />
       </Routes>
     </div>
   );
