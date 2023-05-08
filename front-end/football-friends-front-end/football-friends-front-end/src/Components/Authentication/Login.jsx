@@ -25,6 +25,7 @@ export default function Login() {
       console.log("FROM BACKEND:   ", response);
       if (response.token) {
         localStorage.setItem("JWT", response.token);
+        localStorage.setItem("userID", response.userID)
         console.log("JWT FROM LOCALSTORAGE:  ", localStorage.getItem("JWT"));
       }
     });

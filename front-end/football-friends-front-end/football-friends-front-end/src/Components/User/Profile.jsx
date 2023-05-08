@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload";
+import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload"
 
 function Profile() {
   const [imageSrc, setImageSrc] = useState(
