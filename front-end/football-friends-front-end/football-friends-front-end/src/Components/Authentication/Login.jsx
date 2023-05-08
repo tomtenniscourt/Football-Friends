@@ -1,18 +1,53 @@
 import { useState } from "react";
+import { login } from "../../API/AuthenticationApiCalls";
+
 export default function Login() {
   /** Jack to play with this component while working out authentication side of things */
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-     return (
-    <div className="loginPage">
-      <h1>Login</h1>
-      <div className="loginForm">
-        <h2>test</h2>
-        <input className="inputUsername" type="text" />
-      <br></br>
-        <input className="inputPassword" type="text" />
-      <br></br>
-        <button className="searchButtonForFootballFriend">Submit</button>
-      </div>
-    </div>
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Email:", email);
+    console.log("Password:", password);
+    login({
+      email: email,
+      password: password,
+    }).then((response) => {
+      console.log("FROM BACKEND:   ", response);
+      if (response.token) {
+        localStorage.setItem("JWT", response.token);
+        console.log("JWT FROM LOCALSTORAGE:  ", localStorage.getItem("JWT"));
+      }
+    });
+  };
+
+  return (
+    <>
+      <h1>LOGIN PAGE</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Email:
+          <input type="text" value={email} onChange={handleEmailChange} />
+        </label>
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </label>
+        <button type="submit">Log in</button>
+      </form>
+    </>
   );
 }
