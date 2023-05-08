@@ -36,6 +36,8 @@ app.use(
   })
 );
 
+
+
 app.use(userRoutes);
 app.use(authenticationRoutes);
 
@@ -52,6 +54,9 @@ app.get(
 );
 
 app.use(profilePictureRouter)
+
+// Makes the files in the uploads folder accessible through our /uploads endpoint
+app.use("/uploads", express.static("uploads"));
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 

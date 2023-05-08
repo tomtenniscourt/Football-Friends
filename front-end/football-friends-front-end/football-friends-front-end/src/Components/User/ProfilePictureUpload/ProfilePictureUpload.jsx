@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 
+
 const ProfilePictureUpload = () => {
+    const [uploadedImagePath, setUploadedImagePath] = useState(null);
     const [selectedFile, setSelectedFile] = useState(null);
 
         // Called when user selects a file
@@ -29,6 +31,7 @@ const ProfilePictureUpload = () => {
             );
             console.log(response.data);
             alert("Profile picture uploaded succesfully!");
+            setUploadedImagePath(response.data.imagePath);
         } catch (err) {
             console.log(err);
             alert("Error uploading the profile picture");
@@ -42,6 +45,12 @@ const ProfilePictureUpload = () => {
                 <input type="file" onChange={onFileChange} />
                 <button type="submit">Upload</button>
             </form>
+            {uploadedImagePath && (
+                <div>
+                    <h3> Uploaded Profile Picture:</h3>
+                    <img src={`http://localhost:5001/${uploadedImagePath}`} alt="Profile" />
+                </div>
+            )}
         </div>
     );
 };
