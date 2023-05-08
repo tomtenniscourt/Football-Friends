@@ -13,7 +13,16 @@ import { Link } from "react-router-dom";
 
 export default function UserThumbnail() {
   return (
-    <div>
+    <div
+      //Styling here is only to help check functionality, this will be replaced with bootstrap (or similar eventually)
+      style={{
+        height: "10vw",
+        width: "10vw",
+        backgroundColor: "hotpink",
+        margin: "2vw",
+        border: "solid black 2px",
+      }}
+    >
       <h3>This is a user thumbnail</h3>
     </div>
   );
