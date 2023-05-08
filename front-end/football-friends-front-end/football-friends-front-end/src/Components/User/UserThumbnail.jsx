@@ -7,3 +7,14 @@
  * displaying that info
  *
  */
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+export default function UserThumbnail() {
+  return (
+    <div>
+      <h3>This is a user thumbnail</h3>
+    </div>
+  );
+}
