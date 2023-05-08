@@ -10,3 +10,11 @@
  * be able to edit a player they admire. (This will navigate them to the
  * 'ViewAdmiredPlayer' component)
  */
+
+export default function AdmiredPlayerListItem() {
+  return (
+    <>
+      <h3>This is an admired Player List Item</h3>
+    </>
+  );
+}

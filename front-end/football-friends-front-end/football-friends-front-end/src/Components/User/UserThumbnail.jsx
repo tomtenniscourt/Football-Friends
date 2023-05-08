@@ -18,7 +18,7 @@ export default function UserThumbnail(props) {
       //Styling here is only to help check functionality, this will be replaced with bootstrap (or similar eventually)
       style={{
         height: "10vw",
-        width: "10vw",
+        minWidth: "10vw",
         backgroundColor: "hotpink",
         margin: "2vw",
         border: "solid black 2px",
@@ -31,6 +31,8 @@ export default function UserThumbnail(props) {
       >
         <div>
           <h3>This is a user thumbnail</h3>
+          <h2>{user.profileName}</h2>
+          <h3>{user.email}</h3>
         </div>
       </Link>
     </div>
