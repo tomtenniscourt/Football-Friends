@@ -9,6 +9,10 @@ export default function NavBar() {
         Homepage
       </Link>
       &nbsp; | &nbsp;
+      <Link to="/AllUsers" style={{ color: "darkblue" }}>
+        All Users
+      </Link>
+      &nbsp; | &nbsp;
       <Link to="/profile" style={{ color: "darkblue" }}>
         My Profile
       </Link>
