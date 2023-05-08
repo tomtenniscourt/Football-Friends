@@ -27,7 +27,7 @@ export default function UserThumbnail(props) {
       <Link
         to="/ViewUser"
         style={{ textDecoration: "none" }} //This styling will go
-        state={{ user: user }}
+        state={{ id: user._id }}
       >
         <div>
           <h3>This is a user thumbnail</h3>
