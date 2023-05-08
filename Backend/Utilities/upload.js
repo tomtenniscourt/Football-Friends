@@ -7,9 +7,9 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "./uploads");
 
-    // Use this section if relative path causes issues
-        // const uploadsDir = path.join(__dirname, "../uploads");
-        // cb(null, uploadsDir);
+    // // Use this section if relative path causes issues
+    //     const uploadsDir = path.join(__dirname, "../uploads");
+    //     cb(null, uploadsDir);
     },
 // Giving the uploaded file a unique name
     filename: (req, file, cb) => {
