@@ -10,6 +10,8 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
+  const [passwordsMatch, setPasswordsMatch] = useState(true); // add a state to track if passwords match
+
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -36,6 +38,15 @@ export default function Register() {
     console.log("Password:", password);
     console.log("Confirm Password:", confirmPassword);
     console.log("Username:", username);
+    
+    // FROM TOM - I have added code here to check that the two passwords match. If this is false, an alert will appear and the form will not submit
+    event.preventDefault();
+    if (password !== confirmPassword) { 
+      setPasswordsMatch(false); 
+      alert("Check again, your passwords do not match!");
+      return; 
+    }
+
     createUser({
       email: email,
       password: password,
