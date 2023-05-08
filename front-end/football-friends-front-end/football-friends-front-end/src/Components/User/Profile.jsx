@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload";
 
 function Profile() {
   const [imageSrc, setImageSrc] = useState(
@@ -75,7 +76,15 @@ function Profile() {
           </form>
         </div>
       )}
+
+
+      <div>
+      <ProfilePictureUpload />
+      </div>
     </div>
+
+        
+
   );
 }
 
