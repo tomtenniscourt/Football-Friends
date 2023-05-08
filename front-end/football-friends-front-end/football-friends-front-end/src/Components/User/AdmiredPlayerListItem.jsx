@@ -11,10 +11,24 @@
  * 'ViewAdmiredPlayer' component)
  */
 
-export default function AdmiredPlayerListItem() {
+import { useState } from "react";
+export default function AdmiredPlayerListItem(props) {
+  const [playerInfo, setPlayerInfo] = useState(props.playerInfo);
   return (
     <>
-      <h3>This is an admired Player List Item</h3>
+      <div //Styling here is only to help check functionality, this will be replaced with bootstrap (or similar eventually)
+        style={{
+          height: "10vw",
+          minWidth: "10vw",
+          backgroundColor: "red",
+          margin: "2vw",
+          border: "solid black 2px",
+        }}
+      >
+        <h3>This is an admired Player List Item</h3>
+        <h4>Name: {playerInfo.name}</h4>
+        <p>Reason Admired: {playerInfo.reasonAdmired}</p>
+      </div>
     </>
   );
 }
