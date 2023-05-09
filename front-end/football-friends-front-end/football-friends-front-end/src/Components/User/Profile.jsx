@@ -4,8 +4,11 @@ import React, { useState, useEffect } from "react";
 import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload";
 import { getOneUser } from "../../API/UserApiCalls";
 import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
-import { createAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
-import { deleteAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
+import {
+  deleteAdmiredPlayer,
+  updateAdmiredPlayer,
+  createAdmiredPlayer,
+} from "../../API/PlayersAdmiredApiCalls";
 
 function Profile() {
   const [userInfo, setUserInfo] = useState({});
@@ -44,15 +47,28 @@ function Profile() {
 
   function handleDeleteAdmiredPlayer(e, playerID) {
     e.preventDefault();
-    deleteAdmiredPlayer(localStorage.getItem("userID"), playerID).then(() =>
-      getOneUser(localStorage.getItem("userID")).then((output) => {
-        console.log("User from Backend: ******", output);
+    deleteAdmiredPlayer(localStorage.getItem("userID"), playerID)
+      // .then(() =>
+      //   getOneUser(localStorage.getItem("userID")).then((output) => {
+      //     console.log("User from Backend: ******", output);
 
-        setUserInfo(output);
-      })
+      //     setUserInfo(output);
+      //   })
+      // );
+      .then(() =>
+        userInfo.playersAdmired.filter((player) => player._id !== playerID)
+      )
+      .then((output) => {
+        setUserInfo({ ...userInfo, playersAdmired: output });
+        console.log(userInfo);
+      });
+  }
+
+  function handleEditAdmiredPlayer(e, playerID, data) {
+    e.preventDefault();
+    updateAdmiredPlayer(localStorage.getItem("userID"), playerID, data).then(
+      (output) => setUserInfo(output)
     );
-    // .then(() => userInfo.playersAdmired.filter(player => player._id !== playerID))
-    // .then(output => {setUserInfo({...userInfo, playersAdmired: output}); console.log(userInfo)})
   }
 
   useEffect(() => {
@@ -76,6 +92,7 @@ function Profile() {
           return (
             <AdmiredPlayerListItem
               handleDeleteAdmiredPlayer={handleDeleteAdmiredPlayer}
+              handleEditAdmiredPlayer={handleEditAdmiredPlayer}
               playerInfo={player}
               key={index}
               mine={true}

@@ -20,6 +20,7 @@ import { Button } from "bootstrap";
 import { deleteAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
 
 export default function AdmiredPlayerListItem(props) {
+  const { handleEditAdmiredPlayer } = props;
   //The mine prop is sent as either true or false depending on which page is rendering the component
   //If it's 'My Profile' this will be set to true so that users can click
   //on the 'AdmiredPlayerListItem' and go to 'ViewAdmiredPlayer' where they
@@ -56,11 +57,21 @@ export default function AdmiredPlayerListItem(props) {
     props.handleDeleteAdmiredPlayer(e, playerInfo._id);
   }
 
+  //   const state = {
+  //     playerInfo: playerInfo,
+  //     test: testFunction,
+  //   };
+
   return (
     <>
       {mine ? (
         <>
-          <Link to="/ViewAdmiredPlayer" state={{ playerInfo: playerInfo }}>
+          <Link
+            to="/ViewAdmiredPlayer"
+            state={{
+              playerInfo: playerInfo,
+            }}
+          >
             {" "}
             <div>{itemToRender}</div>
           </Link>
