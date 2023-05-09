@@ -7,3 +7,34 @@
  * displaying that info
  *
  */
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+export default function UserThumbnail(props) {
+  const { user } = props;
+  return (
+    <div
+      //Styling here is only to help check functionality, this will be replaced with bootstrap (or similar eventually)
+      style={{
+        height: "10vw",
+        minWidth: "10vw",
+        backgroundColor: "hotpink",
+        margin: "2vw",
+        border: "solid black 2px",
+      }}
+    >
+      <Link
+        to="/ViewUser"
+        style={{ textDecoration: "none" }} //This styling will go
+        state={{ id: user._id }}
+      >
+        <div>
+          <h3>This is a user thumbnail</h3>
+          <h2>{user.profileName}</h2>
+          <h3>{user.email}</h3>
+        </div>
+      </Link>
+    </div>
+  );
+}
