@@ -143,6 +143,7 @@ export default function Register() {
         <option value="Lancashire">Lancashire</option>
         <option value="Leicestershire">Leicestershire</option>
         <option value="Lincolnshire">Lincolnshire</option>
+        <option value="London">London</option>
         <option value="Merseyside">Merseyside</option>
         <option value="Norfolk">Norfolk</option>
         <option value="North Yorkshire">North Yorkshire</option>

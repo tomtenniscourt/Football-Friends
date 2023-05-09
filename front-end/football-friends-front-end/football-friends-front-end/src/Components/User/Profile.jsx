@@ -39,26 +39,27 @@ function Profile() {
           value={selectedTeam}
           onChange={handleTeamSelect}
         >
-          <option value="">Choose a team</option>
+          <option value="">Favourite Team</option>
           <option value="Arsenal">Arsenal</option>
-          <option value="Aston Villa">Aston Villa</option>
+          <option value="AstonVilla">Aston Villa</option>
+          <option value="Bournemouth">Bournemouth</option>
           <option value="Brentford">Brentford</option>
-          <option value="Brighton &amp; Hove Albion">
-            Brighton &amp; Hove Albion
-          </option>
-          <option value="Burnley">Burnley</option>
+          <option value="Brighton&HoveAlbion">Brighton</option>
           <option value="Chelsea">Chelsea</option>
-          <option value="Crystal Palace">Crystal Palace</option>
+          <option value="CrystalPalace">Crystal Palace</option>
           <option value="Everton">Everton</option>
-          <option value="Leeds United">Leeds United</option>
-          <option value="Leicester City">Leicester City</option>
+          <option value="LeedsUnited">Leeds United</option>
+          <option value="Fulham">Fulham</option>
+          <option value="LeicesterCity">Leicester City</option>
           <option value="Liverpool">Liverpool</option>
-          <option value="Manchester City">Manchester City</option>
-          <option value="Manchester United">Manchester United</option>
-          <option value="Newcastle United">Newcastle United</option>
-          <option value="Norwich City">Norwich City</option>
+          <option value="ManchesterCity">Manchester City</option>
+          <option value="ManchesterUnited">Manchester United</option>
+          <option value="NewcastleUnited">Newcaste United</option>
+          <option value="NottinghamForest">Nottingham Forest</option>
           <option value="Southampton">Southampton</option>
-          <option value="Tottenham Hotspur">Tottenham Hotspur</option>
+          <option value="TottenhamHotspur">Tottenham Hotspurs</option>
+          <option value="WestHamUnited">Wet Ham United</option>
+          <option value="Wolves">Wolverhamton Wanderers</option>
         </select>
         <button type="submit">Save</button>
       </form>
