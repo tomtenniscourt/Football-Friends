@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { login } from "../../API/AuthenticationApiCalls";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { Container, Row, Col } from 'react-bootstrap';
+
+
+
 
 export default function Login() {
   /** Jack to play with this component while working out authentication side of things */
@@ -34,21 +40,39 @@ export default function Login() {
   return (
     <>
       <h1>LOGIN PAGE</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <Container fluid className="d-flex align-items-center min-vh-100">
+      <Row className="justify-content-center w-100">
+      <Col md={6} className="text-center" >
+      <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>
           Email:
-          <input type="text" value={email} onChange={handleEmailChange} />
-        </label>
-        <label>
+          <Form.Control type="text" value={email} onChange={handleEmailChange} />
+        </Form.Label>
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>
           Password:
-          <input
+
+          <Form.Control
             type="password"
             value={password}
             onChange={handlePasswordChange}
           />
-        </label>
-        <button type="submit">Log in</button>
-      </form>
+        </Form.Label>
+        
+        </Form.Group>
+<Form.Group>
+        <Button variant="primary" type="submit">Log in</Button>
+        </Form.Group>
+      </Form>
+      </Col>
+      </Row>
+      </Container>
     </>
   );
 }
+
+
+

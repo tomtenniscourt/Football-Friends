@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload"
 import { getOneUser} from "../../API/UserApiCalls";
 import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
-
 function Profile() {
    const [userInfo, setUserInfo] = useState({});
    const [admiredPlayers, setAdmiredPlayers] = useState(<h4>No Admired Players</h4>)
@@ -27,7 +26,7 @@ function Profile() {
     club: '',
     reasonAdmired: ''
   });
-
+  
   const addAdmiredPlayer = (event) => {
     event.preventDefault();
     const updatedAdmiredPlayers = [...userInfo.playersAdmired, newAdmiredPlayer];
@@ -47,15 +46,10 @@ function Profile() {
       reasonAdmired: ''
     });
   };
-  
-
-
-
 
   useEffect(() => {
     getOneUser(localStorage.getItem("userID")).then((output) => setUserInfo(output));
   }, []);
-
   useEffect(() => {
     console.log("userInfo updated", userInfo);
     if (userInfo.playersAdmired) {
@@ -73,23 +67,18 @@ function Profile() {
         );
       }
     }, [userInfo]);
-    
-
 
   const handleTeamSelect = (event) => {
     setSelectedTeam(event.target.value);
   };
-
   const handleSave = (event) => {
     event.preventDefault();
     setFavoriteTeam(selectedTeam);
     setSelectedTeam("");
   };
-
   const handleReasonChange = (event) => {
     setFavoriteTeamReason(event.target.value);
   };
-
   return (
     <div>
       <img src={imageSrc} alt="Profile" />
@@ -185,18 +174,11 @@ function Profile() {
             <button type="submit">Add Player</button>
           </form>
         </div>
-
-
-<div>
+        <div>
         <h2>Admired Players</h2>
         {admiredPlayers}
 </div>
-
     </div>
-
-        
-
   );
 }
-
 export default Profile;
