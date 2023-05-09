@@ -33,6 +33,13 @@ router
   .post(upload.single("profilePicture"), profilePictureUpload);
 module.exports = router;
 
+
+module.exports = router
+
+
+// // Define the POST route, use upload.single middleware to handle the file upload 
+// // according to the Multer config detailed in upload.js
+// // profilePicture argument is the field name used in the form-data when sending the file from the client-side
 // router.post("/uploadProfilePicture", upload.single("profilePicture"), async (req,res) => {
 //     try {
 //         // Resizing the user uploaded file
@@ -60,3 +67,8 @@ module.exports = router;
 //     res.status(400).send({ error: 'Error uploading the profile picture.' });
 //     }
 // })
+
+
+
+
+// 6457cbe8fd85550788db11f1

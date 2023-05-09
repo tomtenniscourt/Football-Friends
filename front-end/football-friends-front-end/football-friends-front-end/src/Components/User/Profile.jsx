@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload"
+import { getOneUser} from "../../API/UserApiCalls";
+import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
 
 function Profile() {
+   const [userInfo, setUserInfo] = useState({});
+   const [admiredPlayers, setAdmiredPlayers] = useState(<h4>No Admired Players</h4>)
   const [imageSrc, setImageSrc] = useState(
     "https://example.com/profile-picture.jpg"
   );
@@ -10,6 +15,29 @@ function Profile() {
   const [selectedTeam, setSelectedTeam] = useState("");
   const [favoriteTeam, setFavoriteTeam] = useState("");
   const [favoriteTeamReason, setFavoriteTeamReason] = useState("");
+
+  useEffect(() => {
+    getOneUser(localStorage.getItem("userID")).then((output) => setUserInfo(output));
+  }, []);
+
+  useEffect(() => {
+    console.log("userInfo updated", userInfo);
+    if (userInfo.playersAdmired) {
+      console.log("condition 1 true");
+      if (userInfo.playersAdmired.length > 0) {
+        console.log("condition 2 true");
+      }
+    }
+
+    if (userInfo.playersAdmired && userInfo.playersAdmired.length > 0) {
+      setAdmiredPlayers(
+        userInfo.playersAdmired.map((player, index) => {
+          return <AdmiredPlayerListItem playerInfo={player} key={player._id} mine={true} />;
+        })
+      );
+    }
+  }, [userInfo]);
+
 
   const handleTeamSelect = (event) => {
     setSelectedTeam(event.target.value);
@@ -75,7 +103,21 @@ function Profile() {
           </form>
         </div>
       )}
+
+
+      <div>
+      <ProfilePictureUpload />
+      </div>
+
+<div>
+        <h2>Admired Players</h2>
+        {admiredPlayers}
+</div>
+
     </div>
+
+        
+
   );
 }
 

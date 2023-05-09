@@ -12,10 +12,13 @@
  */
 
 import { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 export default function AdmiredPlayerListItem(props) {
   const [playerInfo, setPlayerInfo] = useState(props.playerInfo);
   return (
+
     <>
+    {props.mine && <Link to="/ViewAdmiredPlayer">
       <div //Styling here is only to help check functionality, this will be replaced with bootstrap (or similar eventually)
         style={{
           height: "10vw",
@@ -24,11 +27,19 @@ export default function AdmiredPlayerListItem(props) {
           margin: "2vw",
           border: "solid black 2px",
         }}
+        // onClick={() => {
+        //   if (props.mine) {
+        //     console.log("click");
+        //     <Navigate to="/ViewAdmiredPlayer"/>
+        //   }
+        // }}
       >
+
         <h3>This is an admired Player List Item</h3>
         <h4>Name: {playerInfo.name}</h4>
         <p>Reason Admired: {playerInfo.reasonAdmired}</p>
       </div>
+      </Link>}
     </>
   );
 }
