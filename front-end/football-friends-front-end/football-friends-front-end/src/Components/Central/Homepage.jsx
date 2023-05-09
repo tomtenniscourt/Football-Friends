@@ -15,7 +15,7 @@ export default function Homepage() {
 
    return (
     <div className="homepage">
-      <h1 class="logo">
+      <h1 className="logo">
         👍🏻Football Friends
         <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>
           👍🏻
