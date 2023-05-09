@@ -13,7 +13,7 @@ export default function Homepage() {
       .then((output) => setMessage(output));
   }, []);
 
-   return (
+  return (
     <div className="homepage">
       <h1 className="logo">
         👍🏻Football Friends
@@ -36,7 +36,7 @@ export default function Homepage() {
         </div>
       </div>
     </div>
-   )
+  );
 }
 
 // const test = getAllUsers()
