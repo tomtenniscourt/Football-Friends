@@ -9,25 +9,25 @@ export default function NavBar() {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-     <Container>
+
       <Navbar.Brand href="/">Football Friends</Navbar.Brand>
 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="me-auto">
+        <Nav variant="tabs" className="me-auto" >
           <Nav.Link href="/profile">Profile</Nav.Link>
           <Nav.Link href="/AllUsers">All Users</Nav.Link>
           <Nav.Link href="/friends">Friends</Nav.Link>
           <Nav.Link href="/messages">Messages</Nav.Link>
           <Nav.Link href="/search">Search</Nav.Link>
         </Nav>
-        <Nav>
+        <Nav variant="tabs">
           <Nav.Link href="/login">Log In</Nav.Link>
           <Nav.Link href="/register">Register</Nav.Link>
         </Nav>
       </Navbar.Collapse>
-    </Container>
+
   </Navbar>
   );
 }
