@@ -6,3 +6,10 @@
  * except users will actually be able to edit the information on this page and
  * update the backend accordingly
  */
+
+
+export default function ViewAdmiredPlayer() {
+    return (
+        <h1> Admired Player</h1>
+    )
+}

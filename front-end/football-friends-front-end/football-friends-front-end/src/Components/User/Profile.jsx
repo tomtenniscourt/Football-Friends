@@ -32,7 +32,7 @@ function Profile() {
     if (userInfo.playersAdmired && userInfo.playersAdmired.length > 0) {
       setAdmiredPlayers(
         userInfo.playersAdmired.map((player, index) => {
-          return <AdmiredPlayerListItem playerInfo={player} key={player._id} />;
+          return <AdmiredPlayerListItem playerInfo={player} key={player._id} mine={true} />;
         })
       );
     }
