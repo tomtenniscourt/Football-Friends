@@ -1,3 +1,5 @@
+// ViewAdmiredPlayer.jsx
+
 /**
  * This component will represent a page/route in our web app. Users can navigate here
  * by clicking on an 'AdmiredPlayerListItem' component from their 'Profile' page.
@@ -17,7 +19,8 @@ export default function ViewAdmiredPlayer() {
 
   return (
     <>
-      <h1> Admired Player</h1>;<h3>Name: {player.name} </h3>
+      <h1> Admired Player</h1>
+      <h3>Name: {player.name} </h3>
       <h4>Age: {player.age}</h4>
       <h4>Club: {player.club}</h4>
       <h4>Reason Admired: {player.reasonAdmired}</h4>
