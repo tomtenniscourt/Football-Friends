@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload"
 import { getOneUser} from "../../API/UserApiCalls";
 import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
-
 function Profile() {
    const [userInfo, setUserInfo] = useState({});
    const [admiredPlayers, setAdmiredPlayers] = useState(<h4>No Admired Players</h4>)
-  const [imageSrc, setImageSrc] = useState(
+   const [imageSrc, setImageSrc] = useState(
     "https://example.com/profile-picture.jpg"
   );
   const [username, setUsername] = useState("johndoe");
@@ -15,11 +14,34 @@ function Profile() {
   const [selectedTeam, setSelectedTeam] = useState("");
   const [favoriteTeam, setFavoriteTeam] = useState("");
   const [favoriteTeamReason, setFavoriteTeamReason] = useState("");
-
+  const [newAdmiredPlayer, setNewAdmiredPlayer] = useState({
+    name: '',
+    age: '',
+    club: '',
+    reasonAdmired: ''
+  });
+  const addAdmiredPlayer = (event) => {
+    event.preventDefault();
+    const updatedAdmiredPlayers = [...userInfo.playersAdmired, newAdmiredPlayer];
+    setUserInfo(prevState => ({
+      ...prevState,
+      playersAdmired: updatedAdmiredPlayers
+    }));
+    setAdmiredPlayers(
+      updatedAdmiredPlayers.map((player, index) => {
+        return <AdmiredPlayerListItem playerInfo={player} key={index} mine={true} />;
+      })
+    );
+    setNewAdmiredPlayer({
+      name: '',
+      age: '',
+      club: '',
+      reasonAdmired: ''
+    });
+  };
   useEffect(() => {
     getOneUser(localStorage.getItem("userID")).then((output) => setUserInfo(output));
   }, []);
-
   useEffect(() => {
     console.log("userInfo updated", userInfo);
     if (userInfo.playersAdmired) {
@@ -28,34 +50,31 @@ function Profile() {
         console.log("condition 2 true");
       }
     }
-
-    if (userInfo.playersAdmired && userInfo.playersAdmired.length > 0) {
-      setAdmiredPlayers(
-        userInfo.playersAdmired.map((player, index) => {
-          return <AdmiredPlayerListItem playerInfo={player} key={player._id} mine={true} />;
-        })
-      );
-    }
-  }, [userInfo]);
-
-
+      if (userInfo.playersAdmired && userInfo.playersAdmired.length > 0) {
+        setAdmiredPlayers(
+          userInfo.playersAdmired.map((player, index) => {
+            return <AdmiredPlayerListItem playerInfo={player} key={index} mine={true} />;
+          })
+        );
+      }
+    }, [userInfo]);
   const handleTeamSelect = (event) => {
     setSelectedTeam(event.target.value);
   };
-
   const handleSave = (event) => {
     event.preventDefault();
     setFavoriteTeam(selectedTeam);
     setSelectedTeam("");
   };
-
   const handleReasonChange = (event) => {
     setFavoriteTeamReason(event.target.value);
   };
-
   return (
     <div>
       <img src={imageSrc} alt="Profile" />
+      <div>
+      <ProfilePictureUpload />
+      </div>
       <h2>{username}</h2>
       <p>{name}</p>
       <p>{location}</p>
@@ -67,27 +86,26 @@ function Profile() {
           value={selectedTeam}
           onChange={handleTeamSelect}
         >
-          <option value="">Favourite Team</option>
+          <option value="">Choose a team</option>
           <option value="Arsenal">Arsenal</option>
-          <option value="AstonVilla">Aston Villa</option>
-          <option value="Bournemouth">Bournemouth</option>
+          <option value="Aston Villa">Aston Villa</option>
           <option value="Brentford">Brentford</option>
-          <option value="Brighton&HoveAlbion">Brighton</option>
+          <option value="Brighton &amp; Hove Albion">
+            Brighton &amp; Hove Albion
+          </option>
+          <option value="Burnley">Burnley</option>
           <option value="Chelsea">Chelsea</option>
-          <option value="CrystalPalace">Crystal Palace</option>
+          <option value="Crystal Palace">Crystal Palace</option>
           <option value="Everton">Everton</option>
-          <option value="LeedsUnited">Leeds United</option>
-          <option value="Fulham">Fulham</option>
-          <option value="LeicesterCity">Leicester City</option>
+          <option value="Leeds United">Leeds United</option>
+          <option value="Leicester City">Leicester City</option>
           <option value="Liverpool">Liverpool</option>
-          <option value="ManchesterCity">Manchester City</option>
-          <option value="ManchesterUnited">Manchester United</option>
-          <option value="NewcastleUnited">Newcaste United</option>
-          <option value="NottinghamForest">Nottingham Forest</option>
+          <option value="Manchester City">Manchester City</option>
+          <option value="Manchester United">Manchester United</option>
+          <option value="Newcastle United">Newcastle United</option>
+          <option value="Norwich City">Norwich City</option>
           <option value="Southampton">Southampton</option>
-          <option value="TottenhamHotspur">Tottenham Hotspurs</option>
-          <option value="WestHamUnited">Wet Ham United</option>
-          <option value="Wolves">Wolverhamton Wanderers</option>
+          <option value="Tottenham Hotspur">Tottenham Hotspur</option>
         </select>
         <button type="submit">Save</button>
       </form>
@@ -104,22 +122,45 @@ function Profile() {
           </form>
         </div>
       )}
-
-
       <div>
-      <ProfilePictureUpload />
-      </div>
-
+          <h3>Add Admired Player</h3>
+          <form onSubmit={addAdmiredPlayer}>
+            <label htmlFor="player-name">Player Name:</label>
+            <input
+              type="text"
+              id="player-name"
+              value={newAdmiredPlayer.name}
+              onChange={(e) => setNewAdmiredPlayer({...newAdmiredPlayer, name: e.target.value})}
+            />
+            <label htmlFor="player-age">Player Age:</label>
+            <input
+              type="text"
+              id="player-age"
+              value={newAdmiredPlayer.age}
+              onChange={(e) => setNewAdmiredPlayer({...newAdmiredPlayer, age: e.target.value})}
+            />
+            <label htmlFor="player-club">Player Club:</label>
+            <input
+              type="text"
+              id="player-club"
+              value={newAdmiredPlayer.club}
+              onChange={(e) => setNewAdmiredPlayer({...newAdmiredPlayer, club: e.target.value})}
+            />
+            <label htmlFor="player-reason">Reason Admired:</label>
+            <input
+              type="text"
+              id="player-reason"
+              value={newAdmiredPlayer.reasonAdmired}
+              onChange={(e) => setNewAdmiredPlayer({...newAdmiredPlayer, reasonAdmired: e.target.value})}
+            />
+            <button type="submit">Add Player</button>
+          </form>
+        </div>
 <div>
         <h2>Admired Players</h2>
         {admiredPlayers}
 </div>
-
     </div>
-
-        
-
   );
 }
-
 export default Profile;
