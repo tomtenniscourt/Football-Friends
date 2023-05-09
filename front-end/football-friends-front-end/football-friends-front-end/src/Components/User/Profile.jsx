@@ -4,15 +4,14 @@ import React, { useState, useEffect } from "react";
 import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload"
 import { getOneUser} from "../../API/UserApiCalls";
 import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
+import {createAdmiredPlayer} from "../../API/PlayersAdmiredApiCalls";
+
 function Profile() {
    const [userInfo, setUserInfo] = useState({});
    const [admiredPlayers, setAdmiredPlayers] = useState(<h4>No Admired Players</h4>)
    const [imageSrc, setImageSrc] = useState(
     "https://example.com/profile-picture.jpg"
   );
-
-
-
 
   const [username, setUsername] = useState("johndoe");
   const [name, setName] = useState("John Doe");
@@ -29,16 +28,9 @@ function Profile() {
   
   const addAdmiredPlayer = (event) => {
     event.preventDefault();
-    const updatedAdmiredPlayers = [...userInfo.playersAdmired, newAdmiredPlayer];
-    setUserInfo(prevState => ({
-      ...prevState,
-      playersAdmired: updatedAdmiredPlayers
-    }));
-    setAdmiredPlayers(
-      updatedAdmiredPlayers.map((player, index) => {
-        return <AdmiredPlayerListItem playerInfo={player} key={index} mine={true} />;
-      })
-    );
+    createAdmiredPlayer(localStorage.getItem("userID"),newAdmiredPlayer)
+    .then(output => setUserInfo (output))
+    .catch((error) => console.log (error))
     setNewAdmiredPlayer({
       name: '',
       age: '',
