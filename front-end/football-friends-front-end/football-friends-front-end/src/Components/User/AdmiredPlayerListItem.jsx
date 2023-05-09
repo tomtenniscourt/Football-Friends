@@ -31,7 +31,6 @@ export default function AdmiredPlayerListItem(props) {
   const [playerInfo, setPlayerInfo] = useState(props.playerInfo);
 
   useEffect(() => {
-    console.log("ENTERED THE USE EFFECT");
     setPlayerInfo(props.playerInfo);
   }, [props.playerInfo]);
 
@@ -50,10 +49,8 @@ export default function AdmiredPlayerListItem(props) {
       <p>Reason Admired: {playerInfo.reasonAdmired}</p>
     </div>
   );
-  console.log(mine);
 
   function handleDelete(e) {
-    console.log(playerInfo.name);
     props.handleDeleteAdmiredPlayer(e, playerInfo._id);
   }
 
