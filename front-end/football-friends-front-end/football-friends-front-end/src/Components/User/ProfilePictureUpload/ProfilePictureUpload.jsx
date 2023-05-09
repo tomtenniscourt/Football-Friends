@@ -37,6 +37,9 @@ const ProfilePictureUpload = () => {
             console.log(response.data);
             alert("Profile picture uploaded succesfully!");
             setUploadedImagePath(response.data.imagePath);
+
+            // Saving the pic to local storage
+            localStorage.setItem("uploadedImagePath", response.data.imagePath);
         } catch (err) {
             console.log(err);
             alert("Error uploading the profile picture");
