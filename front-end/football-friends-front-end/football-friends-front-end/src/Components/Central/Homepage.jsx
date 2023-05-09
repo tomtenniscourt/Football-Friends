@@ -13,9 +13,9 @@ export default function Homepage() {
       .then((output) => setMessage(output));
   }, []);
 
-   return (
+  return (
     <div className="homepage">
-      <h1 class="logo">
+      <h1 className="logo">
         👍🏻Football Friends
         <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>
           👍🏻
@@ -36,7 +36,7 @@ export default function Homepage() {
         </div>
       </div>
     </div>
-   )
+  );
 }
 
 // const test = getAllUsers()
