@@ -13,6 +13,10 @@ export default function NavBar() {
         <Link to="/profile" style={{ color: "darkblue" }}>
           My Profile
         </Link>
+&nbsp; | &nbsp;
+      <Link to="/AllUsers" style={{ color: "darkblue" }}>
+        All Users
+      </Link>
         &nbsp; | &nbsp;
         <Link to="/friends" style={{ color: "darkblue" }}>
           My Football Friends
@@ -35,6 +39,7 @@ export default function NavBar() {
           Register
         </Link>
       </div>
+
     </nav>
   );
 }

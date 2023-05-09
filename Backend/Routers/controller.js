@@ -83,7 +83,7 @@ const validateUser = async (req, res) => {
         const token = jwt.sign(payload, jwtOptions.secretOrKey, {
           expiresIn: 100000,
         });
-        res.json({ success: "The password matched", token: token });
+        res.json({ success: "The password matched", token: token, userID: myUser._id });
       }
     } else {
       res.status(400).json({ error: "Email & Password Required" });
