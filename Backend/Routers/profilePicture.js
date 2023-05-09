@@ -13,7 +13,8 @@ const profilePictureUpload = async (req, res) => {
     // Save resized umage, remove original
     await sharp(resizedImage).toFile(req.file.path);
     // will this have to have authentication involved? EG web token validation etc
-    const user = await User.findById("645505dd9fe91c08fb8a2ccb");
+    
+    const user = await User.findById("6458fb6bb226e76fb3af0d16");
     if (user) {
       // update key with path of pic
       user.profilePicturePath = req.file.path;
