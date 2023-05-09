@@ -6,7 +6,7 @@ import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
 function Profile() {
    const [userInfo, setUserInfo] = useState({});
    const [admiredPlayers, setAdmiredPlayers] = useState(<h4>No Admired Players</h4>)
-  const [imageSrc, setImageSrc] = useState(
+   const [imageSrc, setImageSrc] = useState(
     "https://example.com/profile-picture.jpg"
   );
   const [username, setUsername] = useState("johndoe");
