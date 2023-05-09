@@ -13,7 +13,7 @@
  * 'ViewAdmiredPlayer' component)
  */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import ViewAdmiredPlayer from "./ViewAdmiredPlayer";
 import { Button } from "bootstrap";
@@ -28,6 +28,11 @@ export default function AdmiredPlayerListItem(props) {
   //so that users cannot click on the component, they can only view it, as you would expect
   const { mine } = props;
   const [playerInfo, setPlayerInfo] = useState(props.playerInfo);
+
+  useEffect(() => {
+    console.log("ENTERED THE USE EFFECT");
+    setPlayerInfo(props.playerInfo);
+  }, [props.playerInfo]);
 
   const itemToRender = (
     <div //Styling here is only to help check functionality, this will be replaced with bootstrap (or similar eventually)
@@ -46,23 +51,20 @@ export default function AdmiredPlayerListItem(props) {
   );
   console.log(mine);
 
- function handleDelete(e){
-  console.log(playerInfo.name)
-  props.handleDeleteAdmiredPlayer(e, playerInfo._id)
- }
-
-
-
+  function handleDelete(e) {
+    console.log(playerInfo.name);
+    props.handleDeleteAdmiredPlayer(e, playerInfo._id);
+  }
 
   return (
     <>
       {mine ? (
         <>
-        <Link to="/ViewAdmiredPlayer" state={{ playerInfo: playerInfo }}>
-          {" "}
-          <div>{itemToRender}</div>
-        </Link>
-        <button onClick={handleDelete}>Delete</button>
+          <Link to="/ViewAdmiredPlayer" state={{ playerInfo: playerInfo }}>
+            {" "}
+            <div>{itemToRender}</div>
+          </Link>
+          <button onClick={handleDelete}>Delete</button>
         </>
       ) : (
         itemToRender

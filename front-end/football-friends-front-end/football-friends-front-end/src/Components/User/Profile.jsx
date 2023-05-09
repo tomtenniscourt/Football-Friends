@@ -1,16 +1,18 @@
 // Profile.jsx
 
 import React, { useState, useEffect } from "react";
-import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload"
-import { getOneUser} from "../../API/UserApiCalls";
+import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload";
+import { getOneUser } from "../../API/UserApiCalls";
 import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
 import { createAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
 import { deleteAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
 
 function Profile() {
-   const [userInfo, setUserInfo] = useState({});
-   const [admiredPlayers, setAdmiredPlayers] = useState(<h4>No Admired Players</h4>)
-   const [imageSrc, setImageSrc] = useState(
+  const [userInfo, setUserInfo] = useState({});
+  const [admiredPlayers, setAdmiredPlayers] = useState(
+    <h4>No Admired Players</h4>
+  );
+  const [imageSrc, setImageSrc] = useState(
     "https://example.com/profile-picture.jpg"
   );
 
@@ -21,37 +23,42 @@ function Profile() {
   const [favoriteTeam, setFavoriteTeam] = useState("");
   const [favoriteTeamReason, setFavoriteTeamReason] = useState("");
   const [newAdmiredPlayer, setNewAdmiredPlayer] = useState({
-    name: '',
-    age: '',
-    club: '',
-    reasonAdmired: ''
+    name: "",
+    age: "",
+    club: "",
+    reasonAdmired: "",
   });
-  
+
   const addAdmiredPlayer = (event) => {
     event.preventDefault();
-    createAdmiredPlayer(localStorage.getItem("userID"),newAdmiredPlayer)
-    .then(output => setUserInfo (output))
-    .catch((error) => console.log (error))
+    createAdmiredPlayer(localStorage.getItem("userID"), newAdmiredPlayer)
+      .then((output) => setUserInfo(output))
+      .catch((error) => console.log(error));
     setNewAdmiredPlayer({
-      name: '',
-      age: '',
-      club: '',
-      reasonAdmired: ''
+      name: "",
+      age: "",
+      club: "",
+      reasonAdmired: "",
     });
   };
 
-  function handleDeleteAdmiredPlayer(e, playerID){
+  function handleDeleteAdmiredPlayer(e, playerID) {
     e.preventDefault();
-    deleteAdmiredPlayer(localStorage.getItem("userID"), playerID)
-    .then(() => getOneUser(localStorage.getItem("userID")).then((output) => setUserInfo(output)));
+    deleteAdmiredPlayer(localStorage.getItem("userID"), playerID).then(() =>
+      getOneUser(localStorage.getItem("userID")).then((output) => {
+        console.log("User from Backend: ******", output);
+
+        setUserInfo(output);
+      })
+    );
     // .then(() => userInfo.playersAdmired.filter(player => player._id !== playerID))
     // .then(output => {setUserInfo({...userInfo, playersAdmired: output}); console.log(userInfo)})
-
   }
 
-
   useEffect(() => {
-    getOneUser(localStorage.getItem("userID")).then((output) => setUserInfo(output));
+    getOneUser(localStorage.getItem("userID")).then((output) =>
+      setUserInfo(output)
+    );
   }, []);
   useEffect(() => {
     // console.log("userInfo updated", userInfo);
@@ -60,17 +67,26 @@ function Profile() {
       if (userInfo.playersAdmired.length > 0) {
         // console.log("condition 2 true");
       }
-    } console.log(userInfo.playersAdmired)
+    }
+    console.log(userInfo.playersAdmired);
 
-      if (userInfo.playersAdmired && userInfo.playersAdmired.length > 0) {
-        setAdmiredPlayers(
-          userInfo.playersAdmired.map((player, index) => {
-            return <AdmiredPlayerListItem handleDeleteAdmiredPlayer={handleDeleteAdmiredPlayer} playerInfo={player} key={index} mine={true} />;
-          })
-        );
-      }
-      else {setAdmiredPlayers(<h4>No Admired Players</h4>)}
-    }, [userInfo]);
+    if (userInfo.playersAdmired && userInfo.playersAdmired.length > 0) {
+      setAdmiredPlayers(
+        userInfo.playersAdmired.map((player, index) => {
+          return (
+            <AdmiredPlayerListItem
+              handleDeleteAdmiredPlayer={handleDeleteAdmiredPlayer}
+              playerInfo={player}
+              key={index}
+              mine={true}
+            />
+          );
+        })
+      );
+    } else {
+      setAdmiredPlayers(<h4>No Admired Players</h4>);
+    }
+  }, [userInfo]);
 
   const handleTeamSelect = (event) => {
     setSelectedTeam(event.target.value);
@@ -88,7 +104,7 @@ function Profile() {
       <img src={imageSrc} alt="Profile" />
 
       <div>
-      <ProfilePictureUpload />
+        <ProfilePictureUpload />
       </div>
 
       <h2>{username}</h2>
@@ -121,8 +137,9 @@ function Profile() {
           <option value="Nottingham Forest">Nottingham Forest</option>
           <option value="Southampton">Southampton</option>
           <option value="Tottenham Hotspur">Tottenham Hotspur</option>
-          <option value="Wolverhampton Wanderers">Wolverhampton Wanderers</option>
-
+          <option value="Wolverhampton Wanderers">
+            Wolverhampton Wanderers
+          </option>
         </select>
         <button type="submit">Save</button>
       </form>
@@ -141,47 +158,58 @@ function Profile() {
       )}
 
       <div>
-          <h3>Add Admired Player</h3>
-          <form onSubmit={addAdmiredPlayer}>
-            <label htmlFor="player-name">Player Name:</label>
-            <input
-              type="text"
-              id="player-name"
-              value={newAdmiredPlayer.name}
-              onChange={(e) => setNewAdmiredPlayer({...newAdmiredPlayer, name: e.target.value})}
-            />
+        <h3>Add Admired Player</h3>
+        <form onSubmit={addAdmiredPlayer}>
+          <label htmlFor="player-name">Player Name:</label>
+          <input
+            type="text"
+            id="player-name"
+            value={newAdmiredPlayer.name}
+            onChange={(e) =>
+              setNewAdmiredPlayer({ ...newAdmiredPlayer, name: e.target.value })
+            }
+          />
 
-            <label htmlFor="player-age">Player Age:</label>
-            <input
-              type="text"
-              id="player-age"
-              value={newAdmiredPlayer.age}
-              onChange={(e) => setNewAdmiredPlayer({...newAdmiredPlayer, age: e.target.value})}
-            />
+          <label htmlFor="player-age">Player Age:</label>
+          <input
+            type="text"
+            id="player-age"
+            value={newAdmiredPlayer.age}
+            onChange={(e) =>
+              setNewAdmiredPlayer({ ...newAdmiredPlayer, age: e.target.value })
+            }
+          />
 
-            <label htmlFor="player-club">Player Club:</label>
-            <input
-              type="text"
-              id="player-club"
-              value={newAdmiredPlayer.club}
-              onChange={(e) => setNewAdmiredPlayer({...newAdmiredPlayer, club: e.target.value})}
-            />
+          <label htmlFor="player-club">Player Club:</label>
+          <input
+            type="text"
+            id="player-club"
+            value={newAdmiredPlayer.club}
+            onChange={(e) =>
+              setNewAdmiredPlayer({ ...newAdmiredPlayer, club: e.target.value })
+            }
+          />
 
-            <label htmlFor="player-reason">Reason Admired:</label>
-            <input
-              type="text"
-              id="player-reason"
-              value={newAdmiredPlayer.reasonAdmired}
-              onChange={(e) => setNewAdmiredPlayer({...newAdmiredPlayer, reasonAdmired: e.target.value})}
-            />
+          <label htmlFor="player-reason">Reason Admired:</label>
+          <input
+            type="text"
+            id="player-reason"
+            value={newAdmiredPlayer.reasonAdmired}
+            onChange={(e) =>
+              setNewAdmiredPlayer({
+                ...newAdmiredPlayer,
+                reasonAdmired: e.target.value,
+              })
+            }
+          />
 
-            <button type="submit">Add Player</button>
-          </form>
-        </div>
-        <div>
+          <button type="submit">Add Player</button>
+        </form>
+      </div>
+      <div>
         <h2>Admired Players</h2>
         {admiredPlayers}
-</div>
+      </div>
     </div>
   );
 }
