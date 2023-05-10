@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 
 const ProfilePictureUpload = () => {
     const [uploadedImagePath, setUploadedImagePath] = useState(null);
     const [selectedFile, setSelectedFile] = useState(null);
+
+    useEffect(() => {
+        // Get image path from local storage
+        const localStorageImagePath = localStorage.getItem("uploadedImagePath")
+        if (localStorageImagePath) {
+            setUploadedImagePath(localStorageImagePath)
+        }
+    }, []);
 
         // Called when user selects a file
     const onFileChange = (event) => {
@@ -37,6 +45,9 @@ const ProfilePictureUpload = () => {
             console.log(response.data);
             alert("Profile picture uploaded succesfully!");
             setUploadedImagePath(response.data.imagePath);
+
+            // Saving the pic to local storage
+            localStorage.setItem("uploadedImagePath", response.data.imagePath);
         } catch (err) {
             console.log(err);
             alert("Error uploading the profile picture");

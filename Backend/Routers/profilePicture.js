@@ -3,6 +3,8 @@ const router = express.Router();
 const upload = require("../Utilities/upload");
 const sharp = require("sharp");
 const User = require("../Models/user");
+const passport = require("passport");
+
 const profilePictureUpload = async (req, res) => {
   try {
     // Resizing the user uploaded file
@@ -13,14 +15,15 @@ const profilePictureUpload = async (req, res) => {
     // Save resized umage, remove original
     await sharp(resizedImage).toFile(req.file.path);
     // will this have to have authentication involved? EG web token validation etc
-    const user = await User.findById("645505dd9fe91c08fb8a2ccb");
+
+    const user = await User.findById("6458fb6bb226e76fb3af0d16");
     if (user) {
       // update key with path of pic
       user.profilePicturePath = req.file.path;
       await user.save();
     } else {
       throw new Error("User not found");
-    }
+    } 
     // response to client
     res.status(200).send({ imagePath: req.file.path });
   } catch (error) {
@@ -28,13 +31,12 @@ const profilePictureUpload = async (req, res) => {
     res.status(400).send({ error: "Error uploading the profile picture." });
   }
 };
-router
-  .route("/uploadProfilePicture")
-  .post(upload.single("profilePicture"), profilePictureUpload);
+
+router.route("/uploadProfilePicture").post(
+  // passport.authenticate("jwt", {session: false}),
+  upload.single("profilePicture"), 
+  profilePictureUpload);
 module.exports = router;
-
-
-module.exports = router
 
 
 // // Define the POST route, use upload.single middleware to handle the file upload 

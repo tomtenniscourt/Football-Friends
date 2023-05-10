@@ -83,7 +83,11 @@ const validateUser = async (req, res) => {
         const token = jwt.sign(payload, jwtOptions.secretOrKey, {
           expiresIn: 100000,
         });
-        res.json({ success: "The password matched", token: token, userID: myUser._id });
+        res.json({
+          success: "The password matched",
+          token: token,
+          userID: myUser._id,
+        });
       }
     } else {
       res.status(400).json({ error: "Email & Password Required" });
@@ -133,7 +137,7 @@ const deleteAnAdmiredPlayer = async (req, res) => {
 // /Users/:id/ViewAdmiredPlayer/:playerId
 const updateAnAdmiredPlayer = async (req, res) => {
   try {
-    updatedPlayer = await User.updateOne(
+    updatedPlayer = await User.findOneAndUpdate(
       {
         _id: req.params.id,
         "playersAdmired._id": {
@@ -147,7 +151,8 @@ const updateAnAdmiredPlayer = async (req, res) => {
           "playersAdmired.$.club": req.body.club,
           "playersAdmired.$.reasonAdmired": req.body.reasonAdmired,
         },
-      }
+      },
+      { returnDocument: "after" }
     );
     res.status(201).json(updatedPlayer);
   } catch (error) {
