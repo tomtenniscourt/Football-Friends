@@ -4,18 +4,17 @@ const { admiredPlayerSchema } = require("./admiredPlayer");
 const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
-
-    email: { type: String, required: true },
-    password: { type: String },
-    profileName: { type: String, default: "New User" },
-    location: String,
-    age: Number,
-    favouriteTeam: String,
-    profilePicturePath: String,
-    playersAdmired: [{ type: admiredPlayerSchema }],
-    likesReceived: [String],
-    likesSent: [String]
-})
+  email: { type: String, required: true },
+  password: { type: String },
+  profileName: { type: String, default: "New User" },
+  location: { type: String },
+  age: { type: Number },
+  favouriteTeam: { type: String },
+  profilePicturePath: { type: String },
+  playersAdmired: [{ type: admiredPlayerSchema }],
+  likesReceived: [String],
+  likesSent: [String],
+});
 
 userSchema.methods.generateHash = function (password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(12), null);

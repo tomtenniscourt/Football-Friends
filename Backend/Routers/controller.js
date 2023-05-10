@@ -38,7 +38,7 @@ const createUser = async (req, res) => {
     if ((duplicateUser.length = 0)) {
       res.status(409).json({ error: "This email is already in use" });
     } else {
-      new_user = await User.create({ email: req.body.email });
+      new_user = await User.create(req.body);
       new_user.password = new_user.generateHash(req.body.password);
       new_user.save();
       res.status(201).json(new_user);
@@ -87,6 +87,7 @@ const validateUser = async (req, res) => {
           success: "The password matched",
           token: token,
           userID: myUser._id,
+          profileName: myUser.profileName,
         });
       }
     } else {
