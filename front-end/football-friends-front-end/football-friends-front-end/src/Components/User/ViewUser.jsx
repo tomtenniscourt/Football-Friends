@@ -62,18 +62,20 @@ export default function ViewUser() {
   }, [userInfo]);
   function handleClick(e) {
     e.preventDefault()
-    const data = [...userInfo.likesReceived, localStorage.getItem("userID")]
-    updateUser(userInfo._id, {likesReceived: data })
+    const likesReceivedData = [...userInfo.likesReceived, localStorage.getItem("userID")]
+    updateUser(userInfo._id, {likesReceived: likesReceivedData })
     .then((res) => setUserInfo(res))
     .catch((err) => console.log(err))
-    // haveLiked()
-  }
 
-// function haveLiked() {
-//   console.log("Liked: ", liked)
-//   // userInfo.likesReceived.includes(localStorage.getItem("userID"))
-//   return liked
-// }
+getOneUser(localStorage.getItem("userID"))
+.then((result) => {
+  console.log(result.likesSent)
+  const likesSentData = [...result.likesSent, userInfo._id]
+  updateUser(result._id, {likesSent: likesSentData })
+
+})}
+
+
 
   return (
     <>
