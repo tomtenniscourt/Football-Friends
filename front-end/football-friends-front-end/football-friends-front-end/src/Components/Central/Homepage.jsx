@@ -15,10 +15,10 @@ export default function Homepage() {
       .then((output) => setMessage(output));
   }, []);
 
-  const [localUsers, setLocalUsers] = useState(seedUsers);
+  const [localUsers, setLocalUsers] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedClub, setSelectedClub] = useState("");
-  const [clubUsers, setClubUsers] = useState(seedUsers);
+  const [clubUsers, setClubUsers] = useState([]);
 
   const handleLocationChange = (e) => {
     const location = e.target.value;
