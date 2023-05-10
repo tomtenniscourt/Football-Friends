@@ -31,6 +31,7 @@ function App() {
         <Route path="/ViewAdmiredPlayer" element={<ViewAdmiredPlayer />} />
         <Route path="/LikesReceived" element={<LikesReceived />} />
         <Route path="/LikesSent" element={<LikesSent />} />
+
       </Routes>
     </div>
   );

@@ -10,9 +10,9 @@ export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="/">
-        👍🏻Football Friends
+        👍Football Friends
         <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>
-          👍🏻
+        👍
         </span>
       </Navbar.Brand>
 
@@ -22,16 +22,21 @@ export default function NavBar() {
         <Nav variant="tabs" className="me-auto">
           <Nav.Link href="/profile">Profile</Nav.Link>
           <Nav.Link href="/AllUsers">All Users</Nav.Link>
-          <Nav.Link href="/friends">Friends</Nav.Link>
-          <Nav.Link href="/messages">Messages</Nav.Link>
           <Nav.Link href="/search">Search</Nav.Link>
           <Nav.Link href="/LikesReceived">Likes Received</Nav.Link>
           <Nav.Link href="/LikesSent">Likes Sent</Nav.Link>
+
+          <Nav.Link href="/friends">👍Friends
+          <span style={{display: "inline-block",transform: "scaleX(-1)" }} > 👍 </span></Nav.Link>
+
+          <Nav.Link href="/messages">Messages</Nav.Link>
         </Nav>
+
         <Nav variant="tabs">
           <Nav.Link href="/login">Log In</Nav.Link>
           <Nav.Link href="/register">Register</Nav.Link>
         </Nav>
+
       </Navbar.Collapse>
     </Navbar>
   );
