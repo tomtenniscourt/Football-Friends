@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { login } from "../../API/AuthenticationApiCalls";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { Container, Row, Col } from 'react-bootstrap';
-
-
-
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function Login() {
   /** Jack to play with this component while working out authentication side of things */
@@ -31,48 +28,72 @@ export default function Login() {
       console.log("FROM BACKEND:   ", response);
       if (response.token) {
         localStorage.setItem("JWT", response.token);
-        localStorage.setItem("userID", response.userID)
+        localStorage.setItem("userID", response.userID);
         console.log("JWT FROM LOCALSTORAGE:  ", localStorage.getItem("JWT"));
       }
     });
   };
 
   return (
-    <>
-      <h1>LOGIN PAGE</h1>
-      <Container fluid className="d-flex align-items-center min-vh-100">
-      <Row className="justify-content-center w-100">
-      <Col md={6} className="text-center" >
-      <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>
-          Email:
-          <Form.Control type="text" value={email} onChange={handleEmailChange} />
-        </Form.Label>
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>
-          Password:
-
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </Form.Label>
-        
-        </Form.Group>
-<Form.Group>
-        <Button variant="primary" type="submit">Log in</Button>
-        </Form.Group>
-      </Form>
-      </Col>
+    <Container fluid className="vh-100 d-flex flex-column">
+      <Row className="flex-grow-1">
+        <Col></Col>
+        <Col className="d-flex align-items-center justify-content-center"></Col>
+        <Col></Col>
       </Row>
-      </Container>
-    </>
+      <Row className="flex-grow-1">
+        <Col></Col>
+        <Col className="d-flex align-items-center justify-content-center">
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>
+                Email:
+                <Form.Control
+                  type="text"
+                  value={email}
+                  onChange={handleEmailChange}
+                />
+              </Form.Label>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>
+                Password:
+                <Form.Control
+                  type="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                />
+              </Form.Label>
+            </Form.Group>
+            <Form.Group className="d-flex justify-content-center">
+              <Button variant="primary" type="submit">
+                Log in
+              </Button>
+            </Form.Group>
+          </Form>{" "}
+        </Col>
+        <Col></Col>
+      </Row>
+      <Row className="flex-grow-1">
+        <Col></Col>
+        <Col className="d-flex align-items-center justify-content-center"></Col>
+        <Col></Col>
+      </Row>
+      <Row className="flex-grow-1">
+        <Col></Col>
+        <Col></Col>
+        <Col></Col>
+      </Row>
+      <Row className="flex-grow-1">
+        <Col></Col>
+        <Col>
+          <p>
+            Don’t have an account? <a href="/register">Sign up now!</a>
+          </p>
+        </Col>
+        <Col></Col>
+      </Row>
+    </Container>
   );
 }
-
-
-
