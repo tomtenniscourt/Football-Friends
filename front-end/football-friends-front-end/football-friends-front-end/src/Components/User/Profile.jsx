@@ -1,5 +1,6 @@
 // Profile.jsx
 
+import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 import React, { useState, useEffect } from "react";
 import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload";
 import { getOneUser, updateUser } from "../../API/UserApiCalls";
@@ -138,79 +139,86 @@ function Profile() {
   }
 
   return (
-    <div>
-      <div style={{ border: "solid black 2px", margin: "30px" }}>
-        <img src={imageSrc} alt="Profile" />
-
-        <div>
-          <ProfilePictureUpload />
-        </div>
-      </div>
-      <div style={{ border: "solid black 2px", margin: "30px" }}>
-        <button
-          onClick={(event) =>
-            editing ? handleEditSubmit(event) : setEditing(!editing)
-          }
-        >
-          {editing ? "✅" : "Edit Profile"}
-        </button>
-
-        {editing ? (
-          <>
-            <label>
-              Profile Name:
-              <input
-                type="text"
-                value={userInfo.profileName || ""}
-                onChange={handleChange}
-                required
-                name="profileName"
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    handleEditSubmit(event);
-                  }
-                }}
-              />
-            </label>
-            <label>
-              Location:
-              <input
-                type="text"
-                value={userInfo.location || ""}
-                onChange={handleChange}
-                name="location"
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    handleEditSubmit(event);
-                  }
-                }}
-              />
-            </label>
-          </>
-        ) : (
-          <>
-            {" "}
-            <h2>Name: {userInfo.profileName}</h2>
-            <p>Location: {userInfo.location || "Not yet set"}</p>
-          </>
-        )}
-      </div>
-      <div style={{ border: "solid black 2px", margin: "30px" }}>
-        <h3>Favorite Team: {userInfo.favoriteTeam}</h3>
-        {!changingFavTeam && (
-          <button onClick={() => setChangingFavTeam(!changingFavTeam)}>
-            Change Favorite Team
-          </button>
-        )}
-
-        {changingFavTeam && (
-          <form onSubmit={handleSave}>
-            <label htmlFor="team-select"></label>
-            <select
-              id="team-select"
-              value={selectedTeam || ""}
-              onChange={handleTeamSelect}
-            >
+    <Container>
+      <Row className="mt-4">
+        <Col md={4}>
+          <Card>
+            <Card.Img variant="top" src={imageSrc} alt="Profile" />
+            <Card.Body>
+              <ProfilePictureUpload />
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={8}>
+          <Card className="mb-4">
+            <Card.Body>
+              <Button
+                onClick={(event) =>
+                  editing ? handleEditSubmit(event) : setEditing(!editing)
+                }
+              >
+                {editing ? "✅" : "Edit Profile"}
+              </Button>
+  
+              {editing ? (
+                <>
+                  <Form.Group>
+                    <Form.Label>Profile Name:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={userInfo.profileName || ""}
+                      onChange={handleChange}
+                      required
+                      name="profileName"
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter") {
+                          handleEditSubmit(event);
+                        }
+                      }}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Location:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={userInfo.location || ""}
+                      onChange={handleChange}
+                      name="location"
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter") {
+                          handleEditSubmit(event);
+                        }
+                      }}
+                    />
+                  </Form.Group>
+                </>
+              ) : (
+                <>
+                  <h2>Name: {userInfo.profileName}</h2>
+                  <p>Location: {userInfo.location || "Not yet set"}</p>
+                </>
+              )}
+            </Card.Body>
+          </Card>
+          <Card className="mb-4">
+            <Card.Body>
+              <h3>Favorite Team: {userInfo.favoriteTeam}</h3>
+              {!changingFavTeam && (
+                <Button onClick={() => setChangingFavTeam(!changingFavTeam)}>
+                  Change Favorite Team
+                </Button>
+              )}
+  
+              {changingFavTeam && (
+                <Form onSubmit={handleSave}>
+                  <Form.Group>
+                    <Form.Label htmlFor="team-select"></Form.Label>
+                    <Form.Control
+                      as="select"
+                      id="team-select"
+                      value={selectedTeam || ""}
+                      onChange={handleTeamSelect}
+                    >
               <option value="">Choose a team</option>
               <option value="Arsenal">Arsenal</option>
               <option value="Aston Villa">Aston Villa</option>
@@ -235,29 +243,17 @@ function Profile() {
               <option value="Wolverhampton Wanderers">
                 Wolverhampton Wanderers
               </option>
-            </select>
-            <button type="submit">Save</button>
-          </form>
-        )}
-      </div>
-
-      {/* {userInfo.favoriteTeam && (
-        <div>
-          <h4>Your favorite team is {favoriteTeam}</h4>
-          <form>
-            <label htmlFor="team-reason">Why do you like this team?</label>
-            <textarea
-              id="team-reason"
-              value={favoriteTeamReason}
-              onChange={handleReasonChange}
-            />
-          </form>
-        </div>
-      )} */}
-      <div style={{ border: "solid black 2px", margin: "30px" }}>
-        <div>
+              </Form.Control>
+                </Form.Group>
+                <Button type="submit">Save</Button>
+              </Form>
+            )}
+          </Card.Body>
+        </Card>
+        <Card className="mb-4">
+          <Card.Body>
           <h3>Add Admired Player</h3>
-          <form onSubmit={addAdmiredPlayer}>
+          <Form onSubmit={addAdmiredPlayer}>
             <label htmlFor="player-name">Player Name:</label>
             <input
               type="text"
@@ -311,14 +307,18 @@ function Profile() {
             />
 
             <button type="submit">Add Player</button>
-          </form>
-        </div>
-        <div>
-          <h2>Admired Players</h2>
-          {admiredPlayers}
-        </div>
-      </div>
-    </div>
-  );
-}
+            </Form>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <h2>Admired Players</h2>
+            {admiredPlayers}
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+  </Container>
+);}
 export default Profile;
+

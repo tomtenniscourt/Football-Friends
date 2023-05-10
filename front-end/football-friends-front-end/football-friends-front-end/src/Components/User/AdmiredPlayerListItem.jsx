@@ -13,6 +13,7 @@
  * 'ViewAdmiredPlayer' component)
  */
 
+import { Card } from 'react-bootstrap';
 import { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import ViewAdmiredPlayer from "./ViewAdmiredPlayer";
@@ -35,20 +36,15 @@ export default function AdmiredPlayerListItem(props) {
   }, [props.playerInfo]);
 
   const itemToRender = (
-    <div //Styling here is only to help check functionality, this will be replaced with bootstrap (or similar eventually)
-      style={{
-        height: "10vw",
-        minWidth: "10vw",
-        backgroundColor: "red",
-        margin: "2vw",
-        border: "solid black 2px",
-      }}
-    >
-      <h3>This is an admired Player List Item</h3>
-      <h4>Name: {playerInfo.name}</h4>
-      <p>Reason Admired: {playerInfo.reasonAdmired}</p>
-    </div>
+    <Card className="mb-3" style={{ minWidth: "10rem" }}>
+      {/* <Card.Header as="h3">This is an admired Player List Item</Card.Header> */}
+      <Card.Body>
+        <Card.Title as="h4">Name: {playerInfo.name}</Card.Title>
+        <Card.Text>Reason Admired: {playerInfo.reasonAdmired}</Card.Text>
+      </Card.Body>
+    </Card>
   );
+  
 
   function handleDelete(e) {
     props.handleDeleteAdmiredPlayer(e, playerInfo._id);
