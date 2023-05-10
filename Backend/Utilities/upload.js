@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
     // // Use this section if relative path causes issues
     //     const uploadsDir = path.join(__dirname, "../uploads");
     //     cb(null, uploadsDir);
-    },
+    // },
 // Giving the uploaded file a unique name
     filename: (req, file, cb) => {
         const uniqueFileName = Date.now() + "-" + Math.round(Math.random() * 1e9);
