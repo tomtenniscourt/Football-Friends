@@ -22,11 +22,11 @@ export default function NavBar() {
         <Nav variant="tabs" className="me-auto">
           <Nav.Link href="/profile">Profile</Nav.Link>
           <Nav.Link href="/AllUsers">All Users</Nav.Link>
-          <Nav.Link href="/friends">Friends</Nav.Link>
-          <Nav.Link href="/messages">Messages</Nav.Link>
           <Nav.Link href="/search">Search</Nav.Link>
           <Nav.Link href="/LikesReceived">Likes Received</Nav.Link>
           <Nav.Link href="/LikesSent">Likes Sent</Nav.Link>
+          <Nav.Link href="/friends">👍Friends👍</Nav.Link>
+          <Nav.Link href="/messages">Messages</Nav.Link>
         </Nav>
         <Nav variant="tabs">
           <Nav.Link href="/login">Log In</Nav.Link>
