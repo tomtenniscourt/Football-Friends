@@ -10,6 +10,7 @@
 import { useState, useEffect } from "react";
 import UserThumbnail from "./UserThumbnail";
 import { getAllUsers } from "../../API/UserApiCalls";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function AllUsers() {
   const [users, setUsers] = useState([]);
@@ -56,13 +57,16 @@ export default function AllUsers() {
 
     } else {
     ourUsers = users.map((user, index) => {
-      return <UserThumbnail user={user} key={user._id}></UserThumbnail>;
-    })};
+      return (
+        <Col xs={12} sm={6} md={4} lg={3} key={user._id}>
+          <UserThumbnail user={user} />
+        </Col>
+      );
+    });
   }
   return (
     <>
       <h2>All Users</h2>
-
       <div className="container mt-5">
         <div className="row justify-content-center">
           <div className="col-lg-6">
@@ -78,8 +82,6 @@ export default function AllUsers() {
           </div>
         </div>
       </div>
-
-
       {ourUsers}
     </>
   );
