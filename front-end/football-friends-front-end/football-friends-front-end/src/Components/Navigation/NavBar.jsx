@@ -25,10 +25,8 @@ export default function NavBar() {
           <Nav.Link href="/search">Search</Nav.Link>
           <Nav.Link href="/LikesReceived">Likes Received</Nav.Link>
           <Nav.Link href="/LikesSent">Likes Sent</Nav.Link>
-
           <Nav.Link href="/friends">👍Friends
           <span style={{display: "inline-block",transform: "scaleX(-1)" }} > 👍 </span></Nav.Link>
-
           <Nav.Link href="/messages">Messages</Nav.Link>
         </Nav>
 
