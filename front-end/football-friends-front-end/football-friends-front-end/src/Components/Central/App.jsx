@@ -12,6 +12,7 @@ import AllUsers from "../User/AllUsers";
 import ViewUser from "../User/ViewUser";
 import ViewAdmiredPlayer from "../User/ViewAdmiredPlayer";
 import LikesReceived from "../User/LikesReceived";
+import LikesSent from "../User/LikesSent";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/ViewUser" element={<ViewUser />} />
         <Route path="/ViewAdmiredPlayer" element={<ViewAdmiredPlayer />} />
         <Route path="/LikesReceived" element={<LikesReceived />} />
+        <Route path="/LikesSent" element={<LikesSent />} />
       </Routes>
     </div>
   );
