@@ -1,3 +1,4 @@
+
 const admiredPlayers = [
   { name: "David Beckham", age: 45, club: "Retired", reasonAdmired: "England Legend" },
   { name: "John Terry", age: 36, club: "Retired", reasonAdmired: "Top Defender" },
@@ -365,7 +366,7 @@ const admiredPlayers40 = [
 ];
 
 
- const seedUsers = [
+ export const seedUsers = [
    {
      profileName: "JeffTheCool94",
      email: "tom@google.com",

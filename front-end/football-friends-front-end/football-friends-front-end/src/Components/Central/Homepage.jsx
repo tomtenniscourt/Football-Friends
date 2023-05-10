@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { test } from "../../API/AuthenticationApiCalls";
-import Button from 'react-bootstrap/Button';
+import { seedUsers } from "../../../../../../Backend/Seed/seed";
 // import { getAllUsers, getOneUser, updateUser } from "../../API/UserApiCalls";
 // import { createAdmiredPlayer, deleteAdmiredPlayer, updateAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
 // import { createUser } from "../../API/AuthenticationApiCalls";
@@ -36,7 +36,6 @@ export default function Homepage() {
           <h2>Football Friends in XXX</h2>
         </div>
       </div>
-
     </div>
   );
 }
