@@ -9,9 +9,10 @@
  * update the backend accordingly
  */
 
-import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { updateAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
+import { Container, Row, Col } from 'react-bootstrap';
+import { useLocation } from "react-router-dom";
 
 export default function ViewAdmiredPlayer(props) {
   const location = useLocation();
@@ -43,7 +44,7 @@ export default function ViewAdmiredPlayer(props) {
   }
 
   return (
-    <>
+    <Container className="d-flex flex-column align-items-center mt-5">
       <button
         onClick={(event) =>
           editing ? handleEditSubmit(event) : setEditing(!editing)
@@ -51,7 +52,7 @@ export default function ViewAdmiredPlayer(props) {
       >
         {editing ? "✅" : "Edit"}
       </button>
-      <h1> Admired Player</h1>
+      <h1>Admired Player</h1>
       {editing ? (
         <>
           <label>
@@ -120,7 +121,7 @@ export default function ViewAdmiredPlayer(props) {
           <h4>Club: {player.club}</h4>
           <h4>Reason Admired: {player.reasonAdmired}</h4>
         </>
-      )}{" "}
-    </>
+      )}
+    </Container>
   );
 }
