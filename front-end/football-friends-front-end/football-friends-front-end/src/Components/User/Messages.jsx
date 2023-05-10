@@ -9,5 +9,5 @@ export default function Messages() {
    * complete
    */
 
-  return <h1>Messages</h1>;
+  return <h1 className="text-center">Messages</h1>;
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import UserThumbnail from "./UserThumbnail";
 import { getAllUsers } from "../../API/UserApiCalls";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function Friends() {
   const [friends, setFriends] = useState([]);
@@ -23,13 +24,20 @@ export default function Friends() {
 
   if (friends.length > 0) {
     ourUsers = friends.map((user, index) => {
-      return <UserThumbnail user={user} key={user._id}></UserThumbnail>;
+      return (
+        <Col xs={12} sm={6} md={4} lg={3} key={user._id}>
+          <UserThumbnail user={user} />
+        </Col>
+      );
     });
   }
+
   return (
-    <>
-      <h2>Friends</h2>
-      {ourUsers}
-    </>
+    <Container>
+      <h2 className="text-center">Friends</h2>
+      <Row>
+        {ourUsers}
+      </Row>
+    </Container>
   );
 }

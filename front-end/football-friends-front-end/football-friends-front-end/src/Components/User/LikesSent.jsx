@@ -1,31 +1,39 @@
 import { useState, useEffect } from "react";
 import UserThumbnail from "./UserThumbnail";
 import { getAllUsers } from "../../API/UserApiCalls";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function LikesSent() {
   const [sentLikes, setSentLikes] = useState([]);
 
   useEffect(() => {
-    getAllUsers().then((output) => 
+    getAllUsers().then((output) => {
+      const filteredUsers = output.filter((user) => {
+        return user.likesReceived.includes(localStorage.getItem("userID"));
+      });
 
-    {
-       const filteredUsers = output.filter((user) => {
-            return user.likesReceived.includes(localStorage.getItem("userID"))
-        });
-        setSentLikes(filteredUsers)});
+      setSentLikes(filteredUsers);
+    });
   }, []);
 
   let ourUsers = <h3>No Users</h3>;
 
   if (sentLikes.length > 0) {
     ourUsers = sentLikes.map((user, index) => {
-      return <UserThumbnail user={user} key={user._id}></UserThumbnail>;
+      return (
+        <Col xs={12} sm={6} md={4} lg={3} key={user._id}>
+          <UserThumbnail user={user} />
+        </Col>
+      );
     });
   }
+
   return (
-    <>
-      <h2>Likes Sent</h2>
-      {ourUsers}
-    </>
+    <Container>
+      <h2 className="text-center">Likes Sent</h2>
+      <Row>
+        {ourUsers}
+      </Row>
+    </Container>
   );
 }

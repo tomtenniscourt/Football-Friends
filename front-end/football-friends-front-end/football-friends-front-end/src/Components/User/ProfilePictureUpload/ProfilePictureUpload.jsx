@@ -55,21 +55,22 @@ const ProfilePictureUpload = () => {
     };
 
     return (
-        <div>
-            <h3> Upload your profile picture</h3>
-            <form onSubmit={onFileUpload}>
-                <input type="file" onChange={onFileChange} />
-                <button type="submit">Upload</button>
-            </form>
-            
-            {uploadedImagePath && (
-                // if uploadedImagePath is truthy, run
-                <div>
-                    <h3> Uploaded Profile Picture:</h3>
-                    <img src={`http://localhost:5001/${uploadedImagePath}`} alt="Profile" />
-                </div>
-            )}
+        <div className="container mt-4">
+    <h3 className="text-center">Upload your profile picture</h3>
+    <form onSubmit={onFileUpload} className="d-flex flex-column align-items-center">
+        <div className="mb-3">
+            <input type="file" onChange={onFileChange} className="form-control" />
         </div>
+        <button type="submit" className="btn btn-primary">Upload</button>
+    </form>
+    {uploadedImagePath && (
+        <div className="mt-4 text-center">
+            <h3>Uploaded Profile Picture:</h3>
+            <img src={`http://localhost:5001/${uploadedImagePath}`} alt="Profile" className="img-thumbnail" />
+        </div>
+    )}
+</div>
+
     );
 };
 
