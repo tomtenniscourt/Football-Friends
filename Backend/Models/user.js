@@ -11,7 +11,8 @@ const userSchema = new Schema({
     age: Number,
     favouriteTeam: String,
     profilePicturePath: String,
-    playersAdmired: [{ type: admiredPlayerSchema }]
+    playersAdmired: [{ type: admiredPlayerSchema }],
+    likesReceived: [String]
 })
 
 userSchema.methods.generateHash = function (password) {

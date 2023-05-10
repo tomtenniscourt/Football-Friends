@@ -13,7 +13,7 @@
  */
 
 import { useLocation } from "react-router-dom";
-import { getOneUser } from "../../API/UserApiCalls";
+import { getOneUser, updateUser } from "../../API/UserApiCalls";
 import { useState, useEffect } from "react";
 import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
 
@@ -21,6 +21,7 @@ export default function ViewUser() {
   const location = useLocation();
   const id = location.state.id;
 
+  const [liked, setLiked] = useState(false);
   const [userInfo, setUserInfo] = useState({});
   const [admiredPlayers, setAdmiredPlayers] = useState(
     <h4>No Admired Players</h4>
@@ -39,6 +40,8 @@ export default function ViewUser() {
       }
     }
 
+   
+
     if (userInfo.playersAdmired && userInfo.playersAdmired.length > 0) {
       setAdmiredPlayers(
         userInfo.playersAdmired.map((player, index) => {
@@ -52,15 +55,40 @@ export default function ViewUser() {
         })
       );
     }
+    if (userInfo.likesReceived) {
+      setLiked(userInfo.likesReceived.includes(localStorage.getItem("userID")))
+    }
+
   }, [userInfo]);
+  function handleClick(e) {
+    e.preventDefault()
+    const data = [...userInfo.likesReceived, localStorage.getItem("userID")]
+    updateUser(userInfo._id, {likesReceived: data })
+    .then((res) => setUserInfo(res))
+    .catch((err) => console.log(err))
+    // haveLiked()
+  }
+
+// function haveLiked() {
+//   console.log("Liked: ", liked)
+//   // userInfo.likesReceived.includes(localStorage.getItem("userID"))
+//   return liked
+// }
 
   return (
     <>
+    <button 
+    onClick={(e) => {if(!liked) {
+      handleClick(e)}
+    }}
+    >{liked ? "Like Already Sent" : "like"}</button>
+
       <h3>This is our view user page</h3>
       <h2>Profile Name: {userInfo.profileName}</h2>
       <h3>Email: {userInfo.email}</h3>
       <h3>Admired Players:</h3>
       {admiredPlayers}
+      
     </>
   );
 }
