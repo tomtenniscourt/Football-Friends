@@ -11,6 +11,7 @@ import React from "react";
 import AllUsers from "../User/AllUsers";
 import ViewUser from "../User/ViewUser";
 import ViewAdmiredPlayer from "../User/ViewAdmiredPlayer";
+import LikesReceived from "../User/LikesReceived";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/AllUsers" element={<AllUsers />} />
         <Route path="/ViewUser" element={<ViewUser />} />
         <Route path="/ViewAdmiredPlayer" element={<ViewAdmiredPlayer />} />
+        <Route path="/LikesReceived" element={<LikesReceived />} />
       </Routes>
     </div>
   );
