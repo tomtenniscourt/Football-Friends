@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import { Container, Row, Col } from "react-bootstrap";
 import "react-toastify/dist/ReactToastify.css";
 
 /** Might try and integrate this as a component within other pages e.g. 'AllUsers'
@@ -37,18 +40,50 @@ export default function Search() {
     }
   };
 
-  return (
-    <div>
-      <input type="text" value={searchTerm} onChange={handleInputChange} />
-      <button onClick={handleSearch}>Search</button>
-      {searchResults.length > 0 && (
-        <ul>
-          {searchResults.map((user) => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
-      )}
-      <ToastContainer />
+return (
+  <div className="container mt-5">
+    <div className="row justify-content-center">
+      <div className="col-lg-6">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div className="input-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search for users"
+            value={searchTerm}
+            onChange={handleInputChange}
+          />
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
+        </div>
+        {searchResults.length > 0 && (
+          <ul className="list-group mt-3">
+            {searchResults.map((user) => (
+              <li key={user.id} className="list-group-item">
+                {user.name}
+              </li>
+            ))}
+          </ul>
+        )}
+        <ToastContainer />
+      </div>
     </div>
-  );
+  </div>
+);
 }
+
