@@ -21,6 +21,8 @@ export default function NavBar() {
           <Nav.Link href="/friends">Friends</Nav.Link>
           <Nav.Link href="/messages">Messages</Nav.Link>
           <Nav.Link href="/search">Search</Nav.Link>
+          <Nav.Link href="/LikesReceived">Likes Received</Nav.Link>
+          <Nav.Link href="/LikesSent">Likes Sent</Nav.Link>
         </Nav>
         <Nav variant="tabs">
           <Nav.Link href="/login">Log In</Nav.Link>

@@ -23,7 +23,7 @@ const profilePictureUpload = async (req, res) => {
       await user.save();
     } else {
       throw new Error("User not found");
-    }
+    } 
     // response to client
     res.status(200).send({ imagePath: req.file.path });
   } catch (error) {
