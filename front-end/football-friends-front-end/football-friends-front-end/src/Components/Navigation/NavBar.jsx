@@ -9,13 +9,17 @@ export default function NavBar() {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-
-      <Navbar.Brand href="/">Football Friends</Navbar.Brand>
+      <Navbar.Brand href="/">
+        👍🏻Football Friends
+        <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>
+          👍🏻
+        </span>
+      </Navbar.Brand>
 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav variant="tabs" className="me-auto" >
+        <Nav variant="tabs" className="me-auto">
           <Nav.Link href="/profile">Profile</Nav.Link>
           <Nav.Link href="/AllUsers">All Users</Nav.Link>
           <Nav.Link href="/friends">Friends</Nav.Link>
@@ -27,8 +31,7 @@ export default function NavBar() {
           <Nav.Link href="/register">Register</Nav.Link>
         </Nav>
       </Navbar.Collapse>
-
-  </Navbar>
+    </Navbar>
   );
 }
 

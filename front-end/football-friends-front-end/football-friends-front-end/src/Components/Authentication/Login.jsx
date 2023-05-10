@@ -38,7 +38,8 @@ export default function Login() {
     <Container fluid className="vh-100 d-flex flex-column">
       <Row className="flex-grow-1">
         <Col></Col>
-        <Col className="d-flex align-items-center justify-content-center"></Col>
+        <Col className="d-flex align-items-center justify-content-center">
+        </Col>
         <Col></Col>
       </Row>
       <Row className="flex-grow-1">
@@ -87,9 +88,9 @@ export default function Login() {
       </Row>
       <Row className="flex-grow-1">
         <Col></Col>
-        <Col>
-          <p>
-            Don’t have an account? <a href="/register">Sign up now!</a>
+        <Col className="d-flex align-items-center justify-content-center">
+          <p className="text-center">
+            Don’t have an account? <a href="/register"> Sign up now!</a>
           </p>
         </Col>
         <Col></Col>
