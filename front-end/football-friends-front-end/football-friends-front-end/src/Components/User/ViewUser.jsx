@@ -16,6 +16,7 @@ import { useLocation } from "react-router-dom";
 import { getOneUser, updateUser } from "../../API/UserApiCalls";
 import { useState, useEffect } from "react";
 import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
+import { Button, Card } from "react-bootstrap";
 
 export default function ViewUser() {
   const location = useLocation();
@@ -77,20 +78,25 @@ getOneUser(localStorage.getItem("userID"))
 
 
 
-  return (
-    <>
-    <button 
-    onClick={(e) => {if(!liked) {
-      handleClick(e)}
-    }}
-    >{liked ? "Like Already Sent" : "like"}</button>
-
-      <h3>This is our view user page</h3>
-      <h2>Profile Name: {userInfo.profileName}</h2>
-      <h3>Email: {userInfo.email}</h3>
-      <h3>Admired Players:</h3>
+return (
+  <Card className="m-3">
+    <Card.Body>
+      <Button
+        variant={liked ? "secondary" : "primary"}
+        onClick={(e) => {
+          if (!liked) {
+            handleClick(e);
+          }
+        }}
+      >
+        {liked ? "Like Already Sent" : "like"}
+      </Button>
+      <Card.Title className="mt-2">This is our view user page</Card.Title>
+      <Card.Text>Profile Name: {userInfo.profileName}</Card.Text>
+      <Card.Text>Email: {userInfo.email}</Card.Text>
+      <Card.Text>Admired Players:</Card.Text>
       {admiredPlayers}
-      
-    </>
-  );
+    </Card.Body>
+  </Card>
+);
 }
