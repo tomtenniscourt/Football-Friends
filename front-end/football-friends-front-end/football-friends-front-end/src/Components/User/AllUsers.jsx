@@ -27,9 +27,30 @@ export default function AllUsers() {
   if (users.length > 0) {
     if (searchTerm) {
       let usersToRender = users.filter((user) => {
-       return user.profileName.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 
+        
+      let profileName = false;
+      let age = false;
+      let favouriteTeam = false;
+      let location = false;
+
+       if(user.profileName) {
+       profileName = user.profileName 
+       .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 }
+
+       if (user.age) { 
+        age = JSON.stringify(user.age).toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 }
+       
+        if(user.favouriteTeam) {
+          favouriteTeam = user.favouriteTeam 
+          .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 }
+
+          if(user.location) {
+            location = user.location 
+            .toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 }
+
+       return (!!(profileName || age || favouriteTeam || location))
       });
-      
+
       ourUsers = usersToRender.map((user, index) => {
         return <UserThumbnail user={user} key={user._id}></UserThumbnail>});
 
@@ -53,13 +74,6 @@ export default function AllUsers() {
                 value={searchTerm}
                 onChange={handleInputChange}
               />
-              <button
-                className="btn btn-primary"
-                type="button"
-                // onClick={handleSearch}
-              >
-                Search
-              </button>
             </div>
           </div>
         </div>
