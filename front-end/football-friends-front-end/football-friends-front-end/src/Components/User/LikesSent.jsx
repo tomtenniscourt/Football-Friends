@@ -29,36 +29,41 @@ export default function LikesSent() {
   }
 
   return (
-    <Container>
+    <Container fluid className="vh-100 d-flex flex-column">
+      <br />
       <div
-        style={{
-          width: "330px",
-          height: "330px",
-          overflow: "hidden",
-          borderRadius: "50%",
-          backgroundColor: "#fff",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "0 auto", // Center the div horizontally
-        }}
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "30vh" }}
       >
-        <img
-          src="https://i.imgur.com/AGm0oCR.png"
-          alt="your-image-description"
-          className="img-fluid"
+        <div
           style={{
-            width: "100%",
-            height: "auto",
-            clipPath: "circle(38% at 50% 50%)",
+            height: "350px",
+            width: "350px",
+            overflow: "hidden",
+            borderRadius: "50%",
+            backgroundColor: "transparent",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        />
+        >
+          <img
+            src="https://i.imgur.com/AGm0oCR.png"
+            alt="your-image-description"
+            className="img-fluid"
+            style={{
+              width: "auto",
+              height: "auto",
+              clipPath: "circle(38% at 50% 50%)",
+            }}
+          />
+        </div>
       </div>
-      
-      <h2 className="text-center" style={{ marginTop: "30px" }}>Likes Sent</h2>
-      <Row>
-        {ourUsers}
-      </Row>
+
+      <h2 className="text-center" style={{ marginTop: "30px" }}>
+        Likes Sent
+      </h2>
+      <Row>{ourUsers}</Row>
     </Container>
   );
 }

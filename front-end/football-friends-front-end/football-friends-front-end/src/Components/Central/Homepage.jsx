@@ -49,20 +49,24 @@ export default function Homepage() {
 
   const filteredUsers = localUsers;
 
-  return (
-    <Container fluid className="vh-100 d-flex flex-column">
-      <br />
+
+return (
+  <Container fluid className="d-flex flex-column">
+    <br />
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ height: "30vh" }}
+    >
       <div
         style={{
-          width: "330px",
-          height: "330px",
+          height: "350px",
+          width: "350px",
           overflow: "hidden",
           borderRadius: "50%",
-          backgroundColor: "#fff",
+          backgroundColor: "transparent",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          margin: "0 auto", // Center the div horizontally
         }}
       >
         <img
@@ -70,12 +74,14 @@ export default function Homepage() {
           alt="your-image-description"
           className="img-fluid"
           style={{
-            width: "100%",
+            width: "auto",
             height: "auto",
             clipPath: "circle(38% at 50% 50%)",
           }}
         />
       </div>
+    </div>
+
 
       <br />
       <br />
@@ -227,12 +233,14 @@ export default function Homepage() {
           </div>
           <div className="col-md-2"></div>
         </div>
-        <div className="row flex-grow-1">
-          <div className="col-md-2"></div>
-          <div className="col-md-4 d-flex flex-column justify-content-center">
-            <div className="newUsers">
-              <h2 className="text-center"></h2>
-            </div>
+        <div className="col-md-2"></div>
+      </div>
+      <div className="row flex-grow-1">
+        <div className="col-md-2"></div>
+        <div className="col-md-4 d-flex flex-column justify-content-center">
+          <div className="newUsers">
+            <h2 className="text-center"></h2>
+
           </div>
           <div className="col-md-4 d-flex justify-content-center">
             <br />
