@@ -15,7 +15,8 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         const uniqueFileName = Date.now() + "-" + Math.round(Math.random() * 1e9);
         cb(null, uniqueFileName + "-" + file.originalname)
-    },
+    };
+},
 });
 
 // Filtering out disallowed filetypes
