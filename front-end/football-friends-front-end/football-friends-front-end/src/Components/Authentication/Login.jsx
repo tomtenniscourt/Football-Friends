@@ -76,7 +76,11 @@ export default function Login() {
                   </Form.Label>
                 </Form.Group>
                 <Form.Group className="d-flex justify-content-center">
-                  <Button variant="primary" type="submit">
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    style={{ margin: "0 10px" }}
+                  >
                     Log in
                   </Button>
                 </Form.Group>
@@ -106,9 +110,32 @@ export default function Login() {
         </Container>
       )}
       {isLoggedIn && (
-        <Container>
-          <h2>Logged in as {localStorage.getItem("profileName")}</h2>
-          <button onClick={logoutAuth}>Log Out</button>
+        <Container fluid className="vh-100 d-flex flex-column">
+          <Row className="flex-grow-1">
+            <Col></Col>
+            <Col className="d-flex align-items-center justify-content-center">
+              <h2>Hello {localStorage.getItem("profileName")}!</h2>
+            </Col>
+            <Col></Col>
+          </Row>
+          <Row>
+            <Col></Col>
+            <Col className="d-flex align-items-start justify-content-center mt-auto">
+              <Button
+                variant="primary"
+                onClick={logoutAuth}
+                style={{ margin: "0 1px" }}
+              >
+                Log Out
+              </Button>
+            </Col>
+            <Col></Col>
+          </Row>
+          <Row className="flex-grow-1">
+            <Col></Col>
+            <Col></Col>
+            <Col></Col>
+          </Row>
         </Container>
       )}
     </>
