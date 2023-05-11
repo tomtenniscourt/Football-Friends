@@ -11,10 +11,9 @@ import { useState, useEffect } from "react";
 import UserThumbnail from "./UserThumbnail";
 import { getAllUsers } from "../../API/UserApiCalls";
 import { Container, Row, Col } from "react-bootstrap";
-import { seedUsers } from "../../seed";
 
 export default function AllUsers() {
-  const [users, setUsers] = useState(seedUsers);
+  const [users, setUsers] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (event) => {
