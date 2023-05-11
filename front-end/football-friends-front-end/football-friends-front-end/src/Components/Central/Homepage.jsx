@@ -216,13 +216,15 @@ return (
         <div className="col-md-2"></div>
         <div className="col-md-4 d-flex flex-column justify-content-center">
           <div className="newUsers">
-            <h2 className="text-center">New Football Friends</h2>
+
+
+          <h2 className="text-center"></h2>
           </div>
         </div>
         <div className="col-md-4 d-flex justify-content-center">
           <br />
           <div className="trendingUsers text-center">
-            <h2>Trending Football Friends</h2>
+            <h2></h2>
           </div>
         </div>
         <div className="col-md-2"></div>

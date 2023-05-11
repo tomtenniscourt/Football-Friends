@@ -25,7 +25,7 @@ export default function NavBar() {
         <Nav variant="tabs" className="me-auto">
           <Nav.Link href={isLoggedIn ? "/profile" : "/login"}>Profile</Nav.Link>
           <Nav.Link href={isLoggedIn ? "/AllUsers" : "/login"}>
-            All Users
+            Search All Users
           </Nav.Link>
           <Nav.Link href={isLoggedIn ? "/search" : "/login"}>Search</Nav.Link>
           <Nav.Link href={isLoggedIn ? "/LikesReceived" : "/login"}>
