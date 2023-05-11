@@ -140,7 +140,7 @@ function Profile() {
   }
 
   return (
-    <Container>
+    <Container fluid className="vh-100 d-flex flex-column">
       <Row className="mt-4">
         <Col md={4}>
           <Card>

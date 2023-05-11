@@ -141,7 +141,7 @@ export default function Register() {
                     <option value="AstonVilla">Aston Villa</option>
                     <option value="Bournemouth">Bournemouth</option>
                     <option value="Brentford">Brentford</option>
-                    <option value="Brighton&HoveAlbion">Brighton</option>
+                    <option value="Brighton&Hove Albion">Brighton</option>
                     <option value="Chelsea">Chelsea</option>
                     <option value="CrystalPalace">Crystal Palace</option>
                     <option value="Everton">Everton</option>
@@ -150,7 +150,7 @@ export default function Register() {
                     <option value="LeicesterCity">Leicester City</option>
                     <option value="Liverpool">Liverpool</option>
                     <option value="ManchesterCity">Manchester City</option>
-                    <option value="ManchesterUnited">Manchester United</option>
+                    <option value="Manchester United">Manchester United</option>
                     <option value="NewcastleUnited">Newcaste United</option>
                     <option value="NottinghamForest">Nottingham Forest</option>
                     <option value="Southampton">Southampton</option>
