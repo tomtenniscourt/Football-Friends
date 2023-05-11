@@ -72,27 +72,58 @@ export default function AllUsers() {
         );
       });
     }
-    return (
-      <>
-        <h2>All Users</h2>
-        <div className="container mt-5">
-          <div className="row justify-content-center">
-            <div className="col-lg-6">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search for users"
-                  value={searchTerm}
-                  onChange={handleInputChange}
-                />
-              </div>
-            </div>
+return (
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    }}
+  >
+    <div
+      style={{
+        width: "330px",
+        height: "330px",
+        overflow: "hidden",
+        borderRadius: "50%",
+        backgroundColor: "#fff",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        margin: "0 auto", // Center the div horizontally
+      }}
+    >
+      <img
+        src="https://i.imgur.com/AGm0oCR.png"
+        alt="your-image-description"
+        className="img-fluid"
+        style={{
+          width: "100%",
+          height: "auto",
+          clipPath: "circle(38% at 50% 50%)",
+        }}
+      />
+    </div>
+    <h2>All Users</h2>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-lg-6">
+          <div className="input-group">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search for users"
+              value={searchTerm}
+              onChange={handleInputChange}
+            />
           </div>
         </div>
-        {ourUsers}
-      </>
-    );
+      </div>
+    </div>
+    {ourUsers}
+  </div>
+);
+
   }
 }
 
