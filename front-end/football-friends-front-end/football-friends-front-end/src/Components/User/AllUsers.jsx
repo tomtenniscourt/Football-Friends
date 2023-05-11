@@ -73,60 +73,63 @@ export default function AllUsers() {
       });
     }
 
-return (
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    }}
-  >
-    <div
-      style={{
-        width: "350px",
-        height: "350px",
-        overflow: "hidden",
-        borderRadius: "50%",
-        backgroundColor: "transparent",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        margin: "0 auto",
-      }}
-    >
-      <img
-        src="https://i.imgur.com/AGm0oCR.png"
-        alt="your-image-description"
-        className="img-fluid"
+    return (
+      <div
         style={{
-          width: "100%",
-          height: "auto",
-          clipPath: "circle(38% at 50% 50%)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          minHeight: "100vh",
         }}
-      />
-    </div>
-    <>
-      <h2 className="text-center" style={{ marginTop: "30px" }}>
-        All Users
-      </h2>
-      <Container className="mt-5">
-        <div className="d-flex justify-content-center">
-          <div className="col-lg-6">
-            <div className="input-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search for users"
-                value={searchTerm}
-                onChange={handleInputChange}
-              />
-            </div>
-          </div>
+      >
+        <div
+          style={{
+            width: "350px",
+            height: "350px",
+            overflow: "hidden",
+            borderRadius: "50%",
+            backgroundColor: "transparent",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "0 auto",
+          }}
+        >
+          <img
+            src="https://i.imgur.com/AGm0oCR.png"
+            alt="your-image-description"
+            className="img-fluid"
+            style={{
+              width: "100%",
+              height: "auto",
+              clipPath: "circle(38% at 50% 50%)",
+            }}
+          />
         </div>
-      </Container>
-      <div className="d-flex flex-wrap justify-content-center">{ourUsers}</div>
-    </>
-  </div>
-);
+        <>
+          <h2 className="text-center" style={{ marginTop: "30px" }}>
+            All Users
+          </h2>
+          <Container className="mt-5">
+            <div className="d-flex justify-content-center">
+              <div className="col-lg-6">
+                <div className="input-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search for users"
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
+            </div>
+          </Container>
+          <div className="d-flex flex-wrap justify-content-center">
+            {ourUsers}
+          </div>
+        </>
+      </div>
+    );
   }
 }

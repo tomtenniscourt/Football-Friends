@@ -49,39 +49,41 @@ export default function Homepage() {
 
   const filteredUsers = localUsers;
 
-
-return (
-  <Container fluid className="d-flex flex-column">
-    <br />
-    <div
-      className="d-flex justify-content-center align-items-center"
-      style={{ height: "30vh" }}
+  return (
+    <Container
+      fluid
+      className="d-flex flex-column"
+      style={{ minHeight: "100vh" }}
     >
+      <br />
       <div
-        style={{
-          height: "350px",
-          width: "350px",
-          overflow: "hidden",
-          borderRadius: "50%",
-          backgroundColor: "transparent",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "30vh" }}
       >
-        <img
-          src="https://i.imgur.com/AGm0oCR.png"
-          alt="your-image-description"
-          className="img-fluid"
+        <div
           style={{
-            width: "auto",
-            height: "auto",
-            clipPath: "circle(38% at 50% 50%)",
+            height: "350px",
+            width: "350px",
+            overflow: "hidden",
+            borderRadius: "50%",
+            backgroundColor: "transparent",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        />
+        >
+          <img
+            src="https://i.imgur.com/AGm0oCR.png"
+            alt="your-image-description"
+            className="img-fluid"
+            style={{
+              width: "auto",
+              height: "auto",
+              clipPath: "circle(38% at 50% 50%)",
+            }}
+          />
+        </div>
       </div>
-    </div>
-
 
       <br />
       <br />
@@ -240,7 +242,6 @@ return (
         <div className="col-md-4 d-flex flex-column justify-content-center">
           <div className="newUsers">
             <h2 className="text-center"></h2>
-
           </div>
           <div className="col-md-4 d-flex justify-content-center">
             <br />
