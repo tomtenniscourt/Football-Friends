@@ -44,7 +44,7 @@ export default function NavBar() {
               transition: "transform 0.2s ease-in-out",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.15) rotate(25deg)";
+              e.currentTarget.style.transform = "scale(1.15) rotate(720deg)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "scale(1) rotate(0deg)";
@@ -61,7 +61,6 @@ export default function NavBar() {
           <Nav.Link href={isLoggedIn ? "/AllUsers" : "/login"}>
             Search All Users
           </Nav.Link>
-          <Nav.Link href={isLoggedIn ? "/search" : "/login"}>Search</Nav.Link>
           <Nav.Link href={isLoggedIn ? "/LikesReceived" : "/login"}>
             Likes Received
           </Nav.Link>
@@ -79,9 +78,6 @@ export default function NavBar() {
               {" "}
               👍{" "}
             </span>
-          </Nav.Link>
-          <Nav.Link href={isLoggedIn ? "/messages" : "/login"}>
-            Messages
           </Nav.Link>
         </Nav>
 
