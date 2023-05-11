@@ -84,15 +84,15 @@ return (
   >
     <div
       style={{
-        width: "330px",
-        height: "330px",
+        width: "350px",
+        height: "350px",
         overflow: "hidden",
         borderRadius: "50%",
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        margin: "0 auto", // Center the div horizontally
+        margin: "0 auto", 
       }}
     >
       <img
@@ -106,30 +106,28 @@ return (
         }}
       />
     </div>
-      <>
-        <h2 className="text-center" style={{ marginTop: "30px" }}>All Users</h2>
-        <Container className="mt-5">
-          <div className="d-flex justify-content-center">
-            <div className="col-lg-6">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search for users"
-                  value={searchTerm}
-                  onChange={handleInputChange}
-                />
-              </div>
+    <>
+      <h2 className="text-center" style={{ marginTop: "30px" }}>
+        All Users
+      </h2>
+      <Container className="mt-5">
+        <div className="d-flex justify-content-center">
+          <div className="col-lg-6">
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search for users"
+                value={searchTerm}
+                onChange={handleInputChange}
+              />
             </div>
           </div>
-        </Container>
-        <div className="d-flex flex-wrap justify-content-center">
-          {ourUsers}
         </div>
-      </div>
-    </div>
+      </Container>
+      <div className="d-flex flex-wrap justify-content-center">{ourUsers}</div>
+    </>
   </div>
-</>
 );
 
   }

@@ -141,30 +141,36 @@ function Profile() {
   }
 
   return (
-    <Container fluid className="vh-100 d-flex flex-column">
+    <div>
+    <Container fluid className="d-flex flex-column">
+      <br />
       <div
-        style={{
-          width: "330px",
-          height: "330px",
-          overflow: "hidden",
-          borderRadius: "50%",
-          backgroundColor: "#fff",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "0 auto", // Center the div horizontally
-        }}
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "30vh" }}
       >
-        <img
-          src="https://i.imgur.com/AGm0oCR.png"
-          alt="your-image-description"
-          className="img-fluid"
+        <div
           style={{
-            width: "100%",
-            height: "auto",
-            clipPath: "circle(38% at 50% 50%)",
+            height: "350px",
+            width: "350px",
+            overflow: "hidden",
+            borderRadius: "50%",
+            backgroundColor: "transparent",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        />
+        >
+          <img
+            src="https://i.imgur.com/AGm0oCR.png"
+            alt="your-image-description"
+            className="img-fluid"
+            style={{
+              width: "auto",
+              height: "auto",
+              clipPath: "circle(38% at 50% 50%)",
+            }}
+          />
+        </div>
       </div>
       <Row className="mt-4">
         <Col md={4}>
@@ -177,68 +183,73 @@ function Profile() {
         </Col>
 
         <Col md={8}>
-        <Card className="mb-4 card-user">
-  <Card.Body>
-    {editing ? (
-      <>
-        <Form.Group>
-          <Form.Label>Profile Name:</Form.Label>
-          <Form.Control
-            type="text"
-            value={userInfo.profileName || ""}
-            onChange={handleChange}
-            required
-            name="profileName"
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                handleEditSubmit(event);
-              }
-            }}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Location:</Form.Label>
-          <Form.Control
-            type="text"
-            value={userInfo.location || ""}
-            onChange={handleChange}
-            name="location"
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                handleEditSubmit(event);
-              }
-            }}
-          />
-        </Form.Group>
-        <Button variant="success"
-          onClick={(event) =>
-            editing ? handleEditSubmit(event) : setEditing(!editing)
-          }
-        >
-          {editing ? "Save" : "Edit Profile"}
-        </Button>
-      </>
-    ) : (
-      <>
-        <h2>Name: {userInfo.profileName}</h2>
-        <p>Location: {userInfo.location || "Not yet set"}</p>
-        <Button variant="dark"
-          onClick={(event) =>
-            editing ? handleEditSubmit(event) : setEditing(!editing)
-          }
-        >
-          {editing ? "Save" : "Edit Profile"}
-        </Button>
-      </>
-    )}
-  </Card.Body>
-</Card>
+          <Card className="mb-4 card-user">
+            <Card.Body>
+              {editing ? (
+                <>
+                  <Form.Group>
+                    <Form.Label>Profile Name:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={userInfo.profileName || ""}
+                      onChange={handleChange}
+                      required
+                      name="profileName"
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter") {
+                          handleEditSubmit(event);
+                        }
+                      }}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Location:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={userInfo.location || ""}
+                      onChange={handleChange}
+                      name="location"
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter") {
+                          handleEditSubmit(event);
+                        }
+                      }}
+                    />
+                  </Form.Group>
+                  <Button
+                    variant="success"
+                    onClick={(event) =>
+                      editing ? handleEditSubmit(event) : setEditing(!editing)
+                    }
+                  >
+                    {editing ? "Save" : "Edit Profile"}
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <h2>Name: {userInfo.profileName}</h2>
+                  <p>Location: {userInfo.location || "Not yet set"}</p>
+                  <Button
+                    variant="dark"
+                    onClick={(event) =>
+                      editing ? handleEditSubmit(event) : setEditing(!editing)
+                    }
+                  >
+                    {editing ? "Save" : "Edit Profile"}
+                  </Button>
+                </>
+              )}
+            </Card.Body>
+          </Card>
 
           <Card className="mb-4 card-favorite">
             <Card.Body>
               <h3>Favorite Team: {userInfo.favouriteTeam || "not chosen"}</h3>
               {!changingFavTeam && (
-                <Button variant="dark" onClick={() => setChangingFavTeam(!changingFavTeam)}>
+                <Button
+                  variant="dark"
+                  onClick={() => setChangingFavTeam(!changingFavTeam)}
+                >
                   Change Favorite Team
                 </Button>
               )}
@@ -285,88 +296,101 @@ function Profile() {
                       </option>
                     </Form.Control>
                   </Form.Group>
-                  <Button variant="success" type="submit">Save</Button>
+                  <Button variant="success" type="submit">
+                    Save
+                  </Button>
                 </Form>
               )}
             </Card.Body>
           </Card>
           <Card className="mb-4 card-addAdmired">
-  <Card.Body>
-    <h3>Add Admired Player</h3>
-    <Form onSubmit={addAdmiredPlayer}>
-  <Row>
-    <Col>
-      <Form.Group>
-        <Form.Label htmlFor="player-name">Player Name:</Form.Label>
-        <Form.Control
-          type="text"
-          id="player-name"
-          value={newAdmiredPlayer.name}
-          onChange={(e) =>
-            setNewAdmiredPlayer({
-              ...newAdmiredPlayer,
-              name: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-    </Col>
-    <Col>
-      <Form.Group>
-        <Form.Label htmlFor="player-age">Player Age:</Form.Label>
-        <Form.Control
-          type="text"
-          id="player-age"
-          value={newAdmiredPlayer.age}
-          onChange={(e) =>
-            setNewAdmiredPlayer({
-              ...newAdmiredPlayer,
-              age: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-    </Col>
-  </Row>
-  <Row>
-    <Col>
-      <Form.Group>
-        <Form.Label htmlFor="player-club">Player Club:</Form.Label>
-        <Form.Control
-          type="text"
-          id="player-club"
-          value={newAdmiredPlayer.club}
-          onChange={(e) =>
-            setNewAdmiredPlayer({
-              ...newAdmiredPlayer,
-              club: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-    </Col>
-    <Col>
-      <Form.Group>
-        <Form.Label htmlFor="player-reason">Reason Admired:</Form.Label>
-        <Form.Control
-          type="text"
-          id="player-reason"
-          value={newAdmiredPlayer.reasonAdmired}
-          onChange={(e) =>
-            setNewAdmiredPlayer({
-              ...newAdmiredPlayer,
-              reasonAdmired: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-    </Col>
-  </Row>
-  <Button variant="dark" type="submit" style={{ marginTop: "10px" }}>Add Player</Button>
-</Form>
-
-  </Card.Body>
-</Card>
+            <Card.Body>
+              <h3>Add Admired Player</h3>
+              <Form onSubmit={addAdmiredPlayer}>
+                <Row>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label htmlFor="player-name">
+                        Player Name:
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        id="player-name"
+                        value={newAdmiredPlayer.name}
+                        onChange={(e) =>
+                          setNewAdmiredPlayer({
+                            ...newAdmiredPlayer,
+                            name: e.target.value,
+                          })
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label htmlFor="player-age">Player Age:</Form.Label>
+                      <Form.Control
+                        type="text"
+                        id="player-age"
+                        value={newAdmiredPlayer.age}
+                        onChange={(e) =>
+                          setNewAdmiredPlayer({
+                            ...newAdmiredPlayer,
+                            age: e.target.value,
+                          })
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label htmlFor="player-club">
+                        Player Club:
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        id="player-club"
+                        value={newAdmiredPlayer.club}
+                        onChange={(e) =>
+                          setNewAdmiredPlayer({
+                            ...newAdmiredPlayer,
+                            club: e.target.value,
+                          })
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label htmlFor="player-reason">
+                        Reason Admired:
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        id="player-reason"
+                        value={newAdmiredPlayer.reasonAdmired}
+                        onChange={(e) =>
+                          setNewAdmiredPlayer({
+                            ...newAdmiredPlayer,
+                            reasonAdmired: e.target.value,
+                          })
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+                <Button
+                  variant="dark"
+                  type="submit"
+                  style={{ marginTop: "10px" }}
+                >
+                  Add Player
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
 
           <Card className="mb-4 card-admired">
             <Card.Body>
@@ -377,6 +401,7 @@ function Profile() {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 }
 export default Profile;

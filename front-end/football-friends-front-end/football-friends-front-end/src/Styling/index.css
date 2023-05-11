@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
 
+html,
+body {
+  height: 100%;
+}
+
 .App {
-  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 10vh;
   background-color: #E6EAF2;
   margin: 0;
   font-family: 'Changa', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

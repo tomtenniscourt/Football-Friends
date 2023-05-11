@@ -44,11 +44,11 @@ return (
   <div className="container mt-5">
     <div
       style={{
-        width: "330px",
-        height: "330px",
+        width: "350px",
+        height: "350px",
         overflow: "hidden",
         borderRadius: "50%",
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -78,11 +78,7 @@ return (
             value={searchTerm}
             onChange={handleInputChange}
           />
-          <button
-            className="btn btn-dark"
-            type="button"
-            onClick={handleSearch}
-          >
+          <button className="btn btn-dark" type="button" onClick={handleSearch}>
             Search
           </button>
         </div>
