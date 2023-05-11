@@ -25,7 +25,7 @@ export default function ViewUser() {
   const [liked, setLiked] = useState(false);
   const [userInfo, setUserInfo] = useState({});
   const [admiredPlayers, setAdmiredPlayers] = useState(
-    <h4>No Admired Players</h4>
+    <h5>No Admired Players ☹</h5>
   );
 
   useEffect(() => {
@@ -74,7 +74,6 @@ export default function ViewUser() {
       updateUser(result._id, { likesSent: likesSentData });
     });
   }
-
   return (
     <Card className="m-3">
       <Card.Body>
@@ -87,11 +86,11 @@ export default function ViewUser() {
             }
           }}
         >
-          {liked ? "Like Already Sent" : "like"}
+          {liked ? "Liked Already" : "like"}
         </Button>
         <Card.Text>Favorite Team: {userInfo.favouriteTeam}</Card.Text>
         <Card.Text>From: {userInfo.location}</Card.Text>
-        <Card.Text>Age: {userInfo.age}</Card.Text>
+        <Card.Text> {userInfo.age}</Card.Text>
         <Card.Text>Admired Players:</Card.Text>
         {admiredPlayers}
       </Card.Body>

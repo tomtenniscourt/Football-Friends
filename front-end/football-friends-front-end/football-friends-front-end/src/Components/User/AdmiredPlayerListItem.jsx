@@ -17,7 +17,7 @@ import { Card } from 'react-bootstrap';
 import { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import ViewAdmiredPlayer from "./ViewAdmiredPlayer";
-import { Button } from "bootstrap";
+import { Button } from 'react-bootstrap';
 import { deleteAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
 
 export default function AdmiredPlayerListItem(props) {
@@ -37,7 +37,6 @@ export default function AdmiredPlayerListItem(props) {
 
   const itemToRender = (
     <Card className="mb-3" style={{ minWidth: "10rem" }}>
-      {/* <Card.Header as="h3">This is an admired Player List Item</Card.Header> */}
       <Card.Body>
         <Card.Title as="h4">Name: {playerInfo.name}</Card.Title>
         <Card.Text>Reason Admired: {playerInfo.reasonAdmired}</Card.Text>
@@ -45,16 +44,10 @@ export default function AdmiredPlayerListItem(props) {
     </Card>
   );
   
-
   function handleDelete(e) {
     props.handleDeleteAdmiredPlayer(e, playerInfo._id);
   }
-
-  //   const state = {
-  //     playerInfo: playerInfo,
-  //     test: testFunction,
-  //   };
-
+  
   return (
     <>
       {mine ? (
@@ -68,7 +61,7 @@ export default function AdmiredPlayerListItem(props) {
             {" "}
             <div>{itemToRender}</div>
           </Link>
-          <button onClick={handleDelete}>Delete</button>
+          <Button variant="danger"style={{ marginBottom: "30px" }} onClick={handleDelete}>Remove</Button>
         </>
       ) : (
         itemToRender
