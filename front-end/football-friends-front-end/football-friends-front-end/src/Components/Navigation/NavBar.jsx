@@ -41,6 +41,13 @@ export default function NavBar() {
               width: "auto",
               height: "auto",
               clipPath: "circle(38% at 50% 50%)",
+              transition: "transform 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.15) rotate(25deg)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1) rotate(0deg)";
             }}
           />
         </div>
