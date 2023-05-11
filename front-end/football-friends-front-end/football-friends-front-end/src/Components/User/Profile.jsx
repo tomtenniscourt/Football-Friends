@@ -143,14 +143,6 @@ function Profile() {
   return (
     <Container>
       <Row className="mt-4 card-body">
-        {/* <Col md={4}>
-          <Card>
-            <Card.Img variant="top" src={imageSrc} alt="Profile" />
-            <Card.Body>
-              <ProfilePictureUpload />
-            </Card.Body>
-          </Card>
-        </Col> */}
         <Col md={8}>
         <Card className="mb-4 card-user">
   <Card.Body>
