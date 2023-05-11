@@ -66,8 +66,56 @@ export default function Homepage() {
         <div className="row">
           <div className="col"></div>
           <div className="col">
+            <div className="newUsers">
+              <h2 className="text-center">New Football Friends</h2>
+            </div>
+          </div>
+          <div className="col">
+            <div className="userLikeThis">
+              <h2 className="text-center">Same Club Football Friends</h2>
+              <Form.Label>Football friends who support... </Form.Label>
+              <Form.Select onChange={handleClubChange} value={selectedClub}>
+                <option value="">Select a team</option>
+                <option value="Arsenal">Arsenal</option>
+                <option value="Aston Villa">Aston Villa</option>
+                <option value="Bournemouth">Bournemouth</option>
+                <option value="Brentford">Brentford</option>
+                <option value="Brighton & Hove Albion">Brighton</option>
+                <option value="Chelsea">Chelsea</option>
+                <option value="Crystal Palace">Crystal Palace</option>
+                <option value="Everton">Everton</option>
+                <option value="Leeds United">Leeds United</option>
+                <option value="Fulham">Fulham</option>
+                <option value="Leicester City">Leicester City</option>
+                <option value="Liverpool">Liverpool</option>
+                <option value="Manchester City">Manchester City</option>
+                <option value="Manchester United">Manchester United</option>
+                <option value="Newcastle United">Newcaste United</option>
+                <option value="Nottingham Forest">Nottingham Forest</option>
+                <option value="Southampton">Southampton</option>
+                <option value="Tottenham Hotspur">Tottenham Hotspurs</option>
+                <option value="West Ham United">Wet Ham United</option>
+                <option value="Wolves">Wolverhamton Wanderers</option>
+              </Form.Select>
+              <ul>
+                {clubUsers.map((user) => (
+                  <li key={user.id}>{user.profileName}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="col"></div>
+        </div>
+        <div className="row flex-grow-1">
+          <div className="col"></div>
+          <div className="col d-flex flex-column justify-content-center">
+            <div className="trendingUsers">
+              <h2 className="text-center">Trending Football Friends</h2>
+            </div>
+          </div>
+          <div className="col d-flex flex-column justify-content-center">
             <div className="localUsers">
-              <h2 className="text-center">Local Football Friends</h2>
+              <h2 className="text-center">National Football Friends</h2>
               <Form.Label>Find Football friends in...</Form.Label>
               <Form.Select
                 value={selectedLocation}
@@ -133,62 +181,11 @@ export default function Homepage() {
               </ul>
             </div>
           </div>
-          <div className="col">
-            <div className="userLikeThis">
-              <h2 className="text-center"> My Club Football Friends</h2>
-              <Form.Label>Football friends who support... </Form.Label>
-              <Form.Select onChange={handleClubChange} value={selectedClub}>
-                <option value="">Select a team</option>
-                <option value="Arsenal">Arsenal</option>
-                <option value="Aston Villa">Aston Villa</option>
-                <option value="Bournemouth">Bournemouth</option>
-                <option value="Brentford">Brentford</option>
-                <option value="Brighton & Hove Albion">Brighton</option>
-                <option value="Chelsea">Chelsea</option>
-                <option value="Crystal Palace">Crystal Palace</option>
-                <option value="Everton">Everton</option>
-                <option value="Leeds United">Leeds United</option>
-                <option value="Fulham">Fulham</option>
-                <option value="Leicester City">Leicester City</option>
-                <option value="Liverpool">Liverpool</option>
-                <option value="Manchester City">Manchester City</option>
-                <option value="Manchester United">Manchester United</option>
-                <option value="Newcastle United">Newcaste United</option>
-                <option value="Nottingham Forest">Nottingham Forest</option>
-                <option value="Southampton">Southampton</option>
-                <option value="Tottenham Hotspur">Tottenham Hotspurs</option>
-                <option value="West Ham United">Wet Ham United</option>
-                <option value="Wolves">Wolverhamton Wanderers</option>
-              </Form.Select>
-              <ul>
-                {clubUsers.map((user) => (
-                  <li key={user.id}>{user.profileName}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="col"></div>
-        </div>
-        <div className="row flex-grow-1">
-          <div className="col"></div>
-          <div className="col d-flex flex-column justify-content-center">
-            <div className="newUsers">
-              <h2 className="text-center">New Football Friends</h2>
-            </div>
-          </div>
-          <div className="col d-flex flex-column justify-content-center">
-            <br />
-
-            <div className="trendingUsers">
-              <h2 className="text-center">Trending Football Friends</h2>
-            </div>
-          </div>
           <div className="col"></div>
         </div>
       </div>
     </Container>
   );
-
 }
 
 // const test = getAllUsers()
