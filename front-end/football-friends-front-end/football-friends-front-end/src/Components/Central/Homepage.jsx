@@ -146,15 +146,24 @@ export default function Homepage() {
               </Form.Select>
               <ul className="list-unstyled mt-3">
                 {localUsers.map((user, index) => (
-                  <Link to="/ViewUser" state={{ id: user._id }} key={index}>
+                  <Link
+                    to="/ViewUser"
+                    state={{ id: user._id }}
+                    key={index}
+                    style={{ textDecoration: "none" }}
+                  >
                     <li
                       className={`mb-3 border p-3 rounded ${
                         index === 0 ? "mt-3" : ""
                       }`}
                     >
-                      <span className="fw-bold">{user.profileName}</span>
+                      <span className="fw-bold link-unstyled">
+                        {user.profileName}
+                      </span>
                       <br />
-                      {user.favouriteClub}
+                      {user.favouriteTeam}
+                      <br />
+                      Favourite Player: {user.playersAdmired[0].name}
                       <br />
                     </li>
                   </Link>
@@ -193,7 +202,12 @@ export default function Homepage() {
               </Form.Select>
               <ul className="list-unstyled mt-3">
                 {clubUsers.map((user, index) => (
-                  <Link to="/ViewUser" state={{ id: user._id }} key={index}>
+                  <Link
+                    to="/ViewUser"
+                    state={{ id: user._id }}
+                    key={index}
+                    style={{ textDecoration: "none" }}
+                  >
                     <li
                       className={`mb-3 border p-3 rounded ${
                         index === 0 ? "mt-3" : ""
@@ -201,7 +215,9 @@ export default function Homepage() {
                     >
                       <span className="fw-bold">{user.profileName}</span>
                       <br />
-                      {user.favouriteClub}
+                      {user.location}
+                      <br />
+                      Favourite Player: {user.playersAdmired[0].name}
                       <br />
                     </li>
                   </Link>
