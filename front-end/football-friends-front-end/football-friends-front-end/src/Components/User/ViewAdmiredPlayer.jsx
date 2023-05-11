@@ -11,8 +11,10 @@
 
 import { useState, useEffect } from "react";
 import { updateAdmiredPlayer } from "../../API/PlayersAdmiredApiCalls";
-import { Container, Row, Col } from 'react-bootstrap';
 import { useLocation } from "react-router-dom";
+import { Container, Card, Form, Button, Row, Col } from "react-bootstrap";
+import "../../Styling/styles.css";
+
 
 export default function ViewAdmiredPlayer(props) {
   const location = useLocation();
@@ -34,94 +36,85 @@ export default function ViewAdmiredPlayer(props) {
   }
 
   function handleEditSubmit(event) {
+    if(editing){
+      updateAdmiredPlayer(localStorage.getItem("userID"), player._id, player).then((result) =>
+        console.log(result)
+      );
+    }
     setEditing(!editing);
-    updateAdmiredPlayer(
-      localStorage.getItem("userID"),
-      player._id,
-      player
-    ).then((result) => console.log(result));
-    // handleEditAdmiredPlayer(event, playerInfo._id, player);
   }
 
   return (
-    <Container className="d-flex flex-column align-items-center mt-5">
-      <button
-        onClick={(event) =>
-          editing ? handleEditSubmit(event) : setEditing(!editing)
-        }
-      >
-        {editing ? "✅" : "Edit"}
-      </button>
-      <h1>Admired Player</h1>
-      {editing ? (
-        <>
-          <label>
-            Name:
-            <input
-              type="text"
-              value={player.name || ""}
-              onChange={handleChange}
-              required
-              name="name"
-              onKeyDown={(event) => {
-                if (event.key === "Enter") {
-                  handleEditSubmit(event);
-                }
-              }}
-            />
-          </label>
-          <label>
-            Age:
-            <input
-              type="number"
-              value={player.age || ""}
-              onChange={handleChange}
-              name="age"
-              onKeyDown={(event) => {
-                if (event.key === "Enter") {
-                  handleEditSubmit(event);
-                }
-              }}
-            />
-          </label>
-          <label>
-            Club:
-            <input
-              type="text"
-              value={player.club || ""}
-              onChange={handleChange}
-              name="club"
-              onKeyDown={(event) => {
-                if (event.key === "Enter") {
-                  handleEditSubmit(event);
-                }
-              }}
-            />
-          </label>
-          <label>
-            Reason Admired:
-            <input
-              type="text"
-              value={player.reasonAdmired || ""}
-              onChange={handleChange}
-              required
-              name="reasonAdmired"
-              onKeyDown={(event) => {
-                if (event.key === "Enter") {
-                  handleEditSubmit(event);
-                }
-              }}
-            />
-          </label>
-        </>
-      ) : (
-        <>
-          <h4>Name: {player.name}</h4>
-          <h4>Age: {player.age}</h4>
-          <h4>Club: {player.club}</h4>
-          <h4>Reason Admired: {player.reasonAdmired}</h4>
-        </>
-      )}
+    <Container className="d-flex flex-column align-items-center mt-5 card-addAdmired">
+      <Card className="p-4 w-50">
+        <h1 className="text-center mb-4">Admired Players</h1>
+        <Form>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm="3">
+              Name:
+            </Form.Label>
+            <Col sm="9">
+              <Form.Control
+                type="text"
+                value={player.name || ""}
+                onChange={handleChange}
+                required
+                name="name"
+                readOnly={!editing}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm="3">
+              Age:
+            </Form.Label>
+            <Col sm="9">
+              <Form.Control
+                type="number"
+                value={player.age || ""}
+                onChange={handleChange}
+                name="age"
+                readOnly={!editing}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm="3">
+              Club:
+            </Form.Label>
+            <Col sm="9">
+              <Form.Control
+                type="text"
+                value={player.club || ""}
+                onChange={handleChange}
+                name="club"
+                readOnly={!editing}
+              />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm="3">
+              Reason Admired:
+            </Form.Label>
+            <Col sm="9">
+              <Form.Control
+                type="text"
+                value={player.reasonAdmired || ""}
+                onChange={handleChange}
+                required
+                name="reasonAdmired"
+                readOnly={!editing}
+              />
+            </Col>
+          </Form.Group>
+        </Form>
+        <button
+          className={editing ? "btn btn-success" : "btn btn-dark"}
+          onClick={handleEditSubmit}
+        >
+          {editing ? "Save" : "Edit"}
+        </button>
+      </Card>
     </Container>
   );
 }

@@ -58,8 +58,11 @@ export default function Friends() {
           }}
         />
       </div>
-      <h2 className="text-center">Friends</h2>
-      <Row>{ourUsers}</Row>
+      
+      <h2 className="text-center" style={{ marginTop: "30px" }}>Friends</h2>
+      <Row>
+        {ourUsers}
+      </Row>
     </Container>
   );
 }

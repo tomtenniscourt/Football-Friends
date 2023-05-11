@@ -68,7 +68,7 @@ const [users, setUsers] = useState(seedUsers);
     } else {
       ourUsers = users.map((user, index) => {
         return (
-          <Col xs={12} sm={6} md={4} lg={3} key={user._id}>
+          <Col xs={12} sm={6} md={4} lg={3} className="p-4" key={user._id}>
             <UserThumbnail user={user} />
           </Col>
         );
@@ -106,26 +106,31 @@ return (
         }}
       />
     </div>
-    <h2>All Users</h2>
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-lg-6">
-          <div className="input-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search for users"
-              value={searchTerm}
-              onChange={handleInputChange}
-            />
+      <>
+        <h2 className="text-center" style={{ marginTop: "30px" }}>All Users</h2>
+        <Container className="mt-5">
+          <div className="d-flex justify-content-center">
+            <div className="col-lg-6">
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search for users"
+                  value={searchTerm}
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
           </div>
+        </Container>
+        <div className="d-flex flex-wrap justify-content-center">
+          {ourUsers}
         </div>
       </div>
     </div>
-    {ourUsers}
   </div>
+</>
 );
 
   }
 }
-

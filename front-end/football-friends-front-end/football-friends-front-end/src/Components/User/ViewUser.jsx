@@ -25,7 +25,7 @@ export default function ViewUser() {
   const [liked, setLiked] = useState(false);
   const [userInfo, setUserInfo] = useState({});
   const [admiredPlayers, setAdmiredPlayers] = useState(
-    <h4>No Admired Players</h4>
+    <h5>No Admired Players ☹</h5>
   );
 
   useEffect(() => {
@@ -41,8 +41,6 @@ export default function ViewUser() {
       }
     }
 
-   
-
     if (userInfo.playersAdmired && userInfo.playersAdmired.length > 0) {
       setAdmiredPlayers(
         userInfo.playersAdmired.map((player, index) => {
@@ -57,46 +55,45 @@ export default function ViewUser() {
       );
     }
     if (userInfo.likesReceived) {
-      setLiked(userInfo.likesReceived.includes(localStorage.getItem("userID")))
+      setLiked(userInfo.likesReceived.includes(localStorage.getItem("userID")));
     }
-
   }, [userInfo]);
   function handleClick(e) {
-    e.preventDefault()
-    const likesReceivedData = [...userInfo.likesReceived, localStorage.getItem("userID")]
-    updateUser(userInfo._id, {likesReceived: likesReceivedData })
-    .then((res) => setUserInfo(res))
-    .catch((err) => console.log(err))
+    e.preventDefault();
+    const likesReceivedData = [
+      ...userInfo.likesReceived,
+      localStorage.getItem("userID"),
+    ];
+    updateUser(userInfo._id, { likesReceived: likesReceivedData })
+      .then((res) => setUserInfo(res))
+      .catch((err) => console.log(err));
 
-getOneUser(localStorage.getItem("userID"))
-.then((result) => {
-  console.log(result.likesSent)
-  const likesSentData = [...result.likesSent, userInfo._id]
-  updateUser(result._id, {likesSent: likesSentData })
-
-})}
-
-
-
-return (
-  <Card className="m-3">
-    <Card.Body>
-      <Button
-        variant={liked ? "secondary" : "primary"}
-        onClick={(e) => {
-          if (!liked) {
-            handleClick(e);
-          }
-        }}
-      >
-        {liked ? "Like Already Sent" : "like"}
-      </Button>
-      <Card.Title className="mt-2">This is our view user page</Card.Title>
-      <Card.Text>Profile Name: {userInfo.profileName}</Card.Text>
-      <Card.Text>Email: {userInfo.email}</Card.Text>
-      <Card.Text>Admired Players:</Card.Text>
-      {admiredPlayers}
-    </Card.Body>
-  </Card>
-);
+    getOneUser(localStorage.getItem("userID")).then((result) => {
+      console.log(result.likesSent);
+      const likesSentData = [...result.likesSent, userInfo._id];
+      updateUser(result._id, { likesSent: likesSentData });
+    });
+  }
+  return (
+    <Card className="m-3">
+      <Card.Body>
+        <Card.Title>Say hi to {userInfo.profileName}</Card.Title>
+        <Button
+          variant={liked ? "secondary" : "primary"}
+          onClick={(e) => {
+            if (!liked) {
+              handleClick(e);
+            }
+          }}
+        >
+          {liked ? "Liked Already" : "like"}
+        </Button>
+        <Card.Text>Favorite Team: {userInfo.favouriteTeam}</Card.Text>
+        <Card.Text>From: {userInfo.location}</Card.Text>
+        <Card.Text> {userInfo.age}</Card.Text>
+        <Card.Text>Admired Players:</Card.Text>
+        {admiredPlayers}
+      </Card.Body>
+    </Card>
+  );
 }

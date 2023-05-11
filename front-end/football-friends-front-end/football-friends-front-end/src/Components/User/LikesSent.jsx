@@ -54,8 +54,11 @@ export default function LikesSent() {
           }}
         />
       </div>
-      <h2 className="text-center">Likes Sent</h2>
-      <Row>{ourUsers}</Row>
+      
+      <h2 className="text-center" style={{ marginTop: "30px" }}>Likes Sent</h2>
+      <Row>
+        {ourUsers}
+      </Row>
     </Container>
   );
 }

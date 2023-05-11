@@ -35,7 +35,7 @@ export default function Messages() {
           }}
         />
       </div>
-      <h1 className="text-center">Messages</h1>
-    </div>
+<h1 className="text-center" style={{ marginTop: "30px" }}>Messages</h1>;    </div>
   );
+
 }

@@ -54,8 +54,11 @@ export default function LikesReceived() {
           }}
         />
       </div>
-      <h2 className="text-center">Likes Received</h2>
-      <Row>{ourUsers}</Row>
+      
+      <h2 className="text-center" style={{ marginTop: "30px" }}>Likes Received</h2>
+      <Row>
+        {ourUsers}
+      </Row>
     </Container>
   );
 }
