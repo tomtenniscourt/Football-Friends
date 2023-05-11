@@ -38,6 +38,7 @@ export default function Homepage() {
 
   const handleClubChange = (e) => {
     const club = e.target.value;
+    console.log(e.target.value)
     setSelectedClub(club);
     if (club) {
       const filteredUsers = seedUsers.filter(
@@ -64,8 +65,8 @@ return (
     <br />
     <div className="homepage">
       <div className="row">
-        <div className="col"></div>
-        <div className="col">
+        <div className="col-md-2"></div>
+        <div className="col-md-4">
           <div className="localUsers">
             <h2 className="text-center">Local Football Friends</h2>
             <Form.Label className="text-center">
@@ -127,10 +128,15 @@ return (
               <option value="West Yorkshire">West Yorkshire</option>
               <option value="Wiltshire">Wiltshire</option>
             </Form.Select>
-            <ul>
-              {localUsers.map((user) => (
-                <li key={user.email}>
-                  {user.profileName}
+            <ul className="list-unstyled mt-3">
+              {localUsers.map((user, index) => (
+                <li
+                  key={user.email}
+                  className={`mb-3 border p-3 rounded ${
+                    index === 0 ? "mt-3" : ""
+                  }`}
+                >
+                  <span className="fw-bold">{user.profileName}</span>
                   <br />
                   {user.favouriteClub}
                   <br />
@@ -139,7 +145,7 @@ return (
             </ul>
           </div>
         </div>
-        <div className="col">
+        <div className="col-md-4">
           <div className="userLikeThis">
             <h2 className="text-center">My Club Football Friends</h2>
             <Form.Label className="text-center">
@@ -148,49 +154,59 @@ return (
             <Form.Select onChange={handleClubChange} value={selectedClub}>
               <option value="">Select a team</option>
               <option value="Arsenal">Arsenal</option>
-              <option value="AstonVilla">Aston Villa</option>
+              <option value="Aston Villa">Aston Villa</option>
               <option value="Bournemouth">Bournemouth</option>
               <option value="Brentford">Brentford</option>
-              <option value="Brighton&HoveAlbion">Brighton</option>
+              <option value="Brighton & Hove Albion">Brighton</option>
               <option value="Chelsea">Chelsea</option>
-              <option value="CrystalPalace">Crystal Palace</option>
+              <option value="Crystal Palace">Crystal Palace</option>
               <option value="Everton">Everton</option>
-              <option value="LeedsUnited">Leeds United</option>
+              <option value="Leeds United">Leeds United</option>
               <option value="Fulham">Fulham</option>
-              <option value="LeicesterCity">Leicester City</option>
+              <option value="Leicester City">Leicester City</option>
               <option value="Liverpool">Liverpool</option>
-              <option value="ManchesterCity">Manchester City</option>
-              <option value="ManchesterUnited">Manchester United</option>
-              <option value="NewcastleUnited">Newcaste United</option>
-              <option value="NottinghamForest">Nottingham Forest</option>
+              <option value="Manchester City">Manchester City</option>
+              <option value="Manchester United">Manchester United</option>
+              <option value="Newcastle United">Newcaste United</option>
+              <option value="Nottingham Forest">Nottingham Forest</option>
               <option value="Southampton">Southampton</option>
-              <option value="TottenhamHotspur">Tottenham Hotspurs</option>
-              <option value="WestHamUnited">Wet Ham United</option>
+              <option value="Tottenham Hotspur">Tottenham Hotspurs</option>
+              <option value="West Ham United">Wet Ham United</option>
               <option value="Wolves">Wolverhamton Wanderers</option>
             </Form.Select>
-            <ul>
-              {clubUsers.map((user) => (
-                <li key={user.id}>{user.profileName}</li>
+            <ul className="list-unstyled mt-3">
+              {clubUsers.map((user, index) => (
+                <li
+                  key={user.id}
+                  className={`mb-3 border p-3 rounded ${
+                    index === 0 ? "mt-3" : ""
+                  }`}
+                >
+                  <span className="fw-bold">{user.profileName}</span>
+                  <br />
+                  {user.favouriteClub}
+                  <br />
+                </li>
               ))}
             </ul>
           </div>
         </div>
-        <div className="col"></div>
+        <div className="col-md-2"></div>
       </div>
       <div className="row flex-grow-1">
-        <div className="col"></div>
-        <div className="col d-flex flex-column justify-content-center">
+        <div className="col-md-2"></div>
+        <div className="col-md-4 d-flex flex-column justify-content-center">
           <div className="newUsers">
             <h2 className="text-center">New Football Friends</h2>
           </div>
         </div>
-        <div className="col d-flex justify-content-center">
+        <div className="col-md-4 d-flex justify-content-center">
           <br />
           <div className="trendingUsers text-center">
             <h2>Trending Football Friends</h2>
           </div>
         </div>
-        <div className="col"></div>
+        <div className="col-md-2"></div>
       </div>
     </div>
   </Container>
