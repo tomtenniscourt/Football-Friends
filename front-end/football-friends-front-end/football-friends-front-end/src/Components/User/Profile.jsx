@@ -1,10 +1,11 @@
 // Profile.jsx
 
-import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
-import React, { useState, useEffect } from "react";
+import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import { useState, useEffect } from "react";
 import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload";
 import { getOneUser, updateUser } from "../../API/UserApiCalls";
 import AdmiredPlayerListItem from "./AdmiredPlayerListItem";
+
 import {
   deleteAdmiredPlayer,
   updateAdmiredPlayer,
@@ -24,7 +25,7 @@ function Profile() {
   // const [username, setUsername] = useState("johndoe");
   // const [name, setName] = useState("John Doe");
   // const [location, setLocation] = useState("New York");
-  const [selectedTeam, setSelectedTeam] = useState(userInfo.favoriteTeam);
+  const [selectedTeam, setSelectedTeam] = useState(userInfo.favouriteTeam);
   // const [favoriteTeam, setFavoriteTeam] = useState("");
   // const [favoriteTeamReason, setFavoriteTeamReason] = useState("");
   const [newAdmiredPlayer, setNewAdmiredPlayer] = useState({
@@ -159,7 +160,7 @@ function Profile() {
               >
                 {editing ? "✅" : "Edit Profile"}
               </Button>
-  
+
               {editing ? (
                 <>
                   <Form.Group>
@@ -202,13 +203,13 @@ function Profile() {
           </Card>
           <Card className="mb-4">
             <Card.Body>
-              <h3>Favorite Team: {userInfo.favoriteTeam}</h3>
+              <h3>Favorite Team: {userInfo.favouriteTeam || "not chosen"}</h3>
               {!changingFavTeam && (
                 <Button onClick={() => setChangingFavTeam(!changingFavTeam)}>
                   Change Favorite Team
                 </Button>
               )}
-  
+
               {changingFavTeam && (
                 <Form onSubmit={handleSave}>
                   <Form.Group>
@@ -219,106 +220,112 @@ function Profile() {
                       value={selectedTeam || ""}
                       onChange={handleTeamSelect}
                     >
-              <option value="">Choose a team</option>
-              <option value="Arsenal">Arsenal</option>
-              <option value="Aston Villa">Aston Villa</option>
-              <option value="Bournemouth">Bournemouth</option>
-              <option value="Brentford">Brentford</option>
-              <option value="Brighton & Hove Albion">
-                Brighton & Hove Albion
-              </option>
-              <option value="Chelsea">Chelsea</option>
-              <option value="Crystal Palace">Crystal Palace</option>
-              <option value="Everton">Everton</option>
-              <option value="Fulham">Fulham</option>
-              <option value="Leeds United">Leeds United</option>
-              <option value="Leicester City">Leicester City</option>
-              <option value="Liverpool">Liverpool</option>
-              <option value="Manchester City">Manchester City</option>
-              <option value="Manchester United">Manchester United</option>
-              <option value="Newcastle United">Newcastle United</option>
-              <option value="Nottingham Forest">Nottingham Forest</option>
-              <option value="Southampton">Southampton</option>
-              <option value="Tottenham Hotspur">Tottenham Hotspur</option>
-              <option value="Wolverhampton Wanderers">
-                Wolverhampton Wanderers
-              </option>
-              </Form.Control>
-                </Form.Group>
-                <Button type="submit">Save</Button>
+                      <option value="">Choose a team</option>
+                      <option value="Arsenal">Arsenal</option>
+                      <option value="Aston Villa">Aston Villa</option>
+                      <option value="Bournemouth">Bournemouth</option>
+                      <option value="Brentford">Brentford</option>
+                      <option value="Brighton & Hove Albion">
+                        Brighton & Hove Albion
+                      </option>
+                      <option value="Chelsea">Chelsea</option>
+                      <option value="Crystal Palace">Crystal Palace</option>
+                      <option value="Everton">Everton</option>
+                      <option value="Fulham">Fulham</option>
+                      <option value="Leeds United">Leeds United</option>
+                      <option value="Leicester City">Leicester City</option>
+                      <option value="Liverpool">Liverpool</option>
+                      <option value="Manchester City">Manchester City</option>
+                      <option value="Manchester United">
+                        Manchester United
+                      </option>
+                      <option value="Newcastle United">Newcastle United</option>
+                      <option value="Nottingham Forest">
+                        Nottingham Forest
+                      </option>
+                      <option value="Southampton">Southampton</option>
+                      <option value="Tottenham Hotspur">
+                        Tottenham Hotspur
+                      </option>
+                      <option value="Wolverhampton Wanderers">
+                        Wolverhampton Wanderers
+                      </option>
+                    </Form.Control>
+                  </Form.Group>
+                  <Button type="submit">Save</Button>
+                </Form>
+              )}
+            </Card.Body>
+          </Card>
+          <Card className="mb-4">
+            <Card.Body>
+              <h3>Add Admired Player</h3>
+              <Form onSubmit={addAdmiredPlayer}>
+                <label htmlFor="player-name">Player Name:</label>
+                <input
+                  type="text"
+                  id="player-name"
+                  value={newAdmiredPlayer.name}
+                  onChange={(e) =>
+                    setNewAdmiredPlayer({
+                      ...newAdmiredPlayer,
+                      name: e.target.value,
+                    })
+                  }
+                />
+
+                <label htmlFor="player-age">Player Age:</label>
+                <input
+                  type="text"
+                  id="player-age"
+                  value={newAdmiredPlayer.age}
+                  onChange={(e) =>
+                    setNewAdmiredPlayer({
+                      ...newAdmiredPlayer,
+                      age: e.target.value,
+                    })
+                  }
+                />
+
+                <label htmlFor="player-club">Player Club:</label>
+                <input
+                  type="text"
+                  id="player-club"
+                  value={newAdmiredPlayer.club}
+                  onChange={(e) =>
+                    setNewAdmiredPlayer({
+                      ...newAdmiredPlayer,
+                      club: e.target.value,
+                    })
+                  }
+                />
+
+                <label htmlFor="player-reason">Reason Admired:</label>
+                <input
+                  type="text"
+                  id="player-reason"
+                  value={newAdmiredPlayer.reasonAdmired}
+                  onChange={(e) =>
+                    setNewAdmiredPlayer({
+                      ...newAdmiredPlayer,
+                      reasonAdmired: e.target.value,
+                    })
+                  }
+                />
+
+                <button type="submit">Add Player</button>
               </Form>
-            )}
-          </Card.Body>
-        </Card>
-        <Card className="mb-4">
-          <Card.Body>
-          <h3>Add Admired Player</h3>
-          <Form onSubmit={addAdmiredPlayer}>
-            <label htmlFor="player-name">Player Name:</label>
-            <input
-              type="text"
-              id="player-name"
-              value={newAdmiredPlayer.name}
-              onChange={(e) =>
-                setNewAdmiredPlayer({
-                  ...newAdmiredPlayer,
-                  name: e.target.value,
-                })
-              }
-            />
-
-            <label htmlFor="player-age">Player Age:</label>
-            <input
-              type="text"
-              id="player-age"
-              value={newAdmiredPlayer.age}
-              onChange={(e) =>
-                setNewAdmiredPlayer({
-                  ...newAdmiredPlayer,
-                  age: e.target.value,
-                })
-              }
-            />
-
-            <label htmlFor="player-club">Player Club:</label>
-            <input
-              type="text"
-              id="player-club"
-              value={newAdmiredPlayer.club}
-              onChange={(e) =>
-                setNewAdmiredPlayer({
-                  ...newAdmiredPlayer,
-                  club: e.target.value,
-                })
-              }
-            />
-
-            <label htmlFor="player-reason">Reason Admired:</label>
-            <input
-              type="text"
-              id="player-reason"
-              value={newAdmiredPlayer.reasonAdmired}
-              onChange={(e) =>
-                setNewAdmiredPlayer({
-                  ...newAdmiredPlayer,
-                  reasonAdmired: e.target.value,
-                })
-              }
-            />
-
-            <button type="submit">Add Player</button>
-            </Form>
-          </Card.Body>
-        </Card>
-        <Card>
-          <Card.Body>
-            <h2>Admired Players</h2>
-            {admiredPlayers}
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
-  </Container>
-);}
+            </Card.Body>
+          </Card>
+          <Card>
+            <Card.Body>
+              <h2>Admired Players</h2>
+              {admiredPlayers}
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+  );
+}
 export default Profile;
-

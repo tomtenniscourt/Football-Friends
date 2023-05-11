@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { AuthContext } from "../../AuthContext/AuthContext";
+import { useContext } from "react";
 
 export default function NavBar() {
   /** Could do with some styling */
+  const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/">
+      <Navbar.Brand href={isLoggedIn ? "/" : "/login"}>
         👍Football Friends
         <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>
-        👍
+          👍
         </span>
       </Navbar.Brand>
 
@@ -20,28 +23,37 @@ export default function NavBar() {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav variant="tabs" className="me-auto">
-          <Nav.Link href="/profile">Profile</Nav.Link>
-          <Nav.Link href="/AllUsers">All Users</Nav.Link>
-          <Nav.Link href="/search">Search</Nav.Link>
-          <Nav.Link href="/LikesReceived">Likes Received</Nav.Link>
-          <Nav.Link href="/LikesSent">Likes Sent</Nav.Link>
-          <Nav.Link href="/friends">👍Friends
-          <span style={{display: "inline-block",transform: "scaleX(-1)" }} > 👍 </span></Nav.Link>
-          <Nav.Link href="/messages">Messages</Nav.Link>
+          <Nav.Link href={isLoggedIn ? "/profile" : "/login"}>Profile</Nav.Link>
+          <Nav.Link href={isLoggedIn ? "/AllUsers" : "/login"}>
+            All Users
+          </Nav.Link>
+          <Nav.Link href={isLoggedIn ? "/search" : "/login"}>Search</Nav.Link>
+          <Nav.Link href={isLoggedIn ? "/LikesReceived" : "/login"}>
+            Likes Received
+          </Nav.Link>
+          <Nav.Link href={isLoggedIn ? "/LikesSent" : "/login"}>
+            Likes Sent
+          </Nav.Link>
+          <Nav.Link href={isLoggedIn ? "/friends" : "/login"}>
+            👍Friends
+            <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>
+              {" "}
+              👍{" "}
+            </span>
+          </Nav.Link>
+          <Nav.Link href={isLoggedIn ? "/messages" : "/login"}>
+            Messages
+          </Nav.Link>
         </Nav>
 
         <Nav variant="tabs">
           <Nav.Link href="/login">Log In</Nav.Link>
           <Nav.Link href="/register">Register</Nav.Link>
         </Nav>
-
       </Navbar.Collapse>
     </Navbar>
   );
 }
-
-
-
 
 // <nav style={{ fontSize: "18px", display: "flex", justifyContent: "space-between" }}>
 // <div>
