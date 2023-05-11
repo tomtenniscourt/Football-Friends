@@ -72,9 +72,9 @@ const validateUser = async (req, res) => {
       if (!myUser) {
         res.json({ error: "No user found with that email" });
       }
-      if (!myUser.validPassword(req.body.password)) {
+      if (myUser && !myUser.validPassword(req.body.password)) {
         res.json({ error: "Password did not match" });
-      } else {
+      } else if (myUser && myUser.validPassword(req.body.password)) {
         // Build a JSON Web Token using the payload
         const payload = {
           id: myUser._id,
