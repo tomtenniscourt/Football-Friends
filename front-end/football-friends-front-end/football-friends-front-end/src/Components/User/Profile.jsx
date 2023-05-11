@@ -141,8 +141,41 @@ function Profile() {
   }
 
   return (
-    <Container>
-      <Row className="mt-4 card-body">
+    <Container fluid className="vh-100 d-flex flex-column">
+      <div
+        style={{
+          width: "330px",
+          height: "330px",
+          overflow: "hidden",
+          borderRadius: "50%",
+          backgroundColor: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "0 auto", // Center the div horizontally
+        }}
+      >
+        <img
+          src="https://i.imgur.com/AGm0oCR.png"
+          alt="your-image-description"
+          className="img-fluid"
+          style={{
+            width: "100%",
+            height: "auto",
+            clipPath: "circle(38% at 50% 50%)",
+          }}
+        />
+      </div>
+      <Row className="mt-4">
+        <Col md={4}>
+          <Card>
+            <Card.Img variant="top" src={imageSrc} alt="Profile" />
+            <Card.Body>
+              <ProfilePictureUpload />
+            </Card.Body>
+          </Card>
+        </Col>
+
         <Col md={8}>
         <Card className="mb-4 card-user">
   <Card.Body>

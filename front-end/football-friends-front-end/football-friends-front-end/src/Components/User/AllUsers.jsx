@@ -11,9 +11,11 @@ import { useState, useEffect } from "react";
 import UserThumbnail from "./UserThumbnail";
 import { getAllUsers } from "../../API/UserApiCalls";
 import { Container, Row, Col } from "react-bootstrap";
+import { seedUsers } from "../../seed";
+
 
 export default function AllUsers() {
-  const [users, setUsers] = useState([]);
+const [users, setUsers] = useState(seedUsers);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (event) => {
@@ -72,7 +74,38 @@ export default function AllUsers() {
         );
       });
     }
-    return (
+return (
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    }}
+  >
+    <div
+      style={{
+        width: "330px",
+        height: "330px",
+        overflow: "hidden",
+        borderRadius: "50%",
+        backgroundColor: "#fff",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        margin: "0 auto", // Center the div horizontally
+      }}
+    >
+      <img
+        src="https://i.imgur.com/AGm0oCR.png"
+        alt="your-image-description"
+        className="img-fluid"
+        style={{
+          width: "100%",
+          height: "auto",
+          clipPath: "circle(38% at 50% 50%)",
+        }}
+      />
+    </div>
       <>
         <h2 className="text-center" style={{ marginTop: "30px" }}>All Users</h2>
         <Container className="mt-5">
@@ -93,7 +126,11 @@ export default function AllUsers() {
         <div className="d-flex flex-wrap justify-content-center">
           {ourUsers}
         </div>
-      </>
-    );
+      </div>
+    </div>
+  </div>
+</>
+);
+
   }
 }

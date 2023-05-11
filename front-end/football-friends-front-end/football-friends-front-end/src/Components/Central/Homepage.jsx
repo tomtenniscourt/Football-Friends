@@ -55,12 +55,31 @@ export default function Homepage() {
 return (
   <Container fluid className="vh-100 d-flex flex-column">
     <br />
-    <h1 className="text-center">
-      👍🏻Football Friends
-      <span style={{ display: "inline-block", transform: "scaleX(-1)" }}>
-        👍🏻
-      </span>
-    </h1>
+    <div
+      style={{
+        width: "330px",
+        height: "330px",
+        overflow: "hidden",
+        borderRadius: "50%",
+        backgroundColor: "#fff",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        margin: "0 auto", // Center the div horizontally
+      }}
+    >
+      <img
+        src="https://i.imgur.com/AGm0oCR.png"
+        alt="your-image-description"
+        className="img-fluid"
+        style={{
+          width: "100%",
+          height: "auto",
+          clipPath: "circle(38% at 50% 50%)",
+        }}
+      />
+    </div>
+
     <br />
     <br />
     <div className="homepage">
@@ -197,13 +216,15 @@ return (
         <div className="col-md-2"></div>
         <div className="col-md-4 d-flex flex-column justify-content-center">
           <div className="newUsers">
-            <h2 className="text-center">New Football Friends</h2>
+
+
+          <h2 className="text-center"></h2>
           </div>
         </div>
         <div className="col-md-4 d-flex justify-content-center">
           <br />
           <div className="trendingUsers text-center">
-            <h2>Trending Football Friends</h2>
+            <h2></h2>
           </div>
         </div>
         <div className="col-md-2"></div>
