@@ -66,7 +66,7 @@ export default function AllUsers() {
     } else {
       ourUsers = users.map((user, index) => {
         return (
-          <Col xs={12} sm={6} md={4} lg={3} key={user._id}>
+          <Col xs={12} sm={6} md={4} lg={3} className="p-4" key={user._id}>
             <UserThumbnail user={user} />
           </Col>
         );
@@ -74,9 +74,9 @@ export default function AllUsers() {
     }
     return (
       <>
-        <h2>All Users</h2>
-        <div className="container mt-5">
-          <div className="row justify-content-center">
+        <h2 className="text-center" style={{ marginTop: "30px" }}>All Users</h2>
+        <Container className="mt-5">
+          <div className="d-flex justify-content-center">
             <div className="col-lg-6">
               <div className="input-group">
                 <input
@@ -89,10 +89,11 @@ export default function AllUsers() {
               </div>
             </div>
           </div>
+        </Container>
+        <div className="d-flex flex-wrap justify-content-center">
+          {ourUsers}
         </div>
-        {ourUsers}
       </>
     );
   }
 }
-

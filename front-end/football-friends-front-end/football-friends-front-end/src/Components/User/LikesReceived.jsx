@@ -30,7 +30,7 @@ export default function LikesReceived() {
 
   return (
     <Container>
-      <h2 className="text-center">Likes Received</h2>
+      <h2 className="text-center" style={{ marginTop: "30px" }}>Likes Received</h2>
       <Row>
         {ourUsers}
       </Row>

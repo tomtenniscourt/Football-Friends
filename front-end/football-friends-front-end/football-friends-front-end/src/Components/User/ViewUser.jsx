@@ -25,7 +25,7 @@ export default function ViewUser() {
   const [liked, setLiked] = useState(false);
   const [userInfo, setUserInfo] = useState({});
   const [admiredPlayers, setAdmiredPlayers] = useState(
-    <h4>No Admired Players</h4>
+    <h5>No Admired Players ☹</h5>
   );
 
   useEffect(() => {
@@ -89,11 +89,11 @@ return (
           }
         }}
       >
-        {liked ? "Like Already Sent" : "like"}
+        {liked ? "Liked already" : "like"}
       </Button>
-      <Card.Title className="mt-2">This is our view user page</Card.Title>
-      <Card.Text>Profile Name: {userInfo.profileName}</Card.Text>
-      <Card.Text>Email: {userInfo.email}</Card.Text>
+      {/* <Card.Title className="mt-2">This is our view user page</Card.Title> */}
+      <Card.Text>{userInfo.profileName}</Card.Text>
+      <Card.Text>{userInfo.email}</Card.Text>
       <Card.Text>Admired Players:</Card.Text>
       {admiredPlayers}
     </Card.Body>

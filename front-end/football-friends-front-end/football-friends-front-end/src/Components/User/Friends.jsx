@@ -34,7 +34,7 @@ export default function Friends() {
 
   return (
     <Container>
-      <h2 className="text-center">Friends</h2>
+      <h2 className="text-center" style={{ marginTop: "30px" }}>Friends</h2>
       <Row>
         {ourUsers}
       </Row>

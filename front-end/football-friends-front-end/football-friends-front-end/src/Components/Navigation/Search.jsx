@@ -64,7 +64,7 @@ return (
             onChange={handleInputChange}
           />
           <button
-            className="btn btn-primary"
+            className="btn btn-dark"
             type="button"
             onClick={handleSearch}
           >

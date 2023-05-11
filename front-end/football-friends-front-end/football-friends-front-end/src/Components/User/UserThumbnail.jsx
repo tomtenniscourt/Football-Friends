@@ -22,7 +22,7 @@ export default function UserThumbnail(props) {
           className="text-decoration-none text-dark"
           state={{ id: user._id }}
         >
-          <Card.Title>This is a user thumbnail</Card.Title>
+          {/* <Card.Title>This is a user thumbnail</Card.Title> */}
           <Card.Subtitle className="mb-2">{user.profileName}</Card.Subtitle>
           <Card.Text>{user.email}</Card.Text>
         </Link>
