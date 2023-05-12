@@ -16,17 +16,14 @@ function Profile() {
   const [admiredPlayers, setAdmiredPlayers] = useState(
     <h4>No Admired Players</h4>
   );
+
   const [imageSrc, setImageSrc] = useState(
     "https://example.com/profile-picture.jpg"
   );
+
   const [changingFavTeam, setChangingFavTeam] = useState(false);
   const [editing, setEditing] = useState(false);
-  // const [username, setUsername] = useState("johndoe");
-  // const [name, setName] = useState("John Doe");
-  // const [location, setLocation] = useState("New York");
   const [selectedTeam, setSelectedTeam] = useState(userInfo.favouriteTeam);
-  // const [favoriteTeam, setFavoriteTeam] = useState("");
-  // const [favoriteTeamReason, setFavoriteTeamReason] = useState("");
   const [newAdmiredPlayer, setNewAdmiredPlayer] = useState({
     name: "",
     age: "",
@@ -50,13 +47,6 @@ function Profile() {
   function handleDeleteAdmiredPlayer(e, playerID) {
     e.preventDefault();
     deleteAdmiredPlayer(localStorage.getItem("userID"), playerID)
-      // .then(() =>
-      //   getOneUser(localStorage.getItem("userID")).then((output) => {
-      //     console.log("User from Backend: ******", output);
-
-      //     setUserInfo(output);
-      //   })
-      // );
       .then(() =>
         userInfo.playersAdmired.filter((player) => player._id !== playerID)
       )
@@ -78,15 +68,12 @@ function Profile() {
       setUserInfo(output)
     );
   }, []);
+
   useEffect(() => {
-    // console.log("userInfo updated", userInfo);
     if (userInfo.playersAdmired) {
-      // console.log("condition 1 true");
       if (userInfo.playersAdmired.length > 0) {
-        // console.log("condition 2 true");
       }
     }
-
     if (userInfo.playersAdmired && userInfo.playersAdmired.length > 0) {
       setAdmiredPlayers(
         userInfo.playersAdmired.map((player, index) => {
@@ -110,6 +97,7 @@ function Profile() {
     setSelectedTeam(event.target.value);
     setUserInfo({ ...userInfo, favoriteTeam: event.target.value });
   };
+
   const handleSave = (event) => {
     event.preventDefault();
     setChangingFavTeam(!changingFavTeam);
@@ -118,10 +106,6 @@ function Profile() {
     );
     setSelectedTeam("");
   };
-
-  // const handleReasonChange = (event) => {
-  //   setFavoriteTeamReason(event.target.value);
-  // };
 
   function handleEditSubmit(event) {
     setEditing(!editing);
@@ -170,15 +154,6 @@ function Profile() {
         </div>
       </div>
       <Row className="mt-3 justify-content-center">
-        {/* <Col md={4}>
-          <Card>
-            <Card.Img variant="top" src={imageSrc} alt="Profile" />
-            <Card.Body>
-              <ProfilePictureUpload />
-            </Card.Body>
-          </Card>
-        </Col> */}
-
         <Col md={8}>
         <Card className="mb-3 card-user shadow">
   <Card.Body>
