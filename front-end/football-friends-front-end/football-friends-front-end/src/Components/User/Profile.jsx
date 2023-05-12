@@ -122,7 +122,7 @@ function Profile() {
     });
   }
 
-  return (
+return (
     <Container fluid className="d-flex flex-column">
       <br />
       <div

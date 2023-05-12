@@ -70,15 +70,15 @@ export default function Register() {
     <Container fluid className="vh-100 d-flex flex-column">
       <div
         style={{
-          width: "330px",
-          height: "330px",
+          width: "350px",
+          height: "350px",
           overflow: "hidden",
           borderRadius: "50%",
-          backgroundColor: "#fff",
+          backgroundColor: "transparent",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          margin: "0 auto",
+          margin: "0 auto", 
         }}
       >
         <img

@@ -11,11 +11,9 @@ import { useState, useEffect } from "react";
 import UserThumbnail from "./UserThumbnail";
 import { getAllUsers } from "../../API/UserApiCalls";
 import { Container, Row, Col } from "react-bootstrap";
-import { seedUsers } from "../../seed";
-
 
 export default function AllUsers() {
-const [users, setUsers] = useState(seedUsers);
+  const [users, setUsers] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (event) => {
@@ -74,6 +72,7 @@ const [users, setUsers] = useState(seedUsers);
         );
       });
     }
+
 return (
   <div
     style={{
@@ -84,15 +83,15 @@ return (
   >
     <div
       style={{
-        width: "330px",
-        height: "330px",
+        width: "350px",
+        height: "350px",
         overflow: "hidden",
         borderRadius: "50%",
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        margin: "0 auto", // Center the div horizontally
+        margin: "0 auto",
       }}
     >
       <img
@@ -122,12 +121,11 @@ return (
               </div>
             </div>
           </div>
-        </Container>
-        <div className="d-flex flex-wrap justify-content-center">
-          {ourUsers}
         </div>
-      </>
-    </div>
-    );
+      </Container>
+      <div className="d-flex flex-wrap justify-content-center">{ourUsers}</div>
+    </>
+  </div>
+);
   }
 }

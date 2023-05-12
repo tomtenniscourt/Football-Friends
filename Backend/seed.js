@@ -2,19 +2,19 @@ const admiredPlayers = [
   {
     name: "David Beckham",
     age: 45,
-    club: "Retired",
+    Team: "Retired",
     reasonAdmired: "England Legend",
   },
   {
     name: "John Terry",
     age: 36,
-    club: "Retired",
+    Team: "Retired",
     reasonAdmired: "Top Defender",
   },
   {
     name: "Peter Crouch",
     age: 39,
-    club: "Retired",
+    Team: "Retired",
     reasonAdmired: "Great dance moves",
   },
 ];
@@ -23,7 +23,7 @@ const admiredPlayers1 = [
   {
     name: "Harry Kane",
     age: 29,
-    club: "Tottenham Hotspur",
+    Team: "Tottenham Hotspur",
     reasonAdmired: "England Legend",
   },
 ];
@@ -32,7 +32,7 @@ const admiredPlayers2 = [
   {
     name: "Kevin De Bruyne",
     age: 29,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Creative Genius",
   },
 ];
@@ -41,7 +41,7 @@ const admiredPlayers3 = [
   {
     name: "Mohamed Salah",
     age: 28,
-    club: "Liverpool",
+    Team: "Liverpool",
     reasonAdmired: "Prolific Scorer",
   },
 ];
@@ -50,7 +50,7 @@ const admiredPlayers4 = [
   {
     name: "Bruno Fernandes",
     age: 27,
-    club: "Manchester United",
+    Team: "Manchester United",
     reasonAdmired: "Midfield Maestro",
   },
 ];
@@ -59,7 +59,7 @@ const admiredPlayers5 = [
   {
     name: "Son Heung-min",
     age: 29,
-    club: "Tottenham Hotspur",
+    Team: "Tottenham Hotspur",
     reasonAdmired: "Versatile Forward",
   },
 ];
@@ -68,7 +68,7 @@ const admiredPlayers6 = [
   {
     name: "Sadio Mane",
     age: 29,
-    club: "Liverpool",
+    Team: "Liverpool",
     reasonAdmired: "Speedy Winger",
   },
 ];
@@ -77,7 +77,7 @@ const admiredPlayers7 = [
   {
     name: "Jack Grealish",
     age: 25,
-    club: "Aston Villa",
+    Team: "Aston Villa",
     reasonAdmired: "Nice Legs",
   },
 ];
@@ -86,7 +86,7 @@ const admiredPlayers8 = [
   {
     name: "Raheem Sterling",
     age: 26,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Electric Pace",
   },
 ];
@@ -95,7 +95,7 @@ const admiredPlayers9 = [
   {
     name: "Marcus Rashford",
     age: 23,
-    club: "Manchester United",
+    Team: "Manchester United",
     reasonAdmired: "Social Justice Advocate",
   },
 ];
@@ -104,7 +104,7 @@ const admiredPlayers10 = [
   {
     name: "Jamie Vardy",
     age: 34,
-    club: "Leicester City",
+    Team: "Leicester City",
     reasonAdmired: "Late Bloomer",
   },
 ];
@@ -113,7 +113,7 @@ const admiredPlayers11 = [
   {
     name: "Phil Foden",
     age: 21,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Prodigious Talent",
   },
 ];
@@ -122,7 +122,7 @@ const admiredPlayers12 = [
   {
     name: "Trent Alexander-Arnold",
     age: 22,
-    club: "Liverpool",
+    Team: "Liverpool",
     reasonAdmired: "World-Class Right-Back",
   },
 ];
@@ -131,7 +131,7 @@ const admiredPlayers13 = [
   {
     name: "N'Golo Kante",
     age: 30,
-    club: "Chelsea",
+    Team: "Chelsea",
     reasonAdmired: "The Engine of Chelsea",
   },
 ];
@@ -140,7 +140,7 @@ const admiredPlayers14 = [
   {
     name: "Riyad Mahrez",
     age: 30,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Magical Algerian",
   },
 ];
@@ -149,7 +149,7 @@ const admiredPlayers15 = [
   {
     name: "Virgil van Dijk",
     age: 29,
-    club: "Liverpool",
+    Team: "Liverpool",
     reasonAdmired: "Dominant Center-Back",
   },
 ];
@@ -158,7 +158,7 @@ const admiredPlayers16 = [
   {
     name: "Pierre-Emerick Aubameyang",
     age: 31,
-    club: "Chelsea",
+    Team: "Chelsea",
     reasonAdmired: "He screwed over Arsenal lol",
   },
 ];
@@ -167,7 +167,7 @@ const admiredPlayers17 = [
   {
     name: "Ruben Dias",
     age: 24,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Rock Solid Center-Back",
   },
 ];
@@ -176,7 +176,7 @@ const admiredPlayers18 = [
   {
     name: "Wilfried Zaha",
     age: 28,
-    club: "Crystal Palace",
+    Team: "Crystal Palace",
     reasonAdmired: "Trickster and Dribbler",
   },
 ];
@@ -185,7 +185,7 @@ const admiredPlayers19 = [
   {
     name: "Mason Mount",
     age: 22,
-    club: "Chelsea",
+    Team: "Chelsea",
     reasonAdmired: "Versatile Midfielder",
   },
 ];
@@ -194,7 +194,7 @@ const admiredPlayers20 = [
   {
     name: "Bukayo Saka",
     age: 19,
-    club: "Arsenal",
+    Team: "Arsenal",
     reasonAdmired: "Exciting Young Talent",
   },
 ];
@@ -203,7 +203,7 @@ const admiredPlayers21 = [
   {
     name: "Harry Kane",
     age: 29,
-    club: "Tottenham Hotspur",
+    Team: "Tottenham Hotspur",
     reasonAdmired: "Funny nose",
   },
 ];
@@ -212,7 +212,7 @@ const admiredPlayers22 = [
   {
     name: "Kevin De Bruyne",
     age: 29,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Looks like Prince Harry",
   },
 ];
@@ -221,7 +221,7 @@ const admiredPlayers23 = [
   {
     name: "Mohamed Salah",
     age: 28,
-    club: "Liverpool",
+    Team: "Liverpool",
     reasonAdmired: "Meh he'll do",
   },
 ];
@@ -230,7 +230,7 @@ const admiredPlayers24 = [
   {
     name: "Bruno Fernandes",
     age: 27,
-    club: "Manchester United",
+    Team: "Manchester United",
     reasonAdmired: "Loves the chat",
   },
 ];
@@ -239,7 +239,7 @@ const admiredPlayers25 = [
   {
     name: "Son Heung-min",
     age: 29,
-    club: "Tottenham Hotspur",
+    Team: "Tottenham Hotspur",
     reasonAdmired: "He's fit",
   },
 ];
@@ -248,7 +248,7 @@ const admiredPlayers26 = [
   {
     name: "Sadio Mane",
     age: 29,
-    club: "Liverpool",
+    Team: "Liverpool",
     reasonAdmired: "Scores good goals",
   },
 ];
@@ -257,7 +257,7 @@ const admiredPlayers27 = [
   {
     name: "Jack Grealish",
     age: 25,
-    club: "Aston Villa",
+    Team: "Aston Villa",
     reasonAdmired: "Great banter",
   },
 ];
@@ -266,7 +266,7 @@ const admiredPlayers28 = [
   {
     name: "Raheem Sterling",
     age: 26,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Good speed",
   },
 ];
@@ -275,7 +275,7 @@ const admiredPlayers29 = [
   {
     name: "Marcus Rashford",
     age: 23,
-    club: "Manchester United",
+    Team: "Manchester United",
     reasonAdmired: "Seems like a nice guy",
   },
 ];
@@ -284,7 +284,7 @@ const admiredPlayers30 = [
   {
     name: "Jamie Vardy",
     age: 34,
-    club: "Leicester City",
+    Team: "Leicester City",
     reasonAdmired: "Wagatha Christie",
   },
 ];
@@ -293,7 +293,7 @@ const admiredPlayers31 = [
   {
     name: "Phil Foden",
     age: 21,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Nippy and intelligent",
   },
 ];
@@ -302,7 +302,7 @@ const admiredPlayers32 = [
   {
     name: "Trent Alexander-Arnold",
     age: 22,
-    club: "Liverpool",
+    Team: "Liverpool",
     reasonAdmired: "Great goal vs Barcalona",
   },
 ];
@@ -311,7 +311,7 @@ const admiredPlayers33 = [
   {
     name: "N'Golo Kante",
     age: 30,
-    club: "Chelsea",
+    Team: "Chelsea",
     reasonAdmired: "Utter LAD",
   },
 ];
@@ -320,7 +320,7 @@ const admiredPlayers34 = [
   {
     name: "Riyad Mahrez",
     age: 30,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Was great at Leicester",
   },
 ];
@@ -329,7 +329,7 @@ const admiredPlayers35 = [
   {
     name: "Virgil van Dijk",
     age: 29,
-    club: "Liverpool",
+    Team: "Liverpool",
     reasonAdmired: "Great defender",
   },
 ];
@@ -338,7 +338,7 @@ const admiredPlayers36 = [
   {
     name: "Pierre-Emerick Aubameyang",
     age: 31,
-    club: "Chelsea",
+    Team: "Chelsea",
     reasonAdmired: "He screwed over Arsenal lol",
   },
 ];
@@ -347,7 +347,7 @@ const admiredPlayers37 = [
   {
     name: "Ruben Dias",
     age: 24,
-    club: "Manchester City",
+    Team: "Manchester City",
     reasonAdmired: "Great player all round",
   },
 ];
@@ -356,7 +356,7 @@ const admiredPlayers38 = [
   {
     name: "Wilfried Zaha",
     age: 28,
-    club: "Crystal Palace",
+    Team: "Crystal Palace",
     reasonAdmired: "Good pace",
   },
 ];
@@ -365,7 +365,7 @@ const admiredPlayers39 = [
   {
     name: "Mason Mount",
     age: 22,
-    club: "Chelsea",
+    Team: "Chelsea",
     reasonAdmired: "Not a flop",
   },
 ];
@@ -374,7 +374,7 @@ const admiredPlayers40 = [
   {
     name: "Bukayo Saka",
     age: 19,
-    club: "Arsenal",
+    Team: "Arsenal",
     reasonAdmired: "Getting better at taking penalties",
   },
 ];
@@ -386,7 +386,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers6,
     location: "London",
     age: 29,
-    favouriteClub: "Manchester City",
+    favouriteTeam: "Manchester City",
   },
   {
     profileName: "JasmineRocks",
@@ -394,7 +394,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers1,
     location: "Somerset",
     age: 27,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "JellyFish123",
@@ -402,7 +402,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers3,
     location: "Lincolnshire",
     age: 31,
-    favouriteClub: "Tottenham Hotspur",
+    favouriteTeam: "Tottenham Hotspur",
   },
   {
     profileName: "LionQueen82",
@@ -410,7 +410,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers5,
     location: "Berkshire",
     age: 39,
-    favouriteClub: "Arsenal",
+    favouriteTeam: "Arsenal",
   },
   {
     profileName: "FalconFirebird",
@@ -418,7 +418,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers7,
     location: "Cheshire",
     age: 25,
-    favouriteClub: "Leicester City",
+    favouriteTeam: "Leicester City",
   },
   {
     profileName: "GreenGoblin97",
@@ -426,7 +426,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers9,
     location: "Hampshire",
     age: 24,
-    favouriteClub: "Manchester United",
+    favouriteTeam: "Manchester United",
   },
   {
     profileName: "RedDevilFan_",
@@ -434,7 +434,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers31,
     location: "Nottinghamshire",
     age: 28,
-    favouriteClub: "Manchester United",
+    favouriteTeam: "Manchester United",
   },
   {
     profileName: "TigerTamer123",
@@ -442,7 +442,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers13,
     location: "Durham",
     age: 33,
-    favouriteClub: "Everton",
+    favouriteTeam: "Everton",
   },
   {
     profileName: "BlackCatLady",
@@ -450,7 +450,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers29,
     location: "Tyne and Wear",
     age: 36,
-    favouriteClub: "Sunderland",
+    favouriteTeam: "Sunderland",
   },
   {
     profileName: "WiseOwl55",
@@ -458,7 +458,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers4,
     location: "West Sussex",
     age: 42,
-    favouriteClub: "Brighton & Hove Albion",
+    favouriteTeam: "Brighton & Hove Albion",
   },
   {
     profileName: "PurplePenguin7",
@@ -466,7 +466,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers6,
     location: "Kent",
     age: 29,
-    favouriteClub: "Crystal Palace",
+    favouriteTeam: "Crystal Palace",
   },
   {
     profileName: "BlueJay85",
@@ -474,7 +474,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers8,
     location: "Essex",
     age: 26,
-    favouriteClub: "Chelsea",
+    favouriteTeam: "Chelsea",
   },
   {
     profileName: "Goldfish101",
@@ -482,7 +482,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers10,
     location: "Cumbria",
     age: 30,
-    favouriteClub: "Newcastle United",
+    favouriteTeam: "Newcastle United",
   },
   {
     profileName: "RainbowButterfly",
@@ -490,7 +490,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers22,
     location: "Gloucestershire",
     age: 35,
-    favouriteClub: "West Ham United",
+    favouriteTeam: "West Ham United",
   },
   {
     profileName: "JohnDoe99",
@@ -498,7 +498,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers14,
     location: "Cambridgeshire",
     age: 26,
-    favouriteClub: "Arsenal",
+    favouriteTeam: "Arsenal",
   },
   {
     profileName: "SamanthaJ",
@@ -506,7 +506,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers16,
     location: "Devon",
     age: 31,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "BobbyTheGreat",
@@ -514,7 +514,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers18,
     location: "Essex",
     age: 24,
-    favouriteClub: "Manchester United",
+    favouriteTeam: "Manchester United",
   },
   {
     profileName: "TommyBoy7",
@@ -522,7 +522,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers20,
     location: "Norfolk",
     age: 29,
-    favouriteClub: "Leeds United",
+    favouriteTeam: "Leeds United",
   },
   {
     profileName: "JackieLovesFootball",
@@ -530,7 +530,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers5,
     location: "Somerset",
     age: 32,
-    favouriteClub: "Everton",
+    favouriteTeam: "Everton",
   },
   {
     profileName: "AlexSoccer",
@@ -538,7 +538,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers9,
     location: "Wiltshire",
     age: 28,
-    favouriteClub: "Tottenham Hotspur",
+    favouriteTeam: "Tottenham Hotspur",
   },
   {
     profileName: "LucyTheFan",
@@ -546,7 +546,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers3,
     location: "Suffolk",
     age: 27,
-    favouriteClub: "Chelsea",
+    favouriteTeam: "Chelsea",
   },
   {
     profileName: "JamesTheSupporter",
@@ -554,7 +554,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers13,
     location: "Lincolnshire",
     age: 30,
-    favouriteClub: "Leicester City",
+    favouriteTeam: "Leicester City",
   },
   {
     profileName: "MaggieTheFootballer",
@@ -562,7 +562,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers20,
     location: "Kent",
     age: 25,
-    favouriteClub: "West Ham United",
+    favouriteTeam: "West Ham United",
   },
   {
     profileName: "SteveRed",
@@ -570,7 +570,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers2,
     location: "Cornwall",
     age: 33,
-    favouriteClub: "Manchester City",
+    favouriteTeam: "Manchester City",
   },
   {
     profileName: "SoccerChamp99",
@@ -578,7 +578,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers6,
     location: "Hampshire",
     age: 27,
-    favouriteClub: "Chelsea",
+    favouriteTeam: "Chelsea",
   },
   {
     profileName: "RedDevilFan7",
@@ -586,7 +586,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers9,
     location: "Essex",
     age: 33,
-    favouriteClub: "Manchester United",
+    favouriteTeam: "Manchester United",
   },
   {
     profileName: "Lionel10GOAT",
@@ -594,7 +594,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers9,
     location: "Kent",
     age: 25,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "TheArsenalFan",
@@ -602,7 +602,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers11,
     location: "Surrey",
     age: 31,
-    favouriteClub: "Arsenal",
+    favouriteTeam: "Arsenal",
   },
   {
     profileName: "ManCityFan_84",
@@ -610,7 +610,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers32,
     location: "Devon",
     age: 29,
-    favouriteClub: "Manchester City",
+    favouriteTeam: "Manchester City",
   },
   {
     profileName: "JuveFanatic_10",
@@ -618,7 +618,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers13,
     location: "Buckinghamshire",
     age: 26,
-    favouriteClub: "Leeds United",
+    favouriteTeam: "Leeds United",
   },
   {
     profileName: "TheSpursFan",
@@ -626,7 +626,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers16,
     location: "Cornwall",
     age: 28,
-    favouriteClub: "Tottenham Hotspur",
+    favouriteTeam: "Tottenham Hotspur",
   },
   {
     profileName: "RedsForever8",
@@ -634,7 +634,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers3,
     location: "West Sussex",
     age: 30,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "BlueMoonRising11",
@@ -642,7 +642,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers34,
     location: "Gloucestershire",
     age: 27,
-    favouriteClub: "Manchester City",
+    favouriteTeam: "Manchester City",
   },
   {
     profileName: "ChelseaChick22",
@@ -650,7 +650,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers28,
     location: "Norfolk",
     age: 32,
-    favouriteClub: "Chelsea",
+    favouriteTeam: "Chelsea",
   },
   {
     profileName: "FootballFanatic123",
@@ -658,7 +658,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers19,
     location: "Bristol",
     age: 27,
-    favouriteClub: "Arsenal",
+    favouriteTeam: "Arsenal",
   },
   {
     profileName: "RedDevil4Ever",
@@ -666,7 +666,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers18,
     location: "Surrey",
     age: 33,
-    favouriteClub: "Manchester United",
+    favouriteTeam: "Manchester United",
   },
   {
     profileName: "KopiteLFC",
@@ -674,7 +674,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers17,
     location: "Lancashire",
     age: 25,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "BluesForever",
@@ -682,7 +682,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers16,
     location: "West Midlands",
     age: 31,
-    favouriteClub: "Chelsea",
+    favouriteTeam: "Chelsea",
   },
   {
     profileName: "ToonArmyNUFC",
@@ -690,7 +690,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers15,
     location: "Tyne and Wear",
     age: 28,
-    favouriteClub: "Newcastle United",
+    favouriteTeam: "Newcastle United",
   },
   {
     profileName: "GunnersGooner",
@@ -698,7 +698,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers14,
     location: "Hampshire",
     age: 29,
-    favouriteClub: "Arsenal",
+    favouriteTeam: "Arsenal",
   },
   {
     profileName: "SpursTottenham",
@@ -706,7 +706,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers13,
     location: "Essex",
     age: 26,
-    favouriteClub: "Tottenham Hotspur",
+    favouriteTeam: "Tottenham Hotspur",
   },
   {
     profileName: "TheHammersWHU",
@@ -714,7 +714,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers12,
     location: "Greater London",
     age: 30,
-    favouriteClub: "West Ham United",
+    favouriteTeam: "West Ham United",
   },
   {
     profileName: "KingKenny7",
@@ -722,7 +722,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers11,
     location: "Merseyside",
     age: 32,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "BlueMoonMCFC",
@@ -730,7 +730,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers30,
     location: "Greater Manchester",
     age: 27,
-    favouriteClub: "Manchester City",
+    favouriteTeam: "Manchester City",
   },
   {
     profileName: "TheRedDevil7",
@@ -738,7 +738,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers29,
     location: "West Midlands",
     age: 27,
-    favouriteClub: "Manchester United",
+    favouriteTeam: "Manchester United",
   },
   {
     profileName: "TheGoldenSpur",
@@ -746,7 +746,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers1,
     location: "Bristol",
     age: 32,
-    favouriteClub: "Tottenham Hotspur",
+    favouriteTeam: "Tottenham Hotspur",
   },
   {
     profileName: "TheGunnersNinja",
@@ -754,7 +754,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers8,
     location: "Kent",
     age: 24,
-    favouriteClub: "Arsenal",
+    favouriteTeam: "Arsenal",
   },
   {
     profileName: "TheSkyBlues",
@@ -762,7 +762,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers7,
     location: "Essex",
     age: 31,
-    favouriteClub: "Coventry City",
+    favouriteTeam: "Coventry City",
   },
   {
     profileName: "TheHammersFan",
@@ -770,7 +770,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers6,
     location: "Hampshire",
     age: 28,
-    favouriteClub: "West Ham United",
+    favouriteTeam: "West Ham United",
   },
   {
     profileName: "TheVillaLion",
@@ -778,7 +778,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers5,
     location: "Surrey",
     age: 26,
-    favouriteClub: "Aston Villa",
+    favouriteTeam: "Aston Villa",
   },
   {
     profileName: "TheFoxesTamer",
@@ -786,7 +786,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers34,
     location: "Dorset",
     age: 29,
-    favouriteClub: "Leicester City",
+    favouriteTeam: "Leicester City",
   },
   {
     profileName: "TheBlueUnicorn",
@@ -794,7 +794,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers3,
     location: "Somerset",
     age: 23,
-    favouriteClub: "Chelsea",
+    favouriteTeam: "Chelsea",
   },
   {
     profileName: "TheCanariesBird",
@@ -802,7 +802,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers32,
     location: "Devon",
     age: 33,
-    favouriteClub: "Norwich City",
+    favouriteTeam: "Norwich City",
   },
   {
     profileName: "TheClaretsBurn",
@@ -810,7 +810,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers21,
     location: "Cornwall",
     age: 27,
-    favouriteClub: "Burnley",
+    favouriteTeam: "Burnley",
   },
   {
     profileName: "TheBlueLioness",
@@ -818,7 +818,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers17,
     location: "Surrey",
     age: 33,
-    favouriteClub: "Chelsea",
+    favouriteTeam: "Chelsea",
   },
   {
     profileName: "TheRedKnight",
@@ -826,7 +826,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers12,
     location: "Lancashire",
     age: 30,
-    favouriteClub: "Manchester United",
+    favouriteTeam: "Manchester United",
   },
   {
     profileName: "TheFoxHunter",
@@ -834,7 +834,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers24,
     location: "Leicestershire",
     age: 28,
-    favouriteClub: "Leicester City",
+    favouriteTeam: "Leicester City",
   },
   {
     profileName: "TheMagpieFan",
@@ -842,7 +842,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers6,
     location: "Tyne and Wear",
     age: 26,
-    favouriteClub: "Newcastle United",
+    favouriteTeam: "Newcastle United",
   },
   {
     profileName: "TheGunnersGuru",
@@ -850,7 +850,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers8,
     location: "Greater London",
     age: 35,
-    favouriteClub: "Arsenal",
+    favouriteTeam: "Arsenal",
   },
   {
     profileName: "TheLilywhiteLegend",
@@ -858,7 +858,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers19,
     location: "Essex",
     age: 27,
-    favouriteClub: "Tottenham Hotspur",
+    favouriteTeam: "Tottenham Hotspur",
   },
   {
     profileName: "TheSaintsSupporter",
@@ -866,7 +866,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers33,
     location: "Hampshire",
     age: 29,
-    favouriteClub: "Southampton",
+    favouriteTeam: "Southampton",
   },
   {
     profileName: "TheHammersHero",
@@ -874,7 +874,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers16,
     location: "West Ham",
     age: 32,
-    favouriteClub: "West Ham United",
+    favouriteTeam: "West Ham United",
   },
   {
     profileName: "TheRedsRocker",
@@ -882,7 +882,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers29,
     location: "Merseyside",
     age: 26,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "TheBladesBoss",
@@ -890,7 +890,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers7,
     location: "South Yorkshire",
     age: 30,
-    favouriteClub: "Sheffield United",
+    favouriteTeam: "Sheffield United",
   },
   {
     profileName: "TheCanariesFan",
@@ -898,7 +898,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers22,
     location: "Norfolk",
     age: 28,
-    favouriteClub: "Norwich City",
+    favouriteTeam: "Norwich City",
   },
   {
     profileName: "TheRedsRider",
@@ -906,7 +906,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers18,
     location: "Kent",
     age: 31,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "TheFoxesFanatic",
@@ -914,7 +914,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers15,
     location: "Leicestershire",
     age: 25,
-    favouriteClub: "Leicester City",
+    favouriteTeam: "Leicester City",
   },
   {
     profileName: "TheBoroBabe",
@@ -922,7 +922,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers20,
     location: "North Yorkshire",
     age: 27,
-    favouriteClub: "Middlesbrough",
+    favouriteTeam: "Middlesbrough",
   },
   {
     profileName: "ThePeacocksPundit",
@@ -930,7 +930,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers26,
     location: "West Yorkshire",
     age: 34,
-    favouriteClub: "Leeds United",
+    favouriteTeam: "Leeds United",
   },
   {
     profileName: "TheEaglesEnthusiast",
@@ -938,7 +938,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers9,
     location: "Surrey",
     age: 29,
-    favouriteClub: "Crystal Palace",
+    favouriteTeam: "Crystal Palace",
   },
   {
     profileName: "TheCottagersCrazy",
@@ -946,7 +946,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers14,
     location: "Hertfordshire",
     age: 26,
-    favouriteClub: "Fulham",
+    favouriteTeam: "Fulham",
   },
   {
     profileName: "TheBluesBoss",
@@ -954,7 +954,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers23,
     location: "Birmingham",
     age: 33,
-    favouriteClub: "Birmingham City",
+    favouriteTeam: "Birmingham City",
   },
   {
     profileName: "TheSeagullsSupporter",
@@ -962,7 +962,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers11,
     location: "East Sussex",
     age: 30,
-    favouriteClub: "Brighton & Hove Albion",
+    favouriteTeam: "Brighton & Hove Albion",
   },
   {
     profileName: "TheRoyalsRuler",
@@ -970,7 +970,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers27,
     location: "Berkshire",
     age: 28,
-    favouriteClub: "Reading",
+    favouriteTeam: "Reading",
   },
   {
     profileName: "TheTerriersTactician",
@@ -978,7 +978,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers7,
     location: "West Yorkshire",
     age: 31,
-    favouriteClub: "Huddersfield Town",
+    favouriteTeam: "Huddersfield Town",
   },
   {
     profileName: "TheBaggiesBeliever",
@@ -986,7 +986,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers30,
     location: "West Midlands",
     age: 26,
-    favouriteClub: "West Bromwich Albion",
+    favouriteTeam: "West Bromwich Albion",
   },
   {
     profileName: "TheVillaViking",
@@ -994,7 +994,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers19,
     location: "Staffordshire",
     age: 29,
-    favouriteClub: "Aston Villa",
+    favouriteTeam: "Aston Villa",
   },
   {
     profileName: "TheToffeesTalisman",
@@ -1002,7 +1002,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers12,
     location: "Merseyside",
     age: 28,
-    favouriteClub: "Everton",
+    favouriteTeam: "Everton",
   },
   {
     profileName: "TheClaretsChampion",
@@ -1010,7 +1010,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers24,
     location: "Lancashire",
     age: 27,
-    favouriteClub: "Burnley",
+    favouriteTeam: "Burnley",
   },
   {
     profileName: "TheHornetsHero",
@@ -1018,7 +1018,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers13,
     location: "Hertfordshire",
     age: 32,
-    favouriteClub: "Watford",
+    favouriteTeam: "Watford",
   },
   {
     profileName: "TheSaintsSavior",
@@ -1026,7 +1026,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers8,
     location: "Hampshire",
     age: 26,
-    favouriteClub: "Southampton",
+    favouriteTeam: "Southampton",
   },
   {
     profileName: "TheBladesBoss",
@@ -1034,7 +1034,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers25,
     location: "South Yorkshire",
     age: 35,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "TheWolvesWizard",
@@ -1042,7 +1042,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers21,
     location: "West Midlands",
     age: 28,
-    favouriteClub: "Wolverhampton Wanderers",
+    favouriteTeam: "Wolverhampton Wanderers",
   },
   {
     profileName: "BluesFanatic_88",
@@ -1050,7 +1050,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers18,
     location: "West Sussex",
     age: 33,
-    favouriteClub: "Chelsea",
+    favouriteTeam: "Chelsea",
   },
   {
     profileName: "FoxesForever",
@@ -1058,7 +1058,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers20,
     location: "Leicestershire",
     age: 25,
-    favouriteClub: "Leicester City",
+    favouriteTeam: "Leicester City",
   },
   {
     profileName: "RedsRampage",
@@ -1066,7 +1066,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers10,
     location: "Manchester",
     age: 27,
-    favouriteClub: "Liverpool",
+    favouriteTeam: "Liverpool",
   },
   {
     profileName: "EaglesEnthusiast",
@@ -1074,7 +1074,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers27,
     location: "Surrey",
     age: 29,
-    favouriteClub: "Crystal Palace",
+    favouriteTeam: "Crystal Palace",
   },
   {
     profileName: "SeagullsSupporter",
@@ -1082,7 +1082,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers2,
     location: "East Sussex",
     age: 26,
-    favouriteClub: "Brighton & Hove Albion",
+    favouriteTeam: "Brighton & Hove Albion",
   },
   {
     profileName: "SpursSupreme",
@@ -1090,7 +1090,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers9,
     location: "Essex",
     age: 30,
-    favouriteClub: "Tottenham Hotspur",
+    favouriteTeam: "Tottenham Hotspur",
   },
   {
     profileName: "MagpiesMadness",
@@ -1098,7 +1098,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers23,
     location: "Tyne and Wear",
     age: 28,
-    favouriteClub: "Newcastle United",
+    favouriteTeam: "Newcastle United",
   },
   {
     profileName: "CanariesCraze",
@@ -1106,7 +1106,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers14,
     location: "Norfolk",
     age: 26,
-    favouriteClub: "Norwich City",
+    favouriteTeam: "Norwich City",
   },
   {
     profileName: "BaggiesBoys",
@@ -1114,7 +1114,7 @@ const seedUsers = [
     playersAdmired: admiredPlayers31,
     location: "Birmingham",
     age: 30,
-    favouriteClub: "Manchester United",
+    favouriteTeam: "Manchester United",
   },
   {
     profileName: "SwansSupport",
@@ -1122,8 +1122,8 @@ const seedUsers = [
     playersAdmired: admiredPlayers16,
     location: "Swansea",
     age: 27,
-    favouriteClub: "Swansea City",
+    favouriteTeam: "Swansea City",
   },
 ];
 
-module.exports=seedUsers
+module.exports = seedUsers;

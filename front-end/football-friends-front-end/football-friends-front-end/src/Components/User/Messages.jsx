@@ -21,7 +21,7 @@ export default function Messages() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          margin: "0 auto", // Center the div horizontally
+          margin: "0 auto", 
         }}
       >
         <img
