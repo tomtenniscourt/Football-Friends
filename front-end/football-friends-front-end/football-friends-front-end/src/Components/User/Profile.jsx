@@ -122,9 +122,10 @@ function Profile() {
     });
   }
 
-return (
+  return (
     <Container fluid className="d-flex flex-column">
       <br />
+      <Col></Col>
       <div
         className="d-flex justify-content-center align-items-center"
         style={{ height: "30vh" }}
@@ -155,68 +156,85 @@ return (
       </div>
       <Row className="mt-3 justify-content-center">
         <Col md={8}>
-        <Card className="mb-3 card-user shadow">
-  <Card.Body>
-    {editing ? (
-      <>
-        <Form.Group>
-          <Form.Label>Profile Name:</Form.Label>
-          <Form.Control
-            type="text"
-            value={userInfo.profileName || ""}
-            onChange={handleChange}
-            required
-            name="profileName"
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                handleEditSubmit(event);
-              }
-            }}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Location:</Form.Label>
-          <Form.Control
-            type="text"
-            value={userInfo.location || ""}
-            onChange={handleChange}
-            name="location"
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                handleEditSubmit(event);
-              }
-            }}
-          />
-        </Form.Group>
-        <Button className="subtle-animation shadow mt-2" variant="success"
-          onClick={(event) =>
-            editing ? handleEditSubmit(event) : setEditing(!editing)
-          }
-        >
-          {editing ? "Save" : "Edit Profile"}
-        </Button>
-      </>
-    ) : (
-      <>
-        <h2> <strong class="fw-bold">{userInfo.profileName}</strong></h2>
-        <p><strong class="fw-bold">Location:</strong> {userInfo.location || "Not yet set"}</p>
-        <Button className="subtle-animation shadow" variant="dark btn-sm"
-          onClick={(event) =>
-            editing ? handleEditSubmit(event) : setEditing(!editing)
-          }
-        >
-          {editing ? "Save" : "Edit Profile"}
-        </Button>
-      </>
-    )}
-  </Card.Body>
-</Card>
+          <Card className="mb-3 card-user shadow">
+            <Card.Body>
+              {editing ? (
+                <>
+                  <Form.Group>
+                    <Form.Label>Profile Name:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={userInfo.profileName || ""}
+                      onChange={handleChange}
+                      required
+                      name="profileName"
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter") {
+                          handleEditSubmit(event);
+                        }
+                      }}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Location:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={userInfo.location || ""}
+                      onChange={handleChange}
+                      name="location"
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter") {
+                          handleEditSubmit(event);
+                        }
+                      }}
+                    />
+                  </Form.Group>
+                  <Button
+                    className="subtle-animation shadow mt-2"
+                    variant="success"
+                    onClick={(event) =>
+                      editing ? handleEditSubmit(event) : setEditing(!editing)
+                    }
+                  >
+                    {editing ? "Save" : "Edit Profile"}
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <h2>
+                    {" "}
+                    <strong class="fw-bold">{userInfo.profileName}</strong>
+                  </h2>
+                  <p>
+                    <strong class="fw-bold">Location:</strong>{" "}
+                    {userInfo.location || "Not yet set"}
+                  </p>
+                  <Button
+                    className="subtle-animation shadow"
+                    variant="dark btn-sm"
+                    onClick={(event) =>
+                      editing ? handleEditSubmit(event) : setEditing(!editing)
+                    }
+                  >
+                    {editing ? "Save" : "Edit Profile"}
+                  </Button>
+                </>
+              )}
+            </Card.Body>
+          </Card>
 
           <Card className="mb-3 card-favorite shadow">
             <Card.Body>
-              <h3><strong class="fw-bold">Favorite Team:</strong> {userInfo.favouriteTeam || "not chosen"}</h3>
+              <h3>
+                <strong class="fw-bold">Favorite Team:</strong>{" "}
+                {userInfo.favouriteTeam || "not chosen"}
+              </h3>
               {!changingFavTeam && (
-                <Button className="subtle-animation shadow" variant="dark btn-sm" onClick={() => setChangingFavTeam(!changingFavTeam)}>
+                <Button
+                  className="subtle-animation shadow"
+                  variant="dark btn-sm"
+                  onClick={() => setChangingFavTeam(!changingFavTeam)}
+                >
                   Choose Favorite Team
                 </Button>
               )}
@@ -263,92 +281,114 @@ return (
                       </option>
                     </Form.Control>
                   </Form.Group>
-                  <Button className="subtle-animation shadow mt-2" variant="success btn-sm" type="submit">Save</Button>
+                  <Button
+                    className="subtle-animation shadow mt-2"
+                    variant="success btn-sm"
+                    type="submit"
+                  >
+                    Save
+                  </Button>
                 </Form>
               )}
             </Card.Body>
           </Card>
           <Card className="mb-3 card-addAdmired shadow">
-  <Card.Body>
-    <h3><strong class="fw-bold">Add Admired Player</strong></h3>
-    <Form onSubmit={addAdmiredPlayer}>
-  <Row>
-    <Col>
-      <Form.Group>
-        <Form.Label htmlFor="player-name">Player Name:</Form.Label>
-        <Form.Control
-          type="text"
-          id="player-name"
-          value={newAdmiredPlayer.name}
-          onChange={(e) =>
-            setNewAdmiredPlayer({
-              ...newAdmiredPlayer,
-              name: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-    </Col>
-    <Col>
-      <Form.Group>
-        <Form.Label htmlFor="player-age">Player Age:</Form.Label>
-        <Form.Control
-          type="text"
-          id="player-age"
-          value={newAdmiredPlayer.age}
-          onChange={(e) =>
-            setNewAdmiredPlayer({
-              ...newAdmiredPlayer,
-              age: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-    </Col>
-  </Row>
-  <Row>
-    <Col>
-      <Form.Group>
-        <Form.Label htmlFor="player-club">Player Club:</Form.Label>
-        <Form.Control
-          type="text"
-          id="player-club"
-          value={newAdmiredPlayer.club}
-          onChange={(e) =>
-            setNewAdmiredPlayer({
-              ...newAdmiredPlayer,
-              club: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-    </Col>
-    <Col>
-      <Form.Group>
-        <Form.Label htmlFor="player-reason">Reason Admired:</Form.Label>
-        <Form.Control
-          type="text"
-          id="player-reason"
-          value={newAdmiredPlayer.reasonAdmired}
-          onChange={(e) =>
-            setNewAdmiredPlayer({
-              ...newAdmiredPlayer,
-              reasonAdmired: e.target.value,
-            })
-          }
-        />
-      </Form.Group>
-    </Col>
-  </Row>
-  <Button className="subtle-animation shadow" variant="dark btn-sm" type="submit" style={{ marginTop: "10px" }}>Add Player</Button>
-</Form>
-
-  </Card.Body>
-</Card>
+            <Card.Body>
+              <h3>
+                <strong class="fw-bold">Add Admired Player</strong>
+              </h3>
+              <Form onSubmit={addAdmiredPlayer}>
+                <Row>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label htmlFor="player-name">
+                        Player Name:
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        id="player-name"
+                        value={newAdmiredPlayer.name}
+                        onChange={(e) =>
+                          setNewAdmiredPlayer({
+                            ...newAdmiredPlayer,
+                            name: e.target.value,
+                          })
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label htmlFor="player-age">Player Age:</Form.Label>
+                      <Form.Control
+                        type="text"
+                        id="player-age"
+                        value={newAdmiredPlayer.age}
+                        onChange={(e) =>
+                          setNewAdmiredPlayer({
+                            ...newAdmiredPlayer,
+                            age: e.target.value,
+                          })
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label htmlFor="player-club">
+                        Player Club:
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        id="player-club"
+                        value={newAdmiredPlayer.club}
+                        onChange={(e) =>
+                          setNewAdmiredPlayer({
+                            ...newAdmiredPlayer,
+                            club: e.target.value,
+                          })
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group>
+                      <Form.Label htmlFor="player-reason">
+                        Reason Admired:
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        id="player-reason"
+                        value={newAdmiredPlayer.reasonAdmired}
+                        onChange={(e) =>
+                          setNewAdmiredPlayer({
+                            ...newAdmiredPlayer,
+                            reasonAdmired: e.target.value,
+                          })
+                        }
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+                <Button
+                  className="subtle-animation shadow"
+                  variant="dark btn-sm"
+                  type="submit"
+                  style={{ marginTop: "10px" }}
+                >
+                  Add Player
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
 
           <Card className="mb-5 card-admired shadow">
             <Card.Body>
-              <h2><strong class="fw-bold">Admired Players</strong></h2>
+              <h2>
+                <strong class="fw-bold">Admired Players</strong>
+              </h2>
               {admiredPlayers}
             </Card.Body>
           </Card>
