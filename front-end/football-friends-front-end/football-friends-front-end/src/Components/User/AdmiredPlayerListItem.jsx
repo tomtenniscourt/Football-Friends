@@ -61,7 +61,7 @@ export default function AdmiredPlayerListItem(props) {
             {" "}
             <div>{itemToRender}</div>
           </Link>
-          <Button variant="danger"style={{ marginBottom: "30px" }} onClick={handleDelete}>Remove</Button>
+          <Button className="subtle-animation shadow" variant="danger btn-sm" onClick={handleDelete}>Remove</Button>
         </>
       ) : (
         itemToRender

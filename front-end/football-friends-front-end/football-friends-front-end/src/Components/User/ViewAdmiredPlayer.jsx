@@ -1,5 +1,3 @@
-// ViewAdmiredPlayer.jsx
-
 /**
  * This component will represent a page/route in our web app. Users can navigate here
  * by clicking on an 'AdmiredPlayerListItem' component from their 'Profile' page.

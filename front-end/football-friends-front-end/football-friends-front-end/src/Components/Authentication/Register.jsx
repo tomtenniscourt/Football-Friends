@@ -6,7 +6,6 @@ import { createUser } from "../../API/AuthenticationApiCalls";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
-  /** Jack to play with this component while working out authentication side of things */
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -16,8 +15,7 @@ export default function Register() {
   const [age, setAge] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
-  const [passwordsMatch, setPasswordsMatch] = useState(true); // add a state to track if passwords match
-
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -42,7 +40,6 @@ export default function Register() {
     setSelectedLocation(event.target.value);
 
   const handleSubmit = (event) => {
-    // FROM TOM - I have added code here to check that the two passwords match. If this is false, an alert will appear and the form will not submit
     event.preventDefault();
     if (password !== confirmPassword) {
       setPasswordsMatch(false);
@@ -105,18 +102,20 @@ export default function Register() {
             <br />
             <div className="registerForm">
               <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-2" controlId="formBasicEmail">
                   <Form.Label>Email:</Form.Label>
                   <Form.Control
+                    className="shadow"
                     type="text"
                     value={email}
                     onChange={handleEmailChange}
                   />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-2" controlId="formBasicPassword">
                   <Form.Label>Password:</Form.Label>
                   <Form.Control
+                    className="shadow"
                     type="password"
                     value={password}
                     onChange={handlePasswordChange}
@@ -124,39 +123,42 @@ export default function Register() {
                 </Form.Group>
 
                 <Form.Group
-                  className="mb-3"
+                  className="mb-2"
                   controlId="formBasicConfirmPassword"
                 >
                   <Form.Label>Confirm Password:</Form.Label>
                   <Form.Control
+                    className="shadow"
                     type="password"
                     value={confirmPassword}
                     onChange={handleConfirmPasswordChange}
                   />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicProfileName">
+                <Form.Group className="mb-2" controlId="formBasicProfileName">
                   <Form.Label>Profile Name:</Form.Label>
                   <Form.Control
+                    className="shadow"
                     type="text"
                     value={profileName}
                     onChange={handleProfileNameChange}
                   />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicAge">
+                <Form.Group className="mb-2" controlId="formBasicAge">
                   <Form.Label>Age:</Form.Label>
                   <Form.Control
+                    className="shadow"
                     type="number"
                     value={age}
                     onChange={handleAgeChange}
                   />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicFavouriteTeam">
+                <Form.Group className="mb-2" controlId="formBasicFavouriteTeam">
                   <Form.Label>Favourite Team:</Form.Label>
                   <Form.Select
-                    className="dropdownTeam"
+                    className="dropdownTeam shadow"
                     value={selectedOption}
                     onChange={handleOptionChange}
                   >
@@ -184,10 +186,10 @@ export default function Register() {
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicCounty">
+                <Form.Group className="mb-2" controlId="formBasicCounty">
                   <Form.Label>Location:</Form.Label>
                   <Form.Select
-                    className="dropdownCounty"
+                    className="dropdownCounty shadow"
                     value={selectedLocation}
                     onChange={handleLocationChange}
                   >
@@ -245,13 +247,15 @@ export default function Register() {
                     <option value="West Yorkshire">West Yorkshire</option>
                     <option value="Wiltshire">Wiltshire</option>
                   </Form.Select>
+                <br />
                 </Form.Group>
 
                 <Form.Group className="d-flex justify-content-center">
-                  <Button className="registerButton" type="submit">
+                  <Button className="registerButton btn-dark subtle-animation shadow" type="submit">
                     Submit
                   </Button>
                 </Form.Group>
+                <br />
               </Form>
             </div>
           </div>
@@ -271,6 +275,7 @@ export default function Register() {
       <Row className="flex-grow-1">
         <Col></Col>
         <Col className="d-flex align-items-center justify-content-center">
+          <br />
           <p className="text-center">
             Already have an account? <a href="/login">Log in now!</a>
           </p>
