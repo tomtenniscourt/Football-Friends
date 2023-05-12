@@ -75,25 +75,28 @@ export default function ViewUser() {
     });
   }
   return (
-    <Card className="m-3">
-      <Card.Body>
-        <Card.Title>Say hi to {userInfo.profileName}</Card.Title>
-        <Button
-          variant={liked ? "secondary" : "primary"}
-          onClick={(e) => {
-            if (!liked) {
-              handleClick(e);
-            }
-          }}
-        >
-          {liked ? "Liked Already" : "like"}
-        </Button>
-        <Card.Text>Favorite Team: {userInfo.favouriteTeam}</Card.Text>
-        <Card.Text>From: {userInfo.location}</Card.Text>
-        <Card.Text> {userInfo.age}</Card.Text>
-        <Card.Text>Admired Players:</Card.Text>
-        {admiredPlayers}
-      </Card.Body>
-    </Card>
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <Card className="m-2 shadow" style={{ width: "400px" }}>
+        <Card.Body className="m-2 shadow rounded">
+          <Card.Title>{userInfo.profileName}</Card.Title>
+          <Card.Text>Favorite Team: {userInfo.favouriteTeam}</Card.Text>
+          <Card.Text>From: {userInfo.location}</Card.Text>
+          <Card.Text>{userInfo.age}</Card.Text>
+          <Card.Text>Admired Players:</Card.Text>
+          {admiredPlayers}
+          <Button
+            className="btn-sm subtle-animation"
+            variant={liked ? "secondary" : "primary"}
+            onClick={(e) => {
+              if (!liked) {
+                handleClick(e);
+              }
+            }}
+          >
+            {liked ? "Liked Already" : "Like"}
+          </Button>
+        </Card.Body>
+      </Card>
+    </div>
   );
 }

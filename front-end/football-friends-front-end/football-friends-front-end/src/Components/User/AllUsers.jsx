@@ -105,21 +105,20 @@ return (
         }}
       />
     </div>
-    <>
-      <h2 className="text-center" style={{ marginTop: "30px" }}>
-        All Users
-      </h2>
-      <Container className="mt-5">
-        <div className="d-flex justify-content-center">
-          <div className="col-lg-6">
-            <div className="input-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search for users"
-                value={searchTerm}
-                onChange={handleInputChange}
-              />
+      <>
+        <h2 className="text-center" style={{ marginTop: "30px" }}>All Users</h2>
+        <Container className="mt-5">
+          <div className="d-flex justify-content-center">
+            <div className="col-lg-6 shadow">
+              <div className="input-group shadow">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search for users..."
+                  value={searchTerm}
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
           </div>
         </div>

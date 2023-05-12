@@ -3,6 +3,7 @@ import UserThumbnail from "./UserThumbnail";
 import { getAllUsers } from "../../API/UserApiCalls";
 import { Container, Row, Col } from "react-bootstrap";
 
+
 export default function LikesReceived() {
   const [receivedLikes, setReceivedLikes] = useState([]);
 
