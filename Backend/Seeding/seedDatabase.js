@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const seedData = require("./seed");
-const User = require("./Models/user");
+const User = require("../Models/user");
 const mongoURI = "mongodb://localhost:27017/football-friends";
 
 const seedNewData = async () => {
