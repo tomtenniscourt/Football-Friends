@@ -73,6 +73,7 @@ export default function AllUsers() {
       });
     }
 
+
 return (
   <div
     style={{
@@ -101,9 +102,10 @@ return (
         alt="your-image-description"
         className="img-fluid"
         style={{
-          width: "100%",
-          height: "auto",
-          clipPath: "circle(38% at 50% 50%)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          minHeight: "100vh",
         }}
       />
     </div>
@@ -122,12 +124,12 @@ return (
                 />
               </div>
             </div>
+          </Container>
+          <div className="d-flex flex-wrap justify-content-center">
+            {ourUsers}
           </div>
-        </div>
-      </Container>
-      <div className="d-flex flex-wrap justify-content-center">{ourUsers}</div>
-    </>
-  </div>
-);
+        </>
+      </div>
+    );
   }
 }

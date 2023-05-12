@@ -60,6 +60,11 @@ export default function Homepage() {
     }
   };
 
+
+  const filteredUsers = localUsers;
+
+
+
 return (
   <Container
     fluid
@@ -71,18 +76,12 @@ return (
       className="d-flex justify-content-center align-items-center"
       style={{ height: "30vh" }}
     >
+      <br />
       <div
-        style={{
-          height: "350px",
-          width: "350px",
-          overflow: "hidden",
-          borderRadius: "50%",
-          backgroundColor: "transparent",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "30vh" }}
       >
+
         <img
           src={
             isHovered
@@ -252,8 +251,7 @@ return (
             </ul>
           </div>
         </div>
-        <div className="col-md-2"></div>
-      </div>
+       
       <div className="col-md-2"></div>
     </div>
     <div className="row flex-grow-1">
