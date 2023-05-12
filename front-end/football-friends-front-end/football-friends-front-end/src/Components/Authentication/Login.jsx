@@ -23,8 +23,6 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
     login({
       email: email,
       password: password,
@@ -55,7 +53,7 @@ export default function Login() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              margin: "0 auto", 
+              margin: "0 auto",
             }}
           >
             <img
@@ -145,7 +143,7 @@ export default function Login() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              margin: "0 auto", 
+              margin: "0 auto",
             }}
           >
             <img
