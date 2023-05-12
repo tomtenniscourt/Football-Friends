@@ -3,28 +3,14 @@
   padding: 5px;
 }
 
+.text-shadow {
+  text-shadow: 2px 2px 4px #1E4C89;
+}
 
-
-/* User Profile Card */
-/* .card-user {
-    background-color: #add8e6;
-    color: rgb(0, 0, 0);
-  } */
+.subtle-animation {
+  transition: transform 0.2s ease-in-out;
+}
   
-  /* Favorite Team Card */
-  /* .card-favorite {
-    background-color: #00008b;
-  } */
-  
-  /* Add Admired Player Card */
-  /* .card-addAdmired {
-    background-color: #E6EAF2;
-    color: #000000;
-  } */
-  
-  /* Admired Players Card */
-  /* .card-admired {
-    background-color: #006400;
-    color: rgb(0, 0, 0);
-  } */
-  
+.subtle-animation:hover {
+  transform: scale(1.05);
+}

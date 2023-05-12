@@ -101,7 +101,7 @@ export default function Login() {
                 </Form.Group>
                 <Form.Group className="d-flex justify-content-center">
                   <Button
-                    variant="primary"
+                    className="btn btn-dark subtle-animation"
                     type="submit"
                     style={{ margin: "0 10px" }}
                   >
@@ -170,7 +170,7 @@ export default function Login() {
             <Col></Col>
             <Col className="d-flex align-items-start justify-content-center mt-auto">
               <Button
-                variant="primary"
+                className="btn btn-dark subtle-animation"
                 onClick={logoutAuth}
                 style={{ margin: "0 1px" }}
               >

@@ -15,15 +15,15 @@ import { Card } from "react-bootstrap";
 export default function UserThumbnail(props) {
   const { user } = props;
   return (
-    <Card className="m-3" style={{ width: "18rem" }}>
-      <Card.Body>
+    <Card className="subtle-animation m-3 shadow" style={{ width: "18rem" }}>
+      <Card.Body className="m-2 shadow rounded">
         <Link
           to="/ViewUser"
           className="text-decoration-none text-dark"
           state={{ id: user._id }}
         >
           <Card.Title className="mb-2">{user.profileName}</Card.Title>
-          <Card.Text>Favorite Team: {user.favouriteTeam}</Card.Text>
+          <Card.Text>Favourite Team: {user.favouriteTeam}</Card.Text>
           <Card.Text>From: {user.location}</Card.Text>
           <Card.Text>Age: {user.age}</Card.Text>
         </Link>

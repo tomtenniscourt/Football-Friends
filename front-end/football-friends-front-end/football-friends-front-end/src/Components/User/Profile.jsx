@@ -1,5 +1,3 @@
-// Profile.jsx
-
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import ProfilePictureUpload from "./ProfilePictureUpload/ProfilePictureUpload";
@@ -141,43 +139,48 @@ function Profile() {
   }
 
   return (
-    <Container fluid className="vh-100 d-flex flex-column">
+    <Container fluid className="d-flex flex-column">
+      <br />
       <div
-        style={{
-          width: "330px",
-          height: "330px",
-          overflow: "hidden",
-          borderRadius: "50%",
-          backgroundColor: "#fff",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "0 auto", // Center the div horizontally
-        }}
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "30vh" }}
       >
-        <img
-          src="https://i.imgur.com/AGm0oCR.png"
-          alt="your-image-description"
-          className="img-fluid"
+        <div
           style={{
-            width: "100%",
-            height: "auto",
-            clipPath: "circle(38% at 50% 50%)",
+            height: "350px",
+            width: "350px",
+            overflow: "hidden",
+            borderRadius: "50%",
+            backgroundColor: "transparent",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        />
+        >
+          <img
+            src="https://i.imgur.com/AGm0oCR.png"
+            alt="your-image-description"
+            className="img-fluid"
+            style={{
+              width: "auto",
+              height: "auto",
+              clipPath: "circle(38% at 50% 50%)",
+            }}
+          />
+        </div>
       </div>
-      <Row className="mt-4">
-        <Col md={4}>
+      <Row className="mt-3 justify-content-center">
+        {/* <Col md={4}>
           <Card>
             <Card.Img variant="top" src={imageSrc} alt="Profile" />
             <Card.Body>
               <ProfilePictureUpload />
             </Card.Body>
           </Card>
-        </Col>
+        </Col> */}
 
         <Col md={8}>
-        <Card className="mb-4 card-user">
+        <Card className="mb-3 card-user shadow">
   <Card.Body>
     {editing ? (
       <>
@@ -210,7 +213,7 @@ function Profile() {
             }}
           />
         </Form.Group>
-        <Button variant="success"
+        <Button className="subtle-animation shadow mt-2" variant="success"
           onClick={(event) =>
             editing ? handleEditSubmit(event) : setEditing(!editing)
           }
@@ -220,9 +223,9 @@ function Profile() {
       </>
     ) : (
       <>
-        <h2>Name: {userInfo.profileName}</h2>
-        <p>Location: {userInfo.location || "Not yet set"}</p>
-        <Button variant="dark"
+        <h2> <strong class="fw-bold">{userInfo.profileName}</strong></h2>
+        <p><strong class="fw-bold">Location:</strong> {userInfo.location || "Not yet set"}</p>
+        <Button className="subtle-animation shadow" variant="dark btn-sm"
           onClick={(event) =>
             editing ? handleEditSubmit(event) : setEditing(!editing)
           }
@@ -234,12 +237,12 @@ function Profile() {
   </Card.Body>
 </Card>
 
-          <Card className="mb-4 card-favorite">
+          <Card className="mb-3 card-favorite shadow">
             <Card.Body>
-              <h3>Favorite Team: {userInfo.favouriteTeam || "not chosen"}</h3>
+              <h3><strong class="fw-bold">Favorite Team:</strong> {userInfo.favouriteTeam || "not chosen"}</h3>
               {!changingFavTeam && (
-                <Button variant="dark" onClick={() => setChangingFavTeam(!changingFavTeam)}>
-                  Change Favorite Team
+                <Button className="subtle-animation shadow" variant="dark btn-sm" onClick={() => setChangingFavTeam(!changingFavTeam)}>
+                  Choose Favorite Team
                 </Button>
               )}
 
@@ -285,14 +288,14 @@ function Profile() {
                       </option>
                     </Form.Control>
                   </Form.Group>
-                  <Button variant="success" type="submit">Save</Button>
+                  <Button className="subtle-animation shadow mt-2" variant="success btn-sm" type="submit">Save</Button>
                 </Form>
               )}
             </Card.Body>
           </Card>
-          <Card className="mb-4 card-addAdmired">
+          <Card className="mb-3 card-addAdmired shadow">
   <Card.Body>
-    <h3>Add Admired Player</h3>
+    <h3><strong class="fw-bold">Add Admired Player</strong></h3>
     <Form onSubmit={addAdmiredPlayer}>
   <Row>
     <Col>
@@ -362,15 +365,15 @@ function Profile() {
       </Form.Group>
     </Col>
   </Row>
-  <Button variant="dark" type="submit" style={{ marginTop: "10px" }}>Add Player</Button>
+  <Button className="subtle-animation shadow" variant="dark btn-sm" type="submit" style={{ marginTop: "10px" }}>Add Player</Button>
 </Form>
 
   </Card.Body>
 </Card>
 
-          <Card className="mb-4 card-admired">
+          <Card className="mb-5 card-admired shadow">
             <Card.Body>
-              <h2>Admired Players</h2>
+              <h2><strong class="fw-bold">Admired Players</strong></h2>
               {admiredPlayers}
             </Card.Body>
           </Card>
