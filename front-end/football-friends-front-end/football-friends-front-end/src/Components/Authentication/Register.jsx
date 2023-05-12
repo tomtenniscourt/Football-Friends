@@ -245,6 +245,7 @@ export default function Register() {
                     <option value="West Yorkshire">West Yorkshire</option>
                     <option value="Wiltshire">Wiltshire</option>
                   </Form.Select>
+                <br />
                 </Form.Group>
 
                 <Form.Group className="d-flex justify-content-center">
@@ -252,6 +253,7 @@ export default function Register() {
                     Submit
                   </Button>
                 </Form.Group>
+                <br />
               </Form>
             </div>
           </div>
@@ -271,6 +273,7 @@ export default function Register() {
       <Row className="flex-grow-1">
         <Col></Col>
         <Col className="d-flex align-items-center justify-content-center">
+          <br />
           <p className="text-center">
             Already have an account? <a href="/login">Log in now!</a>
           </p>
