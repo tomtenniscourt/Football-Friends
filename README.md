@@ -209,9 +209,6 @@ To guarantee the stability and reliability of our application, we conducted mult
 After thorough testing and bug fixing, we achieved a stable and feature-rich product that met our initial objectives. 
 
 
-![image](https://github.com/tomtenniscourt/Football-Friends/assets/127535435/2330a1c6-7071-431a-a30b-39f8cd02ccd6)
-
-
 ## Challenges
 
 One of the challenges we faced within the project was how to divvy up responsibilities to ensure that everyone had at least some exposure to areas of coding with which they’re not as comfortable.
@@ -232,18 +229,26 @@ As a member of the front-end team however, I encountered several personal challe
 **Time Management**: Building a comprehensive front-end solution within the project's timeline was a continuous challenge. Prioritizing tasks, managing dependencies, and ensuring efficient collaboration within the team were crucial aspects of overcoming this challenge. I had to make strategic decisions to optimize our workflow and meet our development milestones without compromising the quality of the final product.
 Despite these challenges, our team's dedication, collaboration, and problem-solving skills enabled us to overcome obstacles and deliver a high-quality front-end solution. 
 
-![image](https://github.com/tomtenniscourt/Football-Friends/assets/127535435/c96cfd65-22e6-42c2-8f09-fd7ccfc73d10)
 
 
 ## Wins
 
-One of the big wins that we experienced collectively as a team was the ability to communicate clearly and efficiently throughout the course of the project.
-Doing so meant that we encountered very few merge conflicts, and when they did occur they were minor and didn’t take too long to sort out.
-This was born out of the discussions we had whilst planning. We all agreed that the best way to approach a group project was to put communication as the main priority.
-This looked like frequent screen sharing and group git pushing, code debugging and progress reports.
-Approaching the project in this manner not only lead to a less stressful Project week, but also an end product that we could be proud of.
-Another big win for the team was when we joined the front and back end.
-Doing so was quite a pivotal moment in the project as up until then, the two code bases hadn’t connected and the nature of our approach (a front/back end split in pairs) meant although we knew what each other was doing, we didn’t have hands on experience in each others code base.
+Whilst as a team we experienced many wins together, I experienced many personal ones in addition to this. Here are some of the accomplishments that I am particularly proud of:
+
+**Front-End Proficiency**: Being assigned to the front-end team allowed me to focus on strengthening my skills in HTML, CSS, and JavaScript. Throughout the project, I successfully implemented the static HTML and CSS templates for various pages, gaining a deeper understanding of front-end development principles and best practices.
+
+**Navigation Bar Implementation:** Building a functional navigation bar using bootstrap was a significant achievement for me. It required understanding the user experience requirements and translating them into an interactive and intuitive design. Successfully implementing this crucial component showcased my ability to create user-friendly interfaces that enhance navigation within the application.
+
+**Responsive Design Mastery:** Overcoming the challenges of creating a responsive user interface was a noteworthy accomplishment. Through careful planning, testing, and iterating, I was able to ensure that our application displayed consistently and flawlessly across different devices and screen sizes. Mastering responsive design principles is a valuable skill in today's mobile-first world.
+
+**Collaboration and Teamwork:** Working collaboratively with the front-end and back-end teams was an essential part of the project's success. Successfully integrating my front-end work with the back-end infrastructure developed by the other team demonstrated my ability to collaborate effectively, communicate clearly, and understand different codebases. This collaboration not only improved the overall quality of the application but also enhanced my interpersonal skills as a software engineer.
+
+**User Experience Contributions:** As a junior software engineer, I actively participated in discussions and decision-making regarding user experience design. Offering valuable insights and suggestions on user flows, interactions, and interface improvements showcased my ability to think critically and contribute meaningfully to the overall user experience of the application.
+
+**Bug Fixing and Issue Resolution:** Throughout the project, I encountered various bugs and issues that required diligent investigation and debugging. Successfully identifying the root causes of these issues and implementing effective solutions highlighted my problem-solving skills and attention to detail. Resolving these challenges contributed to the overall stability and functionality of the application.
+
+**Continuous Learning and Growth:** As a beginner software engineer, every aspect of the build process provided opportunities for learning and growth. Overcoming challenges and expanding my skill set allowed me to enhance my technical abilities and gain valuable experience in real-world development scenarios. Embracing a growth mindset and actively seeking knowledge throughout the project contributed to my personal and professional development as a software engineer.
+
 
 ### Authentication
 
