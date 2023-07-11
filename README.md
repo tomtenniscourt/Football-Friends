@@ -192,18 +192,48 @@ One key point to add is that once we had started to work on the project, we made
 
 ## Build Process
 
-For the build process, we divided ourselves into two teams, focussing on the front-end and back-end. I volunteered to be placed in the front-end, as I knew that was where my strengths lay. Together, my sub team focussed on getting the static HTML and CSS ready on all of the pages we had talked about. This included building up a functional navigation bar first, and then detailing other pages that we had discussed. We prioritised the login and registration pages next, along with the profile creation interfaces. Once everything was responsive and working as instructed, we combined this with what our other team had been doing on the back-end. 
+During the build process, our project team divided into two groups, each focusing on a distinct aspect: the front-end and the back-end. Given my strengths and expertise, I volunteered to be part of the front-end team. Together with my colleague we dedicated ourselves to developing the visual and interactive components of the application.
 
-The back-end team had set up the server-side infrastructure to handle the user authentication and account creation previously discussed, along with data storage and populating seed data. 
+Our initial task was to create static HTML and CSS templates for all the pages we had discussed during the planning phase. We began by constructing a functional navigation bar (`NavBar.jsx`), which served as the backbone of our application's user interface. Once we had the foundation in place, we proceeded to meticulously design and implement the remaining pages, ensuring a cohesive and intuitive user experience.
+
+Considering the importance of user management and security, we prioritized the development of the login and registration pages. We invested time and effort into crafting seamless user authentication and account creation processes, guaranteeing a smooth onboarding experience for our users. Additionally, we focused on building intuitive interfaces for profile creation, enabling users to personalize their experience within the application.
+
+The back-end team had set up the server-side infrastructure to handle the functionality we had previously discussed. This included designing robust systems for user authentication, managing accounts, and securely storing data. Furthermore, they implemented mechanisms for populating the application with seed data, ensuring a realistic and representative testing environment.
+
+Once both the front-end and back-end components were running on their own, we initiated the integration phase. This involved merging our front-end work with the back-end infrastructure developed by the other team. By synchronizing the two parts, we created a cohesive and functional application, ready to be put through rigorous testing and optimization.
+
+During the final stages of the build process, we focused on refining the visual aspects of the application. We fine-tuned the CSS and HTML elements, ensuring consistent styling and responsiveness across different devices and screen sizes. This attention to detail enhanced the overall user experience and polished the application's visual identity.
+
+To guarantee the stability and reliability of our application, we conducted multiple rounds of testing. We subjected the application to various scenarios, meticulously hunting down bugs and glitches. Through a systematic approach, we identified and resolved issues, ensuring a smooth and error-free user experience.
+
+After thorough testing and bug fixing, we achieved a stable and feature-rich product that met our initial objectives. 
 
 
-Once both were running well together, we implemented final css and html changes, before going through rounds of testing and bug fixing before finally getting the application in a place where it was ready for deployment.
+![image](https://github.com/tomtenniscourt/Football-Friends/assets/127535435/2330a1c6-7071-431a-a30b-39f8cd02ccd6)
+
 
 ## Challenges
 
 One of the challenges we faced within the project was how to divvy up responsibilities to ensure that everyone had at least some exposure to areas of coding with which they’re not as comfortable.
 Once we had started to merge the front/back end (as detailed below) we decided that it’d be an opportune time to switch roles for a day so we could achieve the goal stated above.
 Safe to say it was a bit of a challenge getting up to speed, but certainly a worthwhile process as not much time was lost making progress towards the MVP.
+
+
+As a member of the front-end team however, I encountered several personal challenges throughout the build process. These were as follows:
+
+**Responsive Design**: One of the primary challenges was ensuring that the application's user interface was responsive and adaptable to different devices and screen sizes. It required careful consideration and testing to guarantee that the layout, components, and content were displayed correctly across various resolutions and orientations.
+
+**Integration Complexity**: Integrating the front-end with the back-end infrastructure developed by the other team posed a challenge. I had to ensure that the communication between the two components was seamless and that data exchanged accurately. This involved coordinating efforts, understanding each other's codebases, and resolving compatibility issues that arose during the integration process.
+
+**User Experience Optimization**: Designing an intuitive and user-friendly interface was crucial to the success of the application. Balancing aesthetic appeal with functionality and ease of use was a challenge that required constant iteration and feedback. I had to carefully consider user flows, navigation patterns, and interactive elements to create a delightful experience for our users.
+
+**Debugging and Issue Resolution**: Throughout the build process, I encountered various bugs, inconsistencies, and unexpected behaviors. Debugging these issues, identifying their root causes, and implementing appropriate fixes demanded persistence and attention to detail. Collaborating closely with the back-end team and conducting thorough testing helped me and my front-end team member identify and resolve these challenges effectively.
+
+**Time Management**: Building a comprehensive front-end solution within the project's timeline was a continuous challenge. Prioritizing tasks, managing dependencies, and ensuring efficient collaboration within the team were crucial aspects of overcoming this challenge. I had to make strategic decisions to optimize our workflow and meet our development milestones without compromising the quality of the final product.
+Despite these challenges, our team's dedication, collaboration, and problem-solving skills enabled us to overcome obstacles and deliver a high-quality front-end solution. 
+
+![image](https://github.com/tomtenniscourt/Football-Friends/assets/127535435/c96cfd65-22e6-42c2-8f09-fd7ccfc73d10)
+
 
 ## Wins
 
