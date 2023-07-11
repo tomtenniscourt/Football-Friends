@@ -192,6 +192,13 @@ One key point to add is that once we had started to work on the project, we made
 
 ## Build Process
 
+For the build process, we divided ourselves into two teams, focussing on the front-end and back-end. I volunteered to be placed in the front-end, as I knew that was where my strengths lay. Together, my sub team focussed on getting the static HTML and CSS ready on all of the pages we had talked about. This included building up a functional navigation bar first, and then detailing other pages that we had discussed. We prioritised the login and registration pages next, along with the profile creation interfaces. Once everything was responsive and working as instructed, we combined this with what our other team had been doing on the back-end. 
+
+The back-end team had set up the server-side infrastructure to handle the user authentication and account creation previously discussed, along with data storage and populating seed data. 
+
+
+Once both were running well together, we implemented final css and html changes, before going through rounds of testing and bug fixing before finally getting the application in a place where it was ready for deployment.
+
 ## Challenges
 
 One of the challenges we faced within the project was how to divvy up responsibilities to ensure that everyone had at least some exposure to areas of coding with which they’re not as comfortable.
